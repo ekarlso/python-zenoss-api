@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>apidoc.Zuul.routers</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;apidoc ::
+        Package&nbsp;Zuul ::
+        Package&nbsp;routers
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="apidoc.Zuul.routers-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="apidoc.Zuul.routers-module.html">Package apidoc.Zuul.routers</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">###########################################################################</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># This program is part of Zenoss Core, an open source monitoring platform.</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (C) 2009, Zenoss Inc.</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># This program is free software; you can redistribute it and/or modify it</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># under the terms of the GNU General Public License version 2 as published by</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"># the Free Software Foundation.</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"># For complete information please visit: http://www.zenoss.com/oss/</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment">###########################################################################</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-docstring">Zenoss JSON API</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">ZenUtils</tt><tt class="py-op">.</tt><tt class="py-name">Ext</tt> <tt class="py-keyword">import</tt> <tt class="py-name">DirectRouter</tt><tt class="py-op">,</tt> <tt class="py-name">DirectResponse</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">decorators</tt> <tt class="py-keyword">import</tt> <tt class="py-name">require</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt> <tt class="py-keyword">import</tt> <tt class="py-name">Zuul</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable apidoc.Zuul.routers.device.log=apidoc.Zuul.routers.device-module.html#log,Variable apidoc.Zuul.routers.events.log=apidoc.Zuul.routers.events-module.html#log,Variable apidoc.Zuul.routers.log=apidoc.Zuul.routers-module.html#log,Variable apidoc.Zuul.routers.mibs.log=apidoc.Zuul.routers.mibs-module.html#log,Variable apidoc.Zuul.routers.network.log=apidoc.Zuul.routers.network-module.html#log,Variable apidoc.Zuul.routers.report.log=apidoc.Zuul.routers.report-module.html#log,Variable apidoc.Zuul.routers.zenpack.log=apidoc.Zuul.routers.zenpack-module.html#log"><a title="apidoc.Zuul.routers.device.log
+apidoc.Zuul.routers.events.log
+apidoc.Zuul.routers.log
+apidoc.Zuul.routers.mibs.log
+apidoc.Zuul.routers.network.log
+apidoc.Zuul.routers.report.log
+apidoc.Zuul.routers.zenpack.log" class="py-name" href="#" onclick="return doclink('link-0', 'log', 'link-0');">log</a></tt> <tt class="py-op">=</tt> <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">getLogger</tt><tt class="py-op">(</tt><tt class="py-name">__name__</tt><tt class="py-op">)</tt> </tt>
+<a name="TreeRouter"></a><div id="TreeRouter-def"><a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt> <a class="py-toggle" href="#" id="TreeRouter-toggle" onclick="return toggle('TreeRouter');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="apidoc.Zuul.routers.TreeRouter-class.html">TreeRouter</a><tt class="py-op">(</tt><tt class="py-base-class">DirectRouter</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TreeRouter-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="TreeRouter-expanded"><a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-docstring">    A common base class for routers that have a hierarchical tree structure.</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TreeRouter.addNode"></a><div id="TreeRouter.addNode-def"><a name="L30"></a><tt class="py-lineno"> 30</tt> <a class="py-toggle" href="#" id="TreeRouter.addNode-toggle" onclick="return toggle('TreeRouter.addNode');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.TreeRouter-class.html#addNode">addNode</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">type</tt><tt class="py-op">,</tt> <tt class="py-param">contextUid</tt><tt class="py-op">,</tt> <tt class="py-param">id</tt><tt class="py-op">,</tt> <tt class="py-param">description</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TreeRouter.addNode-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TreeRouter.addNode-expanded"><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">        Add a node to the existing tree underneath the node specified</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring">        by the context UID</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-docstring">        @type  type: string</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-docstring">        @param type: Either 'class' or 'organizer'</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring">        @type  contextUid: string</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-docstring">        @param contextUid: Path to the node that will</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-docstring">                           be the new node's parent (ex. /zport/dmd/Devices)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-docstring">        @type  id: string</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-docstring">        @param id: Identifier of the new node, must be unique in the</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-docstring">                   parent context</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-docstring">        @type  description: string</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-docstring">        @param description: (optional) Describes this new node (default: None)</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   dictionary</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  Marshaled form of the created node</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">        <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-op">}</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">            <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Method apidoc.Zuul.routers.TreeRouter._getFacade()=apidoc.Zuul.routers.TreeRouter-class.html#_getFacade,Method apidoc.Zuul.routers.device.DeviceRouter._getFacade()=apidoc.Zuul.routers.device.DeviceRouter-class.html#_getFacade,Method apidoc.Zuul.routers.mibs.MibRouter._getFacade()=apidoc.Zuul.routers.mibs.MibRouter-class.html#_getFacade,Method apidoc.Zuul.routers.process.ProcessRouter._getFacade()=apidoc.Zuul.routers.process.ProcessRouter-class.html#_getFacade,Method apidoc.Zuul.routers.service.ServiceRouter._getFacade()=apidoc.Zuul.routers.service.ServiceRouter-class.html#_getFacade,Method apidoc.Zuul.routers.template.TemplateRouter._getFacade()=apidoc.Zuul.routers.template.TemplateRouter-class.html#_getFacade,Method apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade()=apidoc.Zuul.routers.zenpack.ZenPackRouter-class.html#_getFacade"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-1', '_getFacade', 'link-1');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">type</tt><tt class="py-op">.</tt><tt class="py-name">lower</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-string">'class'</tt><tt class="py-op">:</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">                <tt class="py-name">uid</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Method apidoc.Zuul.routers.service.ServiceRouter.addClass()=apidoc.Zuul.routers.service.ServiceRouter-class.html#addClass"><a title="apidoc.Zuul.routers.service.ServiceRouter.addClass" class="py-name" href="#" onclick="return doclink('link-2', 'addClass', 'link-2');">addClass</a></tt><tt class="py-op">(</tt><tt class="py-name">contextUid</tt><tt class="py-op">,</tt> <tt class="py-name">id</tt><tt class="py-op">)</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">                <tt class="py-name">organizer</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt class="py-name">addOrganizer</tt><tt class="py-op">(</tt><tt class="py-name">contextUid</tt><tt class="py-op">,</tt> <tt class="py-name">id</tt><tt class="py-op">,</tt> <tt class="py-name">description</tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">                <tt class="py-name">uid</tt> <tt class="py-op">=</tt> <tt class="py-name">organizer</tt><tt class="py-op">.</tt><tt class="py-name">uid</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">            <tt class="py-name">treeNode</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Method apidoc.Zuul.routers.device.DeviceRouter.getTree()=apidoc.Zuul.routers.device.DeviceRouter-class.html#getTree,Method apidoc.Zuul.routers.mibs.MibRouter.getTree()=apidoc.Zuul.routers.mibs.MibRouter-class.html#getTree,Method apidoc.Zuul.routers.network.NetworkRouter.getTree()=apidoc.Zuul.routers.network.NetworkRouter-class.html#getTree,Method apidoc.Zuul.routers.process.ProcessRouter.getTree()=apidoc.Zuul.routers.process.ProcessRouter-class.html#getTree,Method apidoc.Zuul.routers.report.ReportRouter.getTree()=apidoc.Zuul.routers.report.ReportRouter-class.html#getTree,Method apidoc.Zuul.routers.service.ServiceRouter.getTree()=apidoc.Zuul.routers.service.ServiceRouter-class.html#getTree"><a title="apidoc.Zuul.routers.device.DeviceRouter.getTree
+apidoc.Zuul.routers.mibs.MibRouter.getTree
+apidoc.Zuul.routers.network.NetworkRouter.getTree
+apidoc.Zuul.routers.process.ProcessRouter.getTree
+apidoc.Zuul.routers.report.ReportRouter.getTree
+apidoc.Zuul.routers.service.ServiceRouter.getTree" class="py-name" href="#" onclick="return doclink('link-3', 'getTree', 'link-3');">getTree</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">            <tt class="py-name">result</tt><tt class="py-op">[</tt><tt class="py-string">'nodeConfig'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">treeNode</tt><tt class="py-op">)</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">            <tt class="py-name">result</tt><tt class="py-op">[</tt><tt class="py-string">'success'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt> <tt class="py-name">e</tt><tt class="py-op">:</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">            <tt id="link-4" class="py-name"><a title="apidoc.Zuul.routers.device.log
+apidoc.Zuul.routers.events.log
+apidoc.Zuul.routers.log
+apidoc.Zuul.routers.mibs.log
+apidoc.Zuul.routers.network.log
+apidoc.Zuul.routers.report.log
+apidoc.Zuul.routers.zenpack.log" class="py-name" href="#" onclick="return doclink('link-4', 'log', 'link-0');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">exception</tt><tt class="py-op">(</tt><tt class="py-name">e</tt><tt class="py-op">)</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">            <tt class="py-name">result</tt><tt class="py-op">[</tt><tt class="py-string">'msg'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">e</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">            <tt class="py-name">result</tt><tt class="py-op">[</tt><tt class="py-string">'success'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">result</tt> </tt>
+</div><a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TreeRouter.deleteNode"></a><div id="TreeRouter.deleteNode-def"><a name="L67"></a><tt class="py-lineno"> 67</tt> <a class="py-toggle" href="#" id="TreeRouter.deleteNode-toggle" onclick="return toggle('TreeRouter.deleteNode');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.TreeRouter-class.html#deleteNode">deleteNode</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TreeRouter.deleteNode-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TreeRouter.deleteNode-expanded"><a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-docstring">        Deletesa node from the tree.</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-docstring">        </tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-docstring">        B{NOTE}: You can not delete a root node of a tree</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique identifier of the node we wish to delete</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">             - msg: (string) Status message</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">        <tt class="py-comment"># make sure we are not deleting a root node</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method apidoc.Zuul.routers.TreeRouter._canDeleteUid()=apidoc.Zuul.routers.TreeRouter-class.html#_canDeleteUid,Method apidoc.Zuul.routers.service.ServiceRouter._canDeleteUid()=apidoc.Zuul.routers.service.ServiceRouter-class.html#_canDeleteUid"><a title="apidoc.Zuul.routers.TreeRouter._canDeleteUid
+apidoc.Zuul.routers.service.ServiceRouter._canDeleteUid" class="py-name" href="#" onclick="return doclink('link-5', '_canDeleteUid', 'link-5');">_canDeleteUid</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">Exception</tt><tt class="py-op">(</tt><tt class="py-string">'You cannot delete the root node'</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-6', '_getFacade', 'link-1');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method apidoc.Zuul.routers.TreeRouter.deleteNode()=apidoc.Zuul.routers.TreeRouter-class.html#deleteNode,Method apidoc.Zuul.routers.mibs.MibRouter.deleteNode()=apidoc.Zuul.routers.mibs.MibRouter-class.html#deleteNode,Method apidoc.Zuul.routers.network.NetworkRouter.deleteNode()=apidoc.Zuul.routers.network.NetworkRouter-class.html#deleteNode,Method apidoc.Zuul.routers.report.ReportRouter.deleteNode()=apidoc.Zuul.routers.report.ReportRouter-class.html#deleteNode"><a title="apidoc.Zuul.routers.TreeRouter.deleteNode
+apidoc.Zuul.routers.mibs.MibRouter.deleteNode
+apidoc.Zuul.routers.network.NetworkRouter.deleteNode
+apidoc.Zuul.routers.report.ReportRouter.deleteNode" class="py-name" href="#" onclick="return doclink('link-7', 'deleteNode', 'link-7');">deleteNode</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">        <tt class="py-name">msg</tt> <tt class="py-op">=</tt> <tt class="py-string">"Deleted node '%s'"</tt> <tt class="py-op">%</tt> <tt class="py-name">uid</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">msg</tt><tt class="py-op">=</tt><tt class="py-name">msg</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"> </tt>
+<a name="TreeRouter.moveOrganizer"></a><div id="TreeRouter.moveOrganizer-def"><a name="L87"></a><tt class="py-lineno"> 87</tt> <a class="py-toggle" href="#" id="TreeRouter.moveOrganizer-toggle" onclick="return toggle('TreeRouter.moveOrganizer');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.TreeRouter-class.html#moveOrganizer">moveOrganizer</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">targetUid</tt><tt class="py-op">,</tt> <tt class="py-param">organizerUid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TreeRouter.moveOrganizer-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TreeRouter.moveOrganizer-expanded"><a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring">        Move the organizer uid to be underneath the organizer</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring">        specified by the targetUid.</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring">        @type  targetUid: string</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">        @param targetUid: New parent of the organizer</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-docstring">        @type  organizerUid: string</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-docstring">        @param organizerUid: The organizer to move</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-docstring">             - data: (dictionary) Moved organizer</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-8', '_getFacade', 'link-1');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Method apidoc.Zuul.routers.TreeRouter.moveOrganizer()=apidoc.Zuul.routers.TreeRouter-class.html#moveOrganizer"><a title="apidoc.Zuul.routers.TreeRouter.moveOrganizer" class="py-name" href="#" onclick="return doclink('link-9', 'moveOrganizer', 'link-9');">moveOrganizer</a></tt><tt class="py-op">(</tt><tt class="py-name">targetUid</tt><tt class="py-op">,</tt> <tt class="py-name">organizerUid</tt><tt class="py-op">)</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">=</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"> </tt>
+<a name="TreeRouter._getFacade"></a><div id="TreeRouter._getFacade-def"><a name="L104"></a><tt class="py-lineno">104</tt> <a class="py-toggle" href="#" id="TreeRouter._getFacade-toggle" onclick="return toggle('TreeRouter._getFacade');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.TreeRouter-class.html#_getFacade">_getFacade</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TreeRouter._getFacade-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TreeRouter._getFacade-expanded"><a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-docstring">        Abstract method for child classes to use to get their facade</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-keyword">raise</tt> <tt class="py-name">NotImplementedError</tt><tt class="py-op">(</tt><tt class="py-string">"You must implement the _getFacade method"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"> </tt>
+<a name="TreeRouter._canDeleteUid"></a><div id="TreeRouter._canDeleteUid-def"><a name="L110"></a><tt class="py-lineno">110</tt> <a class="py-toggle" href="#" id="TreeRouter._canDeleteUid-toggle" onclick="return toggle('TreeRouter._canDeleteUid');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.TreeRouter-class.html#_canDeleteUid">_canDeleteUid</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TreeRouter._canDeleteUid-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TreeRouter._canDeleteUid-expanded"><a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-docstring">        We can not delete top level UID's. For example:</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-docstring">            - '/zport/dmd/Processes' this will return False (we can NOT delete)</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"><tt class="py-docstring">            - '/zport/dmd/Processes/Child' will return True</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"><tt class="py-docstring">                (we can delete this)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">        <tt class="py-comment"># check the number of levels deep it is</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">        <tt class="py-name">levels</tt> <tt class="py-op">=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">'/'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">levels</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">4</tt> </tt>
+</div></div><a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Sep 22 15:27:06 2010
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

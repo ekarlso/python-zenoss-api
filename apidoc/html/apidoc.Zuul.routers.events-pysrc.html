@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>apidoc.Zuul.routers.events</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="apidoc.Zuul.routers-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;apidoc ::
+        Package&nbsp;Zuul ::
+        <a href="apidoc.Zuul.routers-module.html">Package&nbsp;routers</a> ::
+        Module&nbsp;events
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="apidoc.Zuul.routers.events-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="apidoc.Zuul.routers.events-module.html">Module apidoc.Zuul.routers.events</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">###########################################################################</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># This program is part of Zenoss Core, an open source monitoring platform.</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (C) 2009, Zenoss Inc.</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># This program is free software; you can redistribute it and/or modify it</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># under the terms of the GNU General Public License version 2 as published by</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"># the Free Software Foundation.</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"># For complete information please visit: http://www.zenoss.com/oss/</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment">###########################################################################</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-docstring">Operations for Events.</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring">Available at:  /zport/dmd/evconsole_router</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">time</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable apidoc.Zuul.routers.device.log=apidoc.Zuul.routers.device-module.html#log,Variable apidoc.Zuul.routers.events.log=apidoc.Zuul.routers.events-module.html#log,Variable apidoc.Zuul.routers.log=apidoc.Zuul.routers-module.html#log,Variable apidoc.Zuul.routers.mibs.log=apidoc.Zuul.routers.mibs-module.html#log,Variable apidoc.Zuul.routers.network.log=apidoc.Zuul.routers.network-module.html#log,Variable apidoc.Zuul.routers.report.log=apidoc.Zuul.routers.report-module.html#log,Variable apidoc.Zuul.routers.zenpack.log=apidoc.Zuul.routers.zenpack-module.html#log"><a title="apidoc.Zuul.routers.device.log
+apidoc.Zuul.routers.events.log
+apidoc.Zuul.routers.log
+apidoc.Zuul.routers.mibs.log
+apidoc.Zuul.routers.network.log
+apidoc.Zuul.routers.report.log
+apidoc.Zuul.routers.zenpack.log" class="py-name" href="#" onclick="return doclink('link-0', 'log', 'link-0');">log</a></tt> <tt class="py-op">=</tt> <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">getLogger</tt><tt class="py-op">(</tt><tt class="py-string">'zen.event_router'</tt><tt class="py-op">)</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">ZenUI3</tt><tt class="py-op">.</tt><tt class="py-name">browser</tt><tt class="py-op">.</tt><tt class="py-name">eventconsole</tt><tt class="py-op">.</tt><tt class="py-name">grid</tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Method apidoc.Zuul.routers.events.EventsRouter.column_config()=apidoc.Zuul.routers.events.EventsRouter-class.html#column_config"><a title="apidoc.Zuul.routers.events.EventsRouter.column_config" class="py-name" href="#" onclick="return doclink('link-1', 'column_config', 'link-1');">column_config</a></tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">ZenUtils</tt><tt class="py-op">.</tt><tt class="py-name">Ext</tt> <tt class="py-keyword">import</tt> <tt class="py-name">DirectRouter</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">ZenUtils</tt><tt class="py-op">.</tt><tt class="py-name">extdirect</tt><tt class="py-op">.</tt><tt class="py-name">router</tt> <tt class="py-keyword">import</tt> <tt class="py-name">DirectResponse</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">Zuul</tt> <tt class="py-keyword">import</tt> <tt class="py-name">getFacade</tt><tt class="py-op">,</tt> <tt class="py-name">marshal</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">decorators</tt> <tt class="py-keyword">import</tt> <tt class="py-name">require</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">_mysql_exceptions</tt> <tt class="py-keyword">import</tt> <tt class="py-name">OperationalError</tt> </tt>
+<a name="EventsRouter"></a><div id="EventsRouter-def"><a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt> <a class="py-toggle" href="#" id="EventsRouter-toggle" onclick="return toggle('EventsRouter');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="apidoc.Zuul.routers.events.EventsRouter-class.html">EventsRouter</a><tt class="py-op">(</tt><tt class="py-base-class">DirectRouter</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventsRouter-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="EventsRouter-expanded"><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">    A JSON/ExtDirect interface to operations on events</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"> </tt>
+<a name="EventsRouter.__init__"></a><div id="EventsRouter.__init__-def"><a name="L35"></a><tt class="py-lineno"> 35</tt> <a class="py-toggle" href="#" id="EventsRouter.__init__-toggle" onclick="return toggle('EventsRouter.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.events.EventsRouter-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">context</tt><tt class="py-op">,</tt> <tt class="py-param">request</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventsRouter.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventsRouter.__init__-expanded"><a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-2" class="py-name" targets="Class apidoc.Zuul.routers.events.EventsRouter=apidoc.Zuul.routers.events.EventsRouter-class.html"><a title="apidoc.Zuul.routers.events.EventsRouter" class="py-name" href="#" onclick="return doclink('link-2', 'EventsRouter', 'link-2');">EventsRouter</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Method apidoc.Zuul.routers.events.EventsRouter.__init__()=apidoc.Zuul.routers.events.EventsRouter-class.html#__init__,Method apidoc.Zuul.routers.messaging.MessagingRouter.__init__()=apidoc.Zuul.routers.messaging.MessagingRouter-class.html#__init__,Method apidoc.Zuul.routers.mibs.MibRouter.__init__()=apidoc.Zuul.routers.mibs.MibRouter-class.html#__init__,Method apidoc.Zuul.routers.network.NetworkRouter.__init__()=apidoc.Zuul.routers.network.NetworkRouter-class.html#__init__,Method apidoc.Zuul.routers.service.ServiceRouter.__init__()=apidoc.Zuul.routers.service.ServiceRouter-class.html#__init__"><a title="apidoc.Zuul.routers.events.EventsRouter.__init__
+apidoc.Zuul.routers.messaging.MessagingRouter.__init__
+apidoc.Zuul.routers.mibs.MibRouter.__init__
+apidoc.Zuul.routers.network.NetworkRouter.__init__
+apidoc.Zuul.routers.service.ServiceRouter.__init__" class="py-name" href="#" onclick="return doclink('link-3', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">context</tt><tt class="py-op">,</tt> <tt class="py-name">request</tt><tt class="py-op">)</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt> <tt class="py-op">=</tt> <tt class="py-name">getFacade</tt><tt class="py-op">(</tt><tt class="py-string">'event'</tt><tt class="py-op">,</tt> <tt class="py-name">context</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'ZenCommon'</tt><tt class="py-op">)</tt> </tt>
+<a name="EventsRouter.query"></a><div id="EventsRouter.query-def"><a name="L40"></a><tt class="py-lineno"> 40</tt> <a class="py-toggle" href="#" id="EventsRouter.query-toggle" onclick="return toggle('EventsRouter.query');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.events.EventsRouter-class.html#query">query</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">limit</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">start</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">sort</tt><tt class="py-op">=</tt><tt class="py-string">'lastTime'</tt><tt class="py-op">,</tt> <tt class="py-param">dir</tt><tt class="py-op">=</tt><tt class="py-string">'DESC'</tt><tt class="py-op">,</tt> <tt class="py-param">params</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">              <tt class="py-param">history</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">criteria</tt><tt class="py-op">=</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventsRouter.query-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventsRouter.query-expanded"><a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-docstring">        Query for events.</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring">        @type  limit: integer</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">        @param limit: (optional) Max index of events to retrieve (default: 0)</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">        @type  start: integer</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">        @param start: (optional) Min index of events to retrieve (default: 0)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring">        @type  sort: string</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-docstring">        @param sort: (optional) Key on which to sort the return results (default:</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-docstring">                     'lastTime')</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-docstring">        @type  dir: string</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-docstring">        @param dir: (optional) Sort order; can be either 'ASC' or 'DESC'</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-docstring">                    (default: 'DESC')</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-docstring">        @type  params: dictionary</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-docstring">        @param params: (optional) Key-value pair of filters for this search.</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">                       (default: None)</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">        @type  history: boolean</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring">        @param history: (optional) True to search the event history table instead</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">                        of active events (default: False)</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: (optional) Context for the query (default: None)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">        @type  criteria: [dictionary]</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-docstring">        @param criteria: (optional) A list of key-value pairs to to build query's</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-docstring">                         where clause (default: None)</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   dictionary</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-docstring">           - events: ([dictionary]) List of objects representing events</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-docstring">           - totalCount: (integer) Total count of events returned</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-docstring">           - asof: (float) Current time</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">uid</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">                <tt class="py-name">uid</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">context</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">            <tt id="link-4" class="py-name" targets="Module apidoc.Zuul.routers.events=apidoc.Zuul.routers.events-module.html"><a title="apidoc.Zuul.routers.events" class="py-name" href="#" onclick="return doclink('link-4', 'events', 'link-4');">events</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method apidoc.Zuul.routers.events.EventsRouter.query()=apidoc.Zuul.routers.events.EventsRouter-class.html#query,Method apidoc.Zuul.routers.service.ServiceRouter.query()=apidoc.Zuul.routers.service.ServiceRouter-class.html#query"><a title="apidoc.Zuul.routers.events.EventsRouter.query
+apidoc.Zuul.routers.service.ServiceRouter.query" class="py-name" href="#" onclick="return doclink('link-5', 'query', 'link-5');">query</a></tt><tt class="py-op">(</tt><tt class="py-name">limit</tt><tt class="py-op">,</tt> <tt class="py-name">start</tt><tt class="py-op">,</tt> <tt class="py-name">sort</tt><tt class="py-op">,</tt> <tt class="py-name">dir</tt><tt class="py-op">,</tt> <tt class="py-name">params</tt><tt class="py-op">,</tt> <tt class="py-name">uid</tt><tt class="py-op">,</tt> <tt class="py-name">criteria</tt><tt class="py-op">,</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">                                   <tt class="py-name">history</tt><tt class="py-op">)</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-op">{</tt><tt class="py-string">'events'</tt><tt class="py-op">:</tt><tt id="link-6" class="py-name"><a title="apidoc.Zuul.routers.events" class="py-name" href="#" onclick="return doclink('link-6', 'events', 'link-4');">events</a></tt><tt class="py-op">[</tt><tt class="py-string">'data'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">                    <tt class="py-string">'totalCount'</tt><tt class="py-op">:</tt> <tt id="link-7" class="py-name"><a title="apidoc.Zuul.routers.events" class="py-name" href="#" onclick="return doclink('link-7', 'events', 'link-4');">events</a></tt><tt class="py-op">[</tt><tt class="py-string">'total'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">                    <tt class="py-string">'asof'</tt><tt class="py-op">:</tt> <tt class="py-name">time</tt><tt class="py-op">.</tt><tt class="py-name">time</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-op">}</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">OperationalError</tt><tt class="py-op">,</tt> <tt class="py-name">oe</tt><tt class="py-op">:</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">            <tt class="py-name">message</tt> <tt class="py-op">=</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">oe</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">fail</tt><tt class="py-op">(</tt><tt class="py-name">message</tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt> <tt class="py-name">e</tt><tt class="py-op">:</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">            <tt id="link-8" class="py-name"><a title="apidoc.Zuul.routers.device.log
+apidoc.Zuul.routers.events.log
+apidoc.Zuul.routers.log
+apidoc.Zuul.routers.mibs.log
+apidoc.Zuul.routers.network.log
+apidoc.Zuul.routers.report.log
+apidoc.Zuul.routers.zenpack.log" class="py-name" href="#" onclick="return doclink('link-8', 'log', 'link-0');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">exception</tt><tt class="py-op">(</tt><tt class="py-string">'Query is failing'</tt><tt class="py-op">)</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">            <tt class="py-name">message</tt> <tt class="py-op">=</tt> <tt class="py-name">e</tt><tt class="py-op">.</tt><tt class="py-name">__class__</tt><tt class="py-op">.</tt><tt class="py-name">__name__</tt> <tt class="py-op">+</tt> <tt class="py-string">' '</tt> <tt class="py-op">+</tt> <tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">e</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">fail</tt><tt class="py-op">(</tt><tt class="py-name">message</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'ZenCommon'</tt><tt class="py-op">)</tt> </tt>
+<a name="EventsRouter.queryHistory"></a><div id="EventsRouter.queryHistory-def"><a name="L89"></a><tt class="py-lineno"> 89</tt> <a class="py-toggle" href="#" id="EventsRouter.queryHistory-toggle" onclick="return toggle('EventsRouter.queryHistory');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.events.EventsRouter-class.html#queryHistory">queryHistory</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">limit</tt><tt class="py-op">,</tt> <tt class="py-param">start</tt><tt class="py-op">,</tt> <tt class="py-param">sort</tt><tt class="py-op">,</tt> <tt class="py-param">dir</tt><tt class="py-op">,</tt> <tt class="py-param">params</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventsRouter.queryHistory-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventsRouter.queryHistory-expanded"><a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring">        Query history table for events.</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">        @type  limit: integer</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-docstring">        @param limit: (optional) Max index of events to retrieve (default: 0)</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-docstring">        @type  start: integer</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-docstring">        @param start: (optional) Min index of events to retrieve (default: 0)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-docstring">        @type  sort: string</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-docstring">        @param sort: (optional) Key on which to sort the return results (default:</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring">                     'lastTime')</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring">        @type  dir: string</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">        @param dir: (optional) Sort order; can be either 'ASC' or 'DESC'</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-docstring">                    (default: 'DESC')</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring">        @type  params: dictionary</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring">        @param params: (optional) Key-value pair of filters for this search.</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-docstring">                       (default: None)</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   dictionary</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-docstring">           - events: ([dictionary]) List of objects representing events</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"><tt class="py-docstring">           - totalCount: (integer) Total count of events returned</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"><tt class="py-docstring">           - asof: (float) Current time</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name"><a title="apidoc.Zuul.routers.events.EventsRouter.query
+apidoc.Zuul.routers.service.ServiceRouter.query" class="py-name" href="#" onclick="return doclink('link-9', 'query', 'link-5');">query</a></tt><tt class="py-op">(</tt><tt class="py-name">limit</tt><tt class="py-op">,</tt> <tt class="py-name">start</tt><tt class="py-op">,</tt> <tt class="py-name">sort</tt><tt class="py-op">,</tt> <tt class="py-name">dir</tt><tt class="py-op">,</tt> <tt class="py-name">params</tt><tt class="py-op">,</tt> <tt class="py-name">history</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage Events'</tt><tt class="py-op">)</tt> </tt>
+<a name="EventsRouter.acknowledge"></a><div id="EventsRouter.acknowledge-def"><a name="L115"></a><tt class="py-lineno">115</tt> <a class="py-toggle" href="#" id="EventsRouter.acknowledge-toggle" onclick="return toggle('EventsRouter.acknowledge');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.events.EventsRouter-class.html#acknowledge">acknowledge</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">evids</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">excludeIds</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">selectState</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">                    <tt class="py-param">field</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">direction</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">params</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">history</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">,</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">                    <tt class="py-param">uid</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">asof</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventsRouter.acknowledge-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventsRouter.acknowledge-expanded"><a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-docstring">        Acknowledge event(s).</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-docstring">        @type  evids: [string]</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-docstring">        @param evids: (optional) List of event IDs to acknowledge (default: None)</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"><tt class="py-docstring">        @type  excludeIds: [string]</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"><tt class="py-docstring">        @param excludeIds: (optional) List of event IDs to exclude from</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-docstring">                           acknowledgment (default: None)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-docstring">        @type  selectState: string</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-docstring">        @param selectState: (optional) Select event ids based on select state.</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"><tt class="py-docstring">                            Available values are: All, New, Acknowledged, and</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"><tt class="py-docstring">                            Suppressed (default: None)</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"><tt class="py-docstring">        @type  field: string</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-docstring">        @param field: (optional) Field key to filter gathered events (default:</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"><tt class="py-docstring">                      None)</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"><tt class="py-docstring">        @type  direction: string</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"><tt class="py-docstring">        @param direction: (optional) Sort order; can be either 'ASC' or 'DESC'</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-docstring">                          (default: 'DESC')</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"><tt class="py-docstring">        @type  params: dictionary</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"><tt class="py-docstring">        @param params: (optional) Key-value pair of filters for this search.</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-docstring">                       (default: None)</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-docstring">        @type  history: boolean</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"><tt class="py-docstring">        @param history: (optional) True to use the event history table instead</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"><tt class="py-docstring">                        of active events (default: False)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: (optional) Context for the query (default: None)</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"><tt class="py-docstring">        @type  asof: float</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"><tt class="py-docstring">        @param asof: (optional) Only acknowledge if there has been no state</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"><tt class="py-docstring">                     change since this time (default: None)</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  Success message</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">uid</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line">            <tt class="py-name">uid</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">context</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Method apidoc.Zuul.routers.events.EventsRouter.acknowledge()=apidoc.Zuul.routers.events.EventsRouter-class.html#acknowledge"><a title="apidoc.Zuul.routers.events.EventsRouter.acknowledge" class="py-name" href="#" onclick="return doclink('link-10', 'acknowledge', 'link-10');">acknowledge</a></tt><tt class="py-op">(</tt><tt class="py-name">evids</tt><tt class="py-op">,</tt> <tt class="py-name">excludeIds</tt><tt class="py-op">,</tt> <tt class="py-name">selectState</tt><tt class="py-op">,</tt> <tt class="py-name">field</tt><tt class="py-op">,</tt> <tt class="py-name">direction</tt><tt class="py-op">,</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">                             <tt class="py-name">params</tt><tt class="py-op">,</tt> <tt class="py-name">asof</tt><tt class="py-op">=</tt><tt class="py-name">asof</tt><tt class="py-op">,</tt> <tt class="py-name">context</tt><tt class="py-op">=</tt><tt class="py-name">uid</tt><tt class="py-op">,</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">                             <tt class="py-name">history</tt><tt class="py-op">=</tt><tt class="py-name">history</tt><tt class="py-op">)</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage Events'</tt><tt class="py-op">)</tt> </tt>
+<a name="EventsRouter.unacknowledge"></a><div id="EventsRouter.unacknowledge-def"><a name="L158"></a><tt class="py-lineno">158</tt> <a class="py-toggle" href="#" id="EventsRouter.unacknowledge-toggle" onclick="return toggle('EventsRouter.unacknowledge');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.events.EventsRouter-class.html#unacknowledge">unacknowledge</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">evids</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">excludeIds</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">selectState</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">                      <tt class="py-param">field</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">direction</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">params</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">history</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">,</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">                      <tt class="py-param">uid</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">asof</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventsRouter.unacknowledge-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventsRouter.unacknowledge-expanded"><a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line"><tt class="py-docstring">        Unacknowledge event(s).</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"><tt class="py-docstring">        @type  evids: [string]</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"><tt class="py-docstring">        @param evids: (optional) List of event IDs to unacknowledge (default: None)</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line"><tt class="py-docstring">        @type  excludeIds: [string]</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"><tt class="py-docstring">        @param excludeIds: (optional) List of event IDs to exclude from</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"><tt class="py-docstring">                           unacknowledgment (default: None)</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line"><tt class="py-docstring">        @type  selectState: string</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line"><tt class="py-docstring">        @param selectState: (optional) Select event ids based on select state.</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"><tt class="py-docstring">                            Available values are: All, New, Acknowledged, and</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line"><tt class="py-docstring">                            Suppressed (default: None)</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line"><tt class="py-docstring">        @type  field: string</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line"><tt class="py-docstring">        @param field: (optional) Field key to filter gathered events (default:</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"><tt class="py-docstring">                      None)</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"><tt class="py-docstring">        @type  direction: string</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line"><tt class="py-docstring">        @param direction: (optional) Sort order; can be either 'ASC' or 'DESC'</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"><tt class="py-docstring">                          (default: 'DESC')</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line"><tt class="py-docstring">        @type  params: dictionary</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line"><tt class="py-docstring">        @param params: (optional) Key-value pair of filters for this search.</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line"><tt class="py-docstring">                       (default: None)</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line"><tt class="py-docstring">        @type  history: boolean</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line"><tt class="py-docstring">        @param history: (optional) True to use the event history table instead</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line"><tt class="py-docstring">                        of active events (default: False)</tt> </tt>
+<a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: (optional) Context for the query (default: None)</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"><tt class="py-docstring">        @type  asof: float</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line"><tt class="py-docstring">        @param asof: (optional) Only unacknowledge if there has been no state</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line"><tt class="py-docstring">                     change since this time (default: None)</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  Success message</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">uid</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line">            <tt class="py-name">uid</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">context</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method apidoc.Zuul.routers.events.EventsRouter.unacknowledge()=apidoc.Zuul.routers.events.EventsRouter-class.html#unacknowledge"><a title="apidoc.Zuul.routers.events.EventsRouter.unacknowledge" class="py-name" href="#" onclick="return doclink('link-11', 'unacknowledge', 'link-11');">unacknowledge</a></tt><tt class="py-op">(</tt><tt class="py-name">evids</tt><tt class="py-op">,</tt> <tt class="py-name">excludeIds</tt><tt class="py-op">,</tt> <tt class="py-name">selectState</tt><tt class="py-op">,</tt> <tt class="py-name">field</tt><tt class="py-op">,</tt> <tt class="py-name">direction</tt><tt class="py-op">,</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line">                               <tt class="py-name">params</tt><tt class="py-op">,</tt> <tt class="py-name">asof</tt><tt class="py-op">=</tt><tt class="py-name">asof</tt><tt class="py-op">,</tt> <tt class="py-name">context</tt><tt class="py-op">=</tt><tt class="py-name">uid</tt><tt class="py-op">,</tt> <tt class="py-name">history</tt><tt class="py-op">=</tt><tt class="py-name">history</tt><tt class="py-op">)</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line"> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage Events'</tt><tt class="py-op">)</tt> </tt>
+<a name="EventsRouter.reopen"></a><div id="EventsRouter.reopen-def"><a name="L200"></a><tt class="py-lineno">200</tt> <a class="py-toggle" href="#" id="EventsRouter.reopen-toggle" onclick="return toggle('EventsRouter.reopen');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.events.EventsRouter-class.html#reopen">reopen</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">evids</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">excludeIds</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">selectState</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">field</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt>  </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line">               <tt class="py-param">direction</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">params</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">history</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">asof</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventsRouter.reopen-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventsRouter.reopen-expanded"><a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line"><tt class="py-docstring">        Reopen event(s).</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line"><tt class="py-docstring">        @type  evids: [string]</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"><tt class="py-docstring">        @param evids: (optional) List of event IDs to reopen (default: None)</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"><tt class="py-docstring">        @type  excludeIds: [string]</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"><tt class="py-docstring">        @param excludeIds: (optional) List of event IDs to exclude from</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line"><tt class="py-docstring">                           reopen (default: None)</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line"><tt class="py-docstring">        @type  selectState: string</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line"><tt class="py-docstring">        @param selectState: (optional) Select event ids based on select state.</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line"><tt class="py-docstring">                            Available values are: All, New, Acknowledged, and</tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line"><tt class="py-docstring">                            Suppressed (default: None)</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line"><tt class="py-docstring">        @type  field: string</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line"><tt class="py-docstring">        @param field: (optional) Field key to filter gathered events (default:</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line"><tt class="py-docstring">                      None)</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line"><tt class="py-docstring">        @type  direction: string</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line"><tt class="py-docstring">        @param direction: (optional) Sort order; can be either 'ASC' or 'DESC'</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line"><tt class="py-docstring">                          (default: 'DESC')</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line"><tt class="py-docstring">        @type  params: dictionary</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line"><tt class="py-docstring">        @param params: (optional) Key-value pair of filters for this search.</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line"><tt class="py-docstring">                       (default: None)</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line"><tt class="py-docstring">        @type  history: boolean</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line"><tt class="py-docstring">        @param history: (optional) True to use the event history table instead</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"><tt class="py-docstring">                        of active events (default: False)</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: (optional) Context for the query (default: None)</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line"><tt class="py-docstring">        @type  asof: float</tt> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line"><tt class="py-docstring">        @param asof: (optional) Only reopen if there has been no state</tt> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line"><tt class="py-docstring">                     change since this time (default: None)</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  Success message</tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">uid</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">            <tt class="py-name">uid</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">context</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name" targets="Method apidoc.Zuul.routers.events.EventsRouter.reopen()=apidoc.Zuul.routers.events.EventsRouter-class.html#reopen"><a title="apidoc.Zuul.routers.events.EventsRouter.reopen" class="py-name" href="#" onclick="return doclink('link-12', 'reopen', 'link-12');">reopen</a></tt><tt class="py-op">(</tt><tt class="py-name">evids</tt><tt class="py-op">,</tt> <tt class="py-name">excludeIds</tt><tt class="py-op">,</tt> <tt class="py-name">selectState</tt><tt class="py-op">,</tt> <tt class="py-name">field</tt><tt class="py-op">,</tt> <tt class="py-name">direction</tt><tt class="py-op">,</tt>  </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line">                        <tt class="py-name">params</tt><tt class="py-op">,</tt> <tt class="py-name">asof</tt><tt class="py-op">=</tt><tt class="py-name">asof</tt><tt class="py-op">,</tt> <tt class="py-name">context</tt><tt class="py-op">=</tt><tt class="py-name">uid</tt><tt class="py-op">,</tt> <tt class="py-name">history</tt><tt class="py-op">=</tt><tt class="py-name">history</tt><tt class="py-op">)</tt> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line"> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage Events'</tt><tt class="py-op">)</tt> </tt>
+<a name="EventsRouter.close"></a><div id="EventsRouter.close-def"><a name="L241"></a><tt class="py-lineno">241</tt> <a class="py-toggle" href="#" id="EventsRouter.close-toggle" onclick="return toggle('EventsRouter.close');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.events.EventsRouter-class.html#close">close</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">evids</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">excludeIds</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">selectState</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">field</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt>  </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line">              <tt class="py-param">direction</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">params</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">history</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">asof</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventsRouter.close-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventsRouter.close-expanded"><a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line"><tt class="py-docstring">        Close event(s).</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line"><tt class="py-docstring">        @type  evids: [string]</tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line"><tt class="py-docstring">        @param evids: (optional) List of event IDs to close (default: None)</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line"><tt class="py-docstring">        @type  excludeIds: [string]</tt> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line"><tt class="py-docstring">        @param excludeIds: (optional) List of event IDs to exclude from</tt> </tt>
+<a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line"><tt class="py-docstring">                           close (default: None)</tt> </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line"><tt class="py-docstring">        @type  selectState: string</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line"><tt class="py-docstring">        @param selectState: (optional) Select event ids based on select state.</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line"><tt class="py-docstring">                            Available values are: All, New, Acknowledged, and</tt> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line"><tt class="py-docstring">                            Suppressed (default: None)</tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line"><tt class="py-docstring">        @type  field: string</tt> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line"><tt class="py-docstring">        @param field: (optional) Field key to filter gathered events (default:</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line"><tt class="py-docstring">                      None)</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line"><tt class="py-docstring">        @type  direction: string</tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line"><tt class="py-docstring">        @param direction: (optional) Sort order; can be either 'ASC' or 'DESC'</tt> </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line"><tt class="py-docstring">                          (default: 'DESC')</tt> </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line"><tt class="py-docstring">        @type  params: dictionary</tt> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line"><tt class="py-docstring">        @param params: (optional) Key-value pair of filters for this search.</tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line"><tt class="py-docstring">                       (default: None)</tt> </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line"><tt class="py-docstring">        @type  history: boolean</tt> </tt>
+<a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line"><tt class="py-docstring">        @param history: (optional) True to use the event history table instead</tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line"><tt class="py-docstring">                        of active events (default: False)</tt> </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: (optional) Context for the query (default: None)</tt> </tt>
+<a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line"><tt class="py-docstring">        @type  asof: float</tt> </tt>
+<a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line"><tt class="py-docstring">        @param asof: (optional) Only close if there has been no state</tt> </tt>
+<a name="L271"></a><tt class="py-lineno">271</tt>  <tt class="py-line"><tt class="py-docstring">                     change since this time (default: None)</tt> </tt>
+<a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  Success message</tt> </tt>
+<a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">uid</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L276"></a><tt class="py-lineno">276</tt>  <tt class="py-line">            <tt class="py-name">uid</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">context</tt> </tt>
+<a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Method apidoc.Zuul.routers.events.EventsRouter.close()=apidoc.Zuul.routers.events.EventsRouter-class.html#close"><a title="apidoc.Zuul.routers.events.EventsRouter.close" class="py-name" href="#" onclick="return doclink('link-13', 'close', 'link-13');">close</a></tt><tt class="py-op">(</tt><tt class="py-name">evids</tt><tt class="py-op">,</tt> <tt class="py-name">excludeIds</tt><tt class="py-op">,</tt> <tt class="py-name">selectState</tt><tt class="py-op">,</tt> <tt class="py-name">field</tt><tt class="py-op">,</tt> <tt class="py-name">direction</tt><tt class="py-op">,</tt> <tt class="py-name">params</tt><tt class="py-op">,</tt> </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line">                        <tt class="py-name">asof</tt><tt class="py-op">=</tt><tt class="py-name">asof</tt><tt class="py-op">,</tt> <tt class="py-name">context</tt><tt class="py-op">=</tt><tt class="py-name">uid</tt><tt class="py-op">,</tt> <tt class="py-name">history</tt><tt class="py-op">=</tt><tt class="py-name">history</tt><tt class="py-op">)</tt> </tt>
+<a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L280"></a><tt class="py-lineno">280</tt>  <tt class="py-line"> </tt>
+<a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'ZenCommon'</tt><tt class="py-op">)</tt> </tt>
+<a name="EventsRouter.detail"></a><div id="EventsRouter.detail-def"><a name="L282"></a><tt class="py-lineno">282</tt> <a class="py-toggle" href="#" id="EventsRouter.detail-toggle" onclick="return toggle('EventsRouter.detail');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.events.EventsRouter-class.html#detail">detail</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">evid</tt><tt class="py-op">,</tt> <tt class="py-param">history</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventsRouter.detail-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventsRouter.detail-expanded"><a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line"><tt class="py-docstring">        Get event details.</tt> </tt>
+<a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line"><tt class="py-docstring">        @type  evid: string</tt> </tt>
+<a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line"><tt class="py-docstring">        @param evid: Event ID to get details</tt> </tt>
+<a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line"><tt class="py-docstring">        @type  history: boolean</tt> </tt>
+<a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line"><tt class="py-docstring">        @param history: (optional) True to search the event history table instead</tt> </tt>
+<a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line"><tt class="py-docstring">                        of active events (default: False)</tt> </tt>
+<a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L292"></a><tt class="py-lineno">292</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line"><tt class="py-docstring">           - event: ([dictionary]) List containing a dictionary representing</tt> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line"><tt class="py-docstring">                    event details</tt> </tt>
+<a name="L295"></a><tt class="py-lineno">295</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L296"></a><tt class="py-lineno">296</tt>  <tt class="py-line">        <tt class="py-name">event</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method apidoc.Zuul.routers.events.EventsRouter.detail()=apidoc.Zuul.routers.events.EventsRouter-class.html#detail"><a title="apidoc.Zuul.routers.events.EventsRouter.detail" class="py-name" href="#" onclick="return doclink('link-14', 'detail', 'link-14');">detail</a></tt><tt class="py-op">(</tt><tt class="py-name">evid</tt><tt class="py-op">,</tt> <tt class="py-name">history</tt><tt class="py-op">)</tt> </tt>
+<a name="L297"></a><tt class="py-lineno">297</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">event</tt><tt class="py-op">:</tt> </tt>
+<a name="L298"></a><tt class="py-lineno">298</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">event</tt><tt class="py-op">=</tt><tt class="py-op">[</tt><tt class="py-name">event</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L299"></a><tt class="py-lineno">299</tt>  <tt class="py-line"> </tt>
+<a name="L300"></a><tt class="py-lineno">300</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage Events'</tt><tt class="py-op">)</tt> </tt>
+<a name="EventsRouter.write_log"></a><div id="EventsRouter.write_log-def"><a name="L301"></a><tt class="py-lineno">301</tt> <a class="py-toggle" href="#" id="EventsRouter.write_log-toggle" onclick="return toggle('EventsRouter.write_log');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.events.EventsRouter-class.html#write_log">write_log</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">evid</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">message</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">history</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventsRouter.write_log-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventsRouter.write_log-expanded"><a name="L302"></a><tt class="py-lineno">302</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L303"></a><tt class="py-lineno">303</tt>  <tt class="py-line"><tt class="py-docstring">        Write a message to an event's log.</tt> </tt>
+<a name="L304"></a><tt class="py-lineno">304</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L305"></a><tt class="py-lineno">305</tt>  <tt class="py-line"><tt class="py-docstring">        @type  evid: string</tt> </tt>
+<a name="L306"></a><tt class="py-lineno">306</tt>  <tt class="py-line"><tt class="py-docstring">        @param evid: Event ID to log to</tt> </tt>
+<a name="L307"></a><tt class="py-lineno">307</tt>  <tt class="py-line"><tt class="py-docstring">        @type  message: string</tt> </tt>
+<a name="L308"></a><tt class="py-lineno">308</tt>  <tt class="py-line"><tt class="py-docstring">        @param message: Message to log</tt> </tt>
+<a name="L309"></a><tt class="py-lineno">309</tt>  <tt class="py-line"><tt class="py-docstring">        @type  history: boolean</tt> </tt>
+<a name="L310"></a><tt class="py-lineno">310</tt>  <tt class="py-line"><tt class="py-docstring">        @param history: (optional) True to use the event history table instead</tt> </tt>
+<a name="L311"></a><tt class="py-lineno">311</tt>  <tt class="py-line"><tt class="py-docstring">                        of active events (default: False)</tt> </tt>
+<a name="L312"></a><tt class="py-lineno">312</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L313"></a><tt class="py-lineno">313</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  Success message</tt> </tt>
+<a name="L314"></a><tt class="py-lineno">314</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L315"></a><tt class="py-lineno">315</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name"><a title="apidoc.Zuul.routers.device.log
+apidoc.Zuul.routers.events.log
+apidoc.Zuul.routers.log
+apidoc.Zuul.routers.mibs.log
+apidoc.Zuul.routers.network.log
+apidoc.Zuul.routers.report.log
+apidoc.Zuul.routers.zenpack.log" class="py-name" href="#" onclick="return doclink('link-15', 'log', 'link-0');">log</a></tt><tt class="py-op">(</tt><tt class="py-name">evid</tt><tt class="py-op">,</tt> <tt class="py-name">message</tt><tt class="py-op">,</tt> <tt class="py-name">history</tt><tt class="py-op">)</tt> </tt>
+<a name="L316"></a><tt class="py-lineno">316</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L317"></a><tt class="py-lineno">317</tt>  <tt class="py-line"> </tt>
+<a name="L318"></a><tt class="py-lineno">318</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage Events'</tt><tt class="py-op">)</tt> </tt>
+<a name="EventsRouter.classify"></a><div id="EventsRouter.classify-def"><a name="L319"></a><tt class="py-lineno">319</tt> <a class="py-toggle" href="#" id="EventsRouter.classify-toggle" onclick="return toggle('EventsRouter.classify');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.events.EventsRouter-class.html#classify">classify</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">evids</tt><tt class="py-op">,</tt> <tt class="py-param">evclass</tt><tt class="py-op">,</tt> <tt class="py-param">history</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventsRouter.classify-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventsRouter.classify-expanded"><a name="L320"></a><tt class="py-lineno">320</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L321"></a><tt class="py-lineno">321</tt>  <tt class="py-line"><tt class="py-docstring">        Associate event(s) with an event class.</tt> </tt>
+<a name="L322"></a><tt class="py-lineno">322</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L323"></a><tt class="py-lineno">323</tt>  <tt class="py-line"><tt class="py-docstring">        @type  evids: [string]</tt> </tt>
+<a name="L324"></a><tt class="py-lineno">324</tt>  <tt class="py-line"><tt class="py-docstring">        @param evids: List of event ID's to classify</tt> </tt>
+<a name="L325"></a><tt class="py-lineno">325</tt>  <tt class="py-line"><tt class="py-docstring">        @type  evclass: string</tt> </tt>
+<a name="L326"></a><tt class="py-lineno">326</tt>  <tt class="py-line"><tt class="py-docstring">        @param evclass: Event class to associate events to</tt> </tt>
+<a name="L327"></a><tt class="py-lineno">327</tt>  <tt class="py-line"><tt class="py-docstring">        @type  history: boolean</tt> </tt>
+<a name="L328"></a><tt class="py-lineno">328</tt>  <tt class="py-line"><tt class="py-docstring">        @param history: (optional) True to use the event history table instead</tt> </tt>
+<a name="L329"></a><tt class="py-lineno">329</tt>  <tt class="py-line"><tt class="py-docstring">                        of active events (default: False)</tt> </tt>
+<a name="L330"></a><tt class="py-lineno">330</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L331"></a><tt class="py-lineno">331</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L332"></a><tt class="py-lineno">332</tt>  <tt class="py-line"><tt class="py-docstring">           - msg: (string) Success/failure message</tt> </tt>
+<a name="L333"></a><tt class="py-lineno">333</tt>  <tt class="py-line"><tt class="py-docstring">           - success: (boolean) True if class update successful</tt> </tt>
+<a name="L334"></a><tt class="py-lineno">334</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L335"></a><tt class="py-lineno">335</tt>  <tt class="py-line">        <tt class="py-name">zem</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt class="py-name">_event_manager</tt><tt class="py-op">(</tt><tt class="py-name">history</tt><tt class="py-op">)</tt> </tt>
+<a name="L336"></a><tt class="py-lineno">336</tt>  <tt class="py-line">        <tt class="py-name">msg</tt><tt class="py-op">,</tt> <tt class="py-name">url</tt> <tt class="py-op">=</tt> <tt class="py-name">zem</tt><tt class="py-op">.</tt><tt class="py-name">manage_createEventMap</tt><tt class="py-op">(</tt><tt class="py-name">evclass</tt><tt class="py-op">,</tt> <tt class="py-name">evids</tt><tt class="py-op">)</tt> </tt>
+<a name="L337"></a><tt class="py-lineno">337</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">url</tt><tt class="py-op">:</tt> </tt>
+<a name="L338"></a><tt class="py-lineno">338</tt>  <tt class="py-line">            <tt class="py-name">msg</tt> <tt class="py-op">+=</tt> <tt class="py-string">"&lt;br/&gt;&lt;br/&gt;&lt;a href='%s'&gt;Go to the new mapping.&lt;/a&gt;"</tt> <tt class="py-op">%</tt> <tt class="py-name">url</tt> </tt>
+<a name="L339"></a><tt class="py-lineno">339</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">(</tt><tt class="py-name">msg</tt><tt class="py-op">,</tt> <tt class="py-name">success</tt><tt class="py-op">=</tt><tt class="py-name">bool</tt><tt class="py-op">(</tt><tt class="py-name">url</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L340"></a><tt class="py-lineno">340</tt>  <tt class="py-line"> </tt>
+<a name="L341"></a><tt class="py-lineno">341</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage Events'</tt><tt class="py-op">)</tt> </tt>
+<a name="EventsRouter.add_event"></a><div id="EventsRouter.add_event-def"><a name="L342"></a><tt class="py-lineno">342</tt> <a class="py-toggle" href="#" id="EventsRouter.add_event-toggle" onclick="return toggle('EventsRouter.add_event');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.events.EventsRouter-class.html#add_event">add_event</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">summary</tt><tt class="py-op">,</tt> <tt class="py-param">device</tt><tt class="py-op">,</tt> <tt class="py-param">component</tt><tt class="py-op">,</tt> <tt class="py-param">severity</tt><tt class="py-op">,</tt> <tt class="py-param">evclasskey</tt><tt class="py-op">,</tt> <tt class="py-param">evclass</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventsRouter.add_event-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventsRouter.add_event-expanded"><a name="L343"></a><tt class="py-lineno">343</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L344"></a><tt class="py-lineno">344</tt>  <tt class="py-line"><tt class="py-docstring">        Create a new event.</tt> </tt>
+<a name="L345"></a><tt class="py-lineno">345</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L346"></a><tt class="py-lineno">346</tt>  <tt class="py-line"><tt class="py-docstring">        @type  summary: string</tt> </tt>
+<a name="L347"></a><tt class="py-lineno">347</tt>  <tt class="py-line"><tt class="py-docstring">        @param summary: New event's summary</tt> </tt>
+<a name="L348"></a><tt class="py-lineno">348</tt>  <tt class="py-line"><tt class="py-docstring">        @type  device: string</tt> </tt>
+<a name="L349"></a><tt class="py-lineno">349</tt>  <tt class="py-line"><tt class="py-docstring">        @param device: Device uid to use for new event</tt> </tt>
+<a name="L350"></a><tt class="py-lineno">350</tt>  <tt class="py-line"><tt class="py-docstring">        @type  component: string</tt> </tt>
+<a name="L351"></a><tt class="py-lineno">351</tt>  <tt class="py-line"><tt class="py-docstring">        @param component: Component uid to use for new event</tt> </tt>
+<a name="L352"></a><tt class="py-lineno">352</tt>  <tt class="py-line"><tt class="py-docstring">        @type  severity: string</tt> </tt>
+<a name="L353"></a><tt class="py-lineno">353</tt>  <tt class="py-line"><tt class="py-docstring">        @param severity: Severity of new event. Can be one of the following:</tt> </tt>
+<a name="L354"></a><tt class="py-lineno">354</tt>  <tt class="py-line"><tt class="py-docstring">                         Critical, Error, Warning, Info, Debug, or Clear</tt> </tt>
+<a name="L355"></a><tt class="py-lineno">355</tt>  <tt class="py-line"><tt class="py-docstring">        @type  evclasskey: string</tt> </tt>
+<a name="L356"></a><tt class="py-lineno">356</tt>  <tt class="py-line"><tt class="py-docstring">        @param evclasskey: The Event Class Key to assign to this event</tt> </tt>
+<a name="L357"></a><tt class="py-lineno">357</tt>  <tt class="py-line"><tt class="py-docstring">        @type  evclass: string</tt> </tt>
+<a name="L358"></a><tt class="py-lineno">358</tt>  <tt class="py-line"><tt class="py-docstring">        @param evclass: Event class for the new event</tt> </tt>
+<a name="L359"></a><tt class="py-lineno">359</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L360"></a><tt class="py-lineno">360</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L361"></a><tt class="py-lineno">361</tt>  <tt class="py-line"><tt class="py-docstring">           - evid: (string) The id of the created event</tt> </tt>
+<a name="L362"></a><tt class="py-lineno">362</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L363"></a><tt class="py-lineno">363</tt>  <tt class="py-line">        <tt class="py-name">evid</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt class="py-name">create</tt><tt class="py-op">(</tt><tt class="py-name">summary</tt><tt class="py-op">,</tt> <tt class="py-name">severity</tt><tt class="py-op">,</tt> <tt id="link-16" class="py-name" targets="Module apidoc.Zuul.routers.device=apidoc.Zuul.routers.device-module.html"><a title="apidoc.Zuul.routers.device" class="py-name" href="#" onclick="return doclink('link-16', 'device', 'link-16');">device</a></tt><tt class="py-op">,</tt> <tt class="py-name">component</tt><tt class="py-op">,</tt> </tt>
+<a name="L364"></a><tt class="py-lineno">364</tt>  <tt class="py-line">                               <tt class="py-name">eventClassKey</tt><tt class="py-op">=</tt><tt class="py-name">evclasskey</tt><tt class="py-op">,</tt> <tt class="py-name">eventClass</tt><tt class="py-op">=</tt><tt class="py-name">evclass</tt><tt class="py-op">)</tt> </tt>
+<a name="L365"></a><tt class="py-lineno">365</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">evid</tt><tt class="py-op">=</tt><tt class="py-name">evid</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L366"></a><tt class="py-lineno">366</tt>  <tt class="py-line"> </tt>
+<a name="EventsRouter.column_config"></a><div id="EventsRouter.column_config-def"><a name="L367"></a><tt class="py-lineno">367</tt> <a class="py-toggle" href="#" id="EventsRouter.column_config-toggle" onclick="return toggle('EventsRouter.column_config');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.events.EventsRouter-class.html#column_config">column_config</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">history</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="EventsRouter.column_config-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="EventsRouter.column_config-expanded"><a name="L368"></a><tt class="py-lineno">368</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L369"></a><tt class="py-lineno">369</tt>  <tt class="py-line"><tt class="py-docstring">        Get the current event console field column configuration.</tt> </tt>
+<a name="L370"></a><tt class="py-lineno">370</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L371"></a><tt class="py-lineno">371</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L372"></a><tt class="py-lineno">372</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: (optional) UID context to use (default: None)</tt> </tt>
+<a name="L373"></a><tt class="py-lineno">373</tt>  <tt class="py-line"><tt class="py-docstring">        @type  history: boolean</tt> </tt>
+<a name="L374"></a><tt class="py-lineno">374</tt>  <tt class="py-line"><tt class="py-docstring">        @param history: (optional) True to use the event history table instead</tt> </tt>
+<a name="L375"></a><tt class="py-lineno">375</tt>  <tt class="py-line"><tt class="py-docstring">                        of active events (default: False)</tt> </tt>
+<a name="L376"></a><tt class="py-lineno">376</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   [dictionary]</tt> </tt>
+<a name="L377"></a><tt class="py-lineno">377</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  A list of objects representing field columns</tt> </tt>
+<a name="L378"></a><tt class="py-lineno">378</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L379"></a><tt class="py-lineno">379</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">uid</tt><tt class="py-op">==</tt><tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L380"></a><tt class="py-lineno">380</tt>  <tt class="py-line">            <tt class="py-name">uid</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">context</tt> </tt>
+<a name="L381"></a><tt class="py-lineno">381</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt id="link-17" class="py-name"><a title="apidoc.Zuul.routers.events.EventsRouter.column_config" class="py-name" href="#" onclick="return doclink('link-17', 'column_config', 'link-1');">column_config</a></tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt class="py-name">fields</tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">,</tt> <tt class="py-name">history</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">request</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L382"></a><tt class="py-lineno">382</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="apidoc.Zuul.routers-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Sep 22 15:27:06 2010
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

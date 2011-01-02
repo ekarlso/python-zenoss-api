@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>apidoc.Zuul.routers.template</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="apidoc.Zuul.routers-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;apidoc ::
+        Package&nbsp;Zuul ::
+        <a href="apidoc.Zuul.routers-module.html">Package&nbsp;routers</a> ::
+        Module&nbsp;template
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="apidoc.Zuul.routers.template-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="apidoc.Zuul.routers.template-module.html">Module apidoc.Zuul.routers.template</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">###########################################################################</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># This program is part of Zenoss Core, an open source monitoring platform.</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (C) 2010, Zenoss Inc.</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># This program is free software; you can redistribute it and/or modify it</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># under the terms of the GNU General Public License version 2 as published by</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"># the Free Software Foundation.</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"># For complete information please visit: http://www.zenoss.com/oss/</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment">###########################################################################</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-docstring">Operations for Templates.</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring">Available at:  /zport/dmd/template_router</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt> <tt class="py-keyword">import</tt> <tt class="py-name">Zuul</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">ZenUtils</tt><tt class="py-op">.</tt><tt class="py-name">Ext</tt> <tt class="py-keyword">import</tt> <tt class="py-name">DirectRouter</tt><tt class="py-op">,</tt> <tt class="py-name">DirectResponse</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">decorators</tt> <tt class="py-keyword">import</tt> <tt class="py-name">require</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">form</tt><tt class="py-op">.</tt><tt class="py-name">interfaces</tt> <tt class="py-keyword">import</tt> <tt class="py-name">IFormBuilder</tt> </tt>
+<a name="TemplateRouter"></a><div id="TemplateRouter-def"><a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt> <a class="py-toggle" href="#" id="TemplateRouter-toggle" onclick="return toggle('TemplateRouter');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html">TemplateRouter</a><tt class="py-op">(</tt><tt class="py-base-class">DirectRouter</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="TemplateRouter-expanded"><a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-docstring">    A JSON/ExtDirect interface to operations on templates</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"> </tt>
+<a name="TemplateRouter._getFacade"></a><div id="TemplateRouter._getFacade-def"><a name="L29"></a><tt class="py-lineno"> 29</tt> <a class="py-toggle" href="#" id="TemplateRouter._getFacade-toggle" onclick="return toggle('TemplateRouter._getFacade');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#_getFacade">_getFacade</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter._getFacade-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter._getFacade-expanded"><a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">getFacade</tt><tt class="py-op">(</tt><tt class="py-string">'template'</tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">context</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"> </tt>
+<a name="TemplateRouter.getTemplates"></a><div id="TemplateRouter.getTemplates-def"><a name="L32"></a><tt class="py-lineno"> 32</tt> <a class="py-toggle" href="#" id="TemplateRouter.getTemplates-toggle" onclick="return toggle('TemplateRouter.getTemplates');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#getTemplates">getTemplates</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">id</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.getTemplates-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.getTemplates-expanded"><a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">        Get all templates.</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-docstring">        @type  id: string</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring">        @param id: not used</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   [dictionary]</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  List of objects representing the templates in tree hierarchy</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Method apidoc.Zuul.routers.TreeRouter._getFacade()=apidoc.Zuul.routers.TreeRouter-class.html#_getFacade,Method apidoc.Zuul.routers.device.DeviceRouter._getFacade()=apidoc.Zuul.routers.device.DeviceRouter-class.html#_getFacade,Method apidoc.Zuul.routers.mibs.MibRouter._getFacade()=apidoc.Zuul.routers.mibs.MibRouter-class.html#_getFacade,Method apidoc.Zuul.routers.process.ProcessRouter._getFacade()=apidoc.Zuul.routers.process.ProcessRouter-class.html#_getFacade,Method apidoc.Zuul.routers.service.ServiceRouter._getFacade()=apidoc.Zuul.routers.service.ServiceRouter-class.html#_getFacade,Method apidoc.Zuul.routers.template.TemplateRouter._getFacade()=apidoc.Zuul.routers.template.TemplateRouter-class.html#_getFacade,Method apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade()=apidoc.Zuul.routers.zenpack.ZenPackRouter-class.html#_getFacade"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-0', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-name">templates</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-1" class="py-name" targets="Method apidoc.Zuul.routers.device.DeviceRouter.getTemplates()=apidoc.Zuul.routers.device.DeviceRouter-class.html#getTemplates,Method apidoc.Zuul.routers.template.TemplateRouter.getTemplates()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getTemplates"><a title="apidoc.Zuul.routers.device.DeviceRouter.getTemplates
+apidoc.Zuul.routers.template.TemplateRouter.getTemplates" class="py-name" href="#" onclick="return doclink('link-1', 'getTemplates', 'link-1');">getTemplates</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">templates</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="TemplateRouter.getDeviceClassTemplates"></a><div id="TemplateRouter.getDeviceClassTemplates-def"><a name="L45"></a><tt class="py-lineno"> 45</tt> <a class="py-toggle" href="#" id="TemplateRouter.getDeviceClassTemplates-toggle" onclick="return toggle('TemplateRouter.getDeviceClassTemplates');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#getDeviceClassTemplates">getDeviceClassTemplates</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">id</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.getDeviceClassTemplates-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.getDeviceClassTemplates-expanded"><a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">        Get all templates by device class. This will return a tree where device</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring">        classes are nodes, and templates are leaves.</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-docstring">        @type  id: string</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-docstring">        @param id: not used</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   [dictionary]</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  List of objects representing the templates in tree hierarchy</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-2', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-name">templates</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.getDeviceClassTemplates()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getDeviceClassTemplates"><a title="apidoc.Zuul.routers.template.TemplateRouter.getDeviceClassTemplates" class="py-name" href="#" onclick="return doclink('link-3', 'getDeviceClassTemplates', 'link-3');">getDeviceClassTemplates</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">[</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">templates</tt><tt class="py-op">)</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">     </tt>
+<a name="TemplateRouter.getAddTemplateTargets"></a><div id="TemplateRouter.getAddTemplateTargets-def"><a name="L59"></a><tt class="py-lineno"> 59</tt> <a class="py-toggle" href="#" id="TemplateRouter.getAddTemplateTargets-toggle" onclick="return toggle('TemplateRouter.getAddTemplateTargets');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#getAddTemplateTargets">getAddTemplateTargets</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">query</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.getAddTemplateTargets-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.getAddTemplateTargets-expanded"><a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">        Get a list of available device classes where new templates can be added.</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">        @type  query: string</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-docstring">        @param query: not used</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-docstring">             - data: ([dictionary]) List of objects containing an available device</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-docstring">             class UID and a human-readable label for that class</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-4', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.getAddTemplateTargets()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getAddTemplateTargets"><a title="apidoc.Zuul.routers.template.TemplateRouter.getAddTemplateTargets" class="py-name" href="#" onclick="return doclink('link-5', 'getAddTemplateTargets', 'link-5');">getAddTemplateTargets</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">=</tt><tt class="py-name">data</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">     </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.addTemplate"></a><div id="TemplateRouter.addTemplate-def"><a name="L76"></a><tt class="py-lineno"> 76</tt> <a class="py-toggle" href="#" id="TemplateRouter.addTemplate-toggle" onclick="return toggle('TemplateRouter.addTemplate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#addTemplate">addTemplate</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">id</tt><tt class="py-op">,</tt> <tt class="py-param">targetUid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.addTemplate-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.addTemplate-expanded"><a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">        Add a template to a device class.</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">        @type  id: string</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring">        @param id: Unique ID of the template to add</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-docstring">        @type  targetUid: string</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring">        @param targetUid: Unique ID of the device class to add template to</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-docstring">             - nodeConfig: (dictionary) Object representing the added template</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">            <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-6', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">            <tt class="py-name">templateNode</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.addTemplate()=apidoc.Zuul.routers.template.TemplateRouter-class.html#addTemplate"><a title="apidoc.Zuul.routers.template.TemplateRouter.addTemplate" class="py-name" href="#" onclick="return doclink('link-7', 'addTemplate', 'link-7');">addTemplate</a></tt><tt class="py-op">(</tt><tt class="py-name">id</tt><tt class="py-op">,</tt> <tt class="py-name">targetUid</tt><tt class="py-op">)</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">            <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line">                <tt class="py-name">nodeConfig</tt><tt class="py-op">=</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">templateNode</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt><tt class="py-op">,</tt> <tt class="py-name">e</tt><tt class="py-op">:</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">            <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">fail</tt><tt class="py-op">(</tt><tt class="py-name">msg</tt><tt class="py-op">=</tt><tt class="py-name">str</tt><tt class="py-op">(</tt><tt class="py-name">e</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">result</tt> </tt>
+</div><a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.deleteTemplate"></a><div id="TemplateRouter.deleteTemplate-def"><a name="L99"></a><tt class="py-lineno"> 99</tt> <a class="py-toggle" href="#" id="TemplateRouter.deleteTemplate-toggle" onclick="return toggle('TemplateRouter.deleteTemplate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#deleteTemplate">deleteTemplate</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.deleteTemplate-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.deleteTemplate-expanded"><a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">        Delete a template.</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique ID of the template to delete</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  Success message</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-8', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-9" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.deleteTemplate()=apidoc.Zuul.routers.template.TemplateRouter-class.html#deleteTemplate"><a title="apidoc.Zuul.routers.template.TemplateRouter.deleteTemplate" class="py-name" href="#" onclick="return doclink('link-9', 'deleteTemplate', 'link-9');">deleteTemplate</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-name">msg</tt> <tt class="py-op">=</tt> <tt class="py-string">"Deleted node '%s'"</tt> <tt class="py-op">%</tt> <tt class="py-name">uid</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">msg</tt><tt class="py-op">=</tt><tt class="py-name">msg</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"> </tt>
+<a name="TemplateRouter.getThresholds"></a><div id="TemplateRouter.getThresholds-def"><a name="L113"></a><tt class="py-lineno">113</tt> <a class="py-toggle" href="#" id="TemplateRouter.getThresholds-toggle" onclick="return toggle('TemplateRouter.getThresholds');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#getThresholds">getThresholds</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">,</tt> <tt class="py-param">query</tt><tt class="py-op">=</tt><tt class="py-string">''</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.getThresholds-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.getThresholds-expanded"><a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"><tt class="py-docstring">        Get the thresholds for a template.</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique ID of a template</tt> </tt>
+<a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"><tt class="py-docstring">        @type  query: string</tt> </tt>
+<a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line"><tt class="py-docstring">        @param query: not used</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   [dictionary]</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  List of objects representing representing thresholds</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-10', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line">        <tt class="py-name">thresholds</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.getThresholds()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getThresholds"><a title="apidoc.Zuul.routers.template.TemplateRouter.getThresholds" class="py-name" href="#" onclick="return doclink('link-11', 'getThresholds', 'link-11');">getThresholds</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">thresholds</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"> </tt>
+<a name="TemplateRouter.getThresholdDetails"></a><div id="TemplateRouter.getThresholdDetails-def"><a name="L128"></a><tt class="py-lineno">128</tt> <a class="py-toggle" href="#" id="TemplateRouter.getThresholdDetails-toggle" onclick="return toggle('TemplateRouter.getThresholdDetails');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#getThresholdDetails">getThresholdDetails</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.getThresholdDetails-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.getThresholdDetails-expanded"><a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"><tt class="py-docstring">        Get a threshold's details.</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique ID of a threshold</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   dictionary</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"><tt class="py-docstring">             - record: (dictionary) Object representing the threshold</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"><tt class="py-docstring">             - form: (dictionary) Object representing an ExtJS form for the threshold</tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-12" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-12', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line">        <tt class="py-name">thresholdDetails</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.getThresholdDetails()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getThresholdDetails"><a title="apidoc.Zuul.routers.template.TemplateRouter.getThresholdDetails" class="py-name" href="#" onclick="return doclink('link-13', 'getThresholdDetails', 'link-13');">getThresholdDetails</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line">        <tt class="py-name">form</tt> <tt class="py-op">=</tt> <tt class="py-name">IFormBuilder</tt><tt class="py-op">(</tt><tt class="py-name">thresholdDetails</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">render</tt><tt class="py-op">(</tt><tt class="py-name">fieldsets</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line">        <tt class="py-comment"># turn the threshold into a dictionary</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt>  <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">dict</tt><tt class="py-op">(</tt><tt class="py-name">record</tt><tt class="py-op">=</tt><tt class="py-name">thresholdDetails</tt><tt class="py-op">,</tt> <tt class="py-name">form</tt><tt class="py-op">=</tt><tt class="py-name">form</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">data</tt> </tt>
+</div><a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"> </tt>
+<a name="TemplateRouter.getDataPoints"></a><div id="TemplateRouter.getDataPoints-def"><a name="L146"></a><tt class="py-lineno">146</tt> <a class="py-toggle" href="#" id="TemplateRouter.getDataPoints-toggle" onclick="return toggle('TemplateRouter.getDataPoints');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#getDataPoints">getDataPoints</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">query</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.getDataPoints-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.getDataPoints-expanded"><a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line"><tt class="py-docstring">        Get a list of available data points for a template.</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"><tt class="py-docstring">        @type  query: string</tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"><tt class="py-docstring">        @param query: not used</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique ID of a template</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"><tt class="py-docstring">             - data: ([dictionary]) List of objects representing data points</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line">        <tt class="py-name">datapoints</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-14', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line">        <tt class="py-comment"># go through each of our datasources and get all the data points</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line">        <tt class="py-name">datasources</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.getDataSources()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getDataSources"><a title="apidoc.Zuul.routers.template.TemplateRouter.getDataSources" class="py-name" href="#" onclick="return doclink('link-15', 'getDataSources', 'link-15');">getDataSources</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">datasource</tt> <tt class="py-keyword">in</tt> <tt class="py-name">datasources</tt><tt class="py-op">:</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">            <tt class="py-keyword">for</tt> <tt class="py-name">datapoint</tt> <tt class="py-keyword">in</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name"><a title="apidoc.Zuul.routers.template.TemplateRouter.getDataSources" class="py-name" href="#" onclick="return doclink('link-16', 'getDataSources', 'link-15');">getDataSources</a></tt><tt class="py-op">(</tt><tt class="py-name">datasource</tt><tt class="py-op">.</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">                <tt class="py-name">datapoints</tt><tt class="py-op">.</tt><tt class="py-name">append</tt><tt class="py-op">(</tt><tt class="py-name">datapoint</tt><tt class="py-op">)</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">datapoints</tt><tt class="py-op">)</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">=</tt><tt class="py-name">data</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.addDataPoint"></a><div id="TemplateRouter.addDataPoint-def"><a name="L169"></a><tt class="py-lineno">169</tt> <a class="py-toggle" href="#" id="TemplateRouter.addDataPoint-toggle" onclick="return toggle('TemplateRouter.addDataPoint');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#addDataPoint">addDataPoint</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">dataSourceUid</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.addDataPoint-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.addDataPoint-expanded"><a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"><tt class="py-docstring">        Add a new data point to a data source.</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line"><tt class="py-docstring">        @type  dataSourceUid: string</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line"><tt class="py-docstring">        @param dataSourceUid: Unique ID of the data source to add data point to</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"><tt class="py-docstring">        @type  name: string</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"><tt class="py-docstring">        @param name: ID of the new data point</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  Success message</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-17" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-17', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-18" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.addDataPoint()=apidoc.Zuul.routers.template.TemplateRouter-class.html#addDataPoint"><a title="apidoc.Zuul.routers.template.TemplateRouter.addDataPoint" class="py-name" href="#" onclick="return doclink('link-18', 'addDataPoint', 'link-18');">addDataPoint</a></tt><tt class="py-op">(</tt><tt class="py-name">dataSourceUid</tt><tt class="py-op">,</tt> <tt class="py-name">name</tt><tt class="py-op">)</tt> </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line"> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.addDataSource"></a><div id="TemplateRouter.addDataSource-def"><a name="L185"></a><tt class="py-lineno">185</tt> <a class="py-toggle" href="#" id="TemplateRouter.addDataSource-toggle" onclick="return toggle('TemplateRouter.addDataSource');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#addDataSource">addDataSource</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">templateUid</tt><tt class="py-op">,</tt> <tt class="py-param">name</tt><tt class="py-op">,</tt> <tt class="py-param">type</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.addDataSource-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.addDataSource-expanded"><a name="L186"></a><tt class="py-lineno">186</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line"><tt class="py-docstring">        Add a new data source to a template.</tt> </tt>
+<a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line"><tt class="py-docstring">        @type  templateUid: string</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line"><tt class="py-docstring">        @param templateUid: Unique ID of the template to add data source to</tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line"><tt class="py-docstring">        @type  name: string</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"><tt class="py-docstring">        @param name: ID of the new data source</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line"><tt class="py-docstring">        @type  type: string</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line"><tt class="py-docstring">        @param type: Type of the new data source. From getDataSourceTypes()</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  Success message</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-19" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-19', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-20" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.addDataSource()=apidoc.Zuul.routers.template.TemplateRouter-class.html#addDataSource"><a title="apidoc.Zuul.routers.template.TemplateRouter.addDataSource" class="py-name" href="#" onclick="return doclink('link-20', 'addDataSource', 'link-20');">addDataSource</a></tt><tt class="py-op">(</tt><tt class="py-name">templateUid</tt><tt class="py-op">,</tt> <tt class="py-name">name</tt><tt class="py-op">,</tt> <tt class="py-name">type</tt><tt class="py-op">)</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line"> </tt>
+<a name="TemplateRouter.getDataSources"></a><div id="TemplateRouter.getDataSources-def"><a name="L202"></a><tt class="py-lineno">202</tt> <a class="py-toggle" href="#" id="TemplateRouter.getDataSources-toggle" onclick="return toggle('TemplateRouter.getDataSources');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#getDataSources">getDataSources</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">id</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.getDataSources-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.getDataSources-expanded"><a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line"><tt class="py-docstring">        Get the data sources for a template.</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"><tt class="py-docstring">        @type  id: string</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"><tt class="py-docstring">        @param id: Unique ID of a template</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   [dictionary]</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  List of objects representing representing data sources</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-21" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-21', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">        <tt class="py-name">dataSources</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-22" class="py-name"><a title="apidoc.Zuul.routers.template.TemplateRouter.getDataSources" class="py-name" href="#" onclick="return doclink('link-22', 'getDataSources', 'link-15');">getDataSources</a></tt><tt class="py-op">(</tt><tt class="py-name">id</tt><tt class="py-op">)</tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">dataSources</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line"> </tt>
+<a name="TemplateRouter.getDataSourceDetails"></a><div id="TemplateRouter.getDataSourceDetails-def"><a name="L215"></a><tt class="py-lineno">215</tt> <a class="py-toggle" href="#" id="TemplateRouter.getDataSourceDetails-toggle" onclick="return toggle('TemplateRouter.getDataSourceDetails');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#getDataSourceDetails">getDataSourceDetails</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.getDataSourceDetails-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.getDataSourceDetails-expanded"><a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line"><tt class="py-docstring">        Get a data source's details.</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique ID of a data source</tt> </tt>
+<a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   dictionary</tt> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L223"></a><tt class="py-lineno">223</tt>  <tt class="py-line"><tt class="py-docstring">             - record: (dictionary) Object representing the data source</tt> </tt>
+<a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line"><tt class="py-docstring">             - form: (dictionary) Object representing an ExtJS form for the data</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"><tt class="py-docstring">             source</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-23" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-23', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line">        <tt class="py-name">details</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-24" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.getDataSourceDetails()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getDataSourceDetails"><a title="apidoc.Zuul.routers.template.TemplateRouter.getDataSourceDetails" class="py-name" href="#" onclick="return doclink('link-24', 'getDataSourceDetails', 'link-24');">getDataSourceDetails</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line">        <tt class="py-name">form</tt> <tt class="py-op">=</tt> <tt class="py-name">IFormBuilder</tt><tt class="py-op">(</tt><tt class="py-name">details</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">render</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt>  <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">dict</tt><tt class="py-op">(</tt><tt class="py-name">record</tt><tt class="py-op">=</tt><tt class="py-name">details</tt><tt class="py-op">,</tt> <tt class="py-name">form</tt><tt class="py-op">=</tt><tt class="py-name">form</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">data</tt> </tt>
+</div><a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line"> </tt>
+<a name="TemplateRouter.getDataPointDetails"></a><div id="TemplateRouter.getDataPointDetails-def"><a name="L233"></a><tt class="py-lineno">233</tt> <a class="py-toggle" href="#" id="TemplateRouter.getDataPointDetails-toggle" onclick="return toggle('TemplateRouter.getDataPointDetails');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#getDataPointDetails">getDataPointDetails</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.getDataPointDetails-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.getDataPointDetails-expanded"><a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line"><tt class="py-docstring">        Get a data point's details.</tt> </tt>
+<a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L237"></a><tt class="py-lineno">237</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique ID of a data point</tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   dictionary</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line"><tt class="py-docstring">             - record: (dictionary) Object representing the data point</tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line"><tt class="py-docstring">             - form: (dictionary) Object representing an ExtJS form for the data</tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line"><tt class="py-docstring">             point</tt> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-25" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-25', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line">        <tt class="py-name">details</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-26" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.getDataPointDetails()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getDataPointDetails"><a title="apidoc.Zuul.routers.template.TemplateRouter.getDataPointDetails" class="py-name" href="#" onclick="return doclink('link-26', 'getDataPointDetails', 'link-26');">getDataPointDetails</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line">        <tt class="py-name">form</tt> <tt class="py-op">=</tt> <tt class="py-name">IFormBuilder</tt><tt class="py-op">(</tt><tt class="py-name">details</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">render</tt><tt class="py-op">(</tt><tt class="py-name">fieldsets</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt>  <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">dict</tt><tt class="py-op">(</tt><tt class="py-name">record</tt><tt class="py-op">=</tt><tt class="py-name">details</tt><tt class="py-op">,</tt> <tt class="py-name">form</tt><tt class="py-op">=</tt><tt class="py-name">form</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">data</tt> </tt>
+</div><a name="L250"></a><tt class="py-lineno">250</tt>  <tt class="py-line"> </tt>
+<a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.setInfo"></a><div id="TemplateRouter.setInfo-def"><a name="L252"></a><tt class="py-lineno">252</tt> <a class="py-toggle" href="#" id="TemplateRouter.setInfo-toggle" onclick="return toggle('TemplateRouter.setInfo');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#setInfo">setInfo</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">data</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.setInfo-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.setInfo-expanded"><a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line"><tt class="py-docstring">        Set attributes on an object.</tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line"><tt class="py-docstring">        This method accepts any keyword argument for the property that you wish</tt> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line"><tt class="py-docstring">        to set. The only required property is "uid".</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line"><tt class="py-docstring">        @type    uid: string</tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line"><tt class="py-docstring">        @keyword uid: Unique identifier of an object</tt> </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:  DirectResponse</tt> </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line"><tt class="py-docstring">        @return: B{Properties}:</tt> </tt>
+<a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line"><tt class="py-docstring">            - data: (dictionary) The modified object</tt> </tt>
+<a name="L263"></a><tt class="py-lineno">263</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L264"></a><tt class="py-lineno">264</tt>  <tt class="py-line">        <tt class="py-name">uid</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-string">'uid'</tt><tt class="py-op">]</tt> </tt>
+<a name="L265"></a><tt class="py-lineno">265</tt>  <tt class="py-line">        <tt class="py-keyword">del</tt> <tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-string">'uid'</tt><tt class="py-op">]</tt> </tt>
+<a name="L266"></a><tt class="py-lineno">266</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-27" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-27', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L267"></a><tt class="py-lineno">267</tt>  <tt class="py-line">        <tt class="py-name">info</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-28" class="py-name" targets="Method apidoc.Zuul.routers.device.DeviceRouter.setInfo()=apidoc.Zuul.routers.device.DeviceRouter-class.html#setInfo,Method apidoc.Zuul.routers.mibs.MibRouter.setInfo()=apidoc.Zuul.routers.mibs.MibRouter-class.html#setInfo,Method apidoc.Zuul.routers.network.NetworkRouter.setInfo()=apidoc.Zuul.routers.network.NetworkRouter-class.html#setInfo,Method apidoc.Zuul.routers.process.ProcessRouter.setInfo()=apidoc.Zuul.routers.process.ProcessRouter-class.html#setInfo,Method apidoc.Zuul.routers.service.ServiceRouter.setInfo()=apidoc.Zuul.routers.service.ServiceRouter-class.html#setInfo,Method apidoc.Zuul.routers.template.TemplateRouter.setInfo()=apidoc.Zuul.routers.template.TemplateRouter-class.html#setInfo"><a title="apidoc.Zuul.routers.device.DeviceRouter.setInfo
+apidoc.Zuul.routers.mibs.MibRouter.setInfo
+apidoc.Zuul.routers.network.NetworkRouter.setInfo
+apidoc.Zuul.routers.process.ProcessRouter.setInfo
+apidoc.Zuul.routers.service.ServiceRouter.setInfo
+apidoc.Zuul.routers.template.TemplateRouter.setInfo" class="py-name" href="#" onclick="return doclink('link-28', 'setInfo', 'link-28');">setInfo</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">,</tt> <tt class="py-name">data</tt><tt class="py-op">)</tt> </tt>
+<a name="L268"></a><tt class="py-lineno">268</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">=</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">info</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L269"></a><tt class="py-lineno">269</tt>  <tt class="py-line"> </tt>
+<a name="L270"></a><tt class="py-lineno">270</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.addThreshold"></a><div id="TemplateRouter.addThreshold-def"><a name="L271"></a><tt class="py-lineno">271</tt> <a class="py-toggle" href="#" id="TemplateRouter.addThreshold-toggle" onclick="return toggle('TemplateRouter.addThreshold');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#addThreshold">addThreshold</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">data</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.addThreshold-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.addThreshold-expanded"><a name="L272"></a><tt class="py-lineno">272</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L273"></a><tt class="py-lineno">273</tt>  <tt class="py-line"><tt class="py-docstring">        Add a threshold.</tt> </tt>
+<a name="L274"></a><tt class="py-lineno">274</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L275"></a><tt class="py-lineno">275</tt>  <tt class="py-line"><tt class="py-docstring">        @type    uid: string</tt> </tt>
+<a name="L276"></a><tt class="py-lineno">276</tt>  <tt class="py-line"><tt class="py-docstring">        @keyword uid: Unique identifier of template to add threshold to</tt> </tt>
+<a name="L277"></a><tt class="py-lineno">277</tt>  <tt class="py-line"><tt class="py-docstring">        @type    thresholdType: string</tt> </tt>
+<a name="L278"></a><tt class="py-lineno">278</tt>  <tt class="py-line"><tt class="py-docstring">        @keyword thresholdType: Type of the new threshold. From getThresholdTypes()</tt> </tt>
+<a name="L279"></a><tt class="py-lineno">279</tt>  <tt class="py-line"><tt class="py-docstring">        @type    thresholdId: string</tt> </tt>
+<a name="L280"></a><tt class="py-lineno">280</tt>  <tt class="py-line"><tt class="py-docstring">        @keyword thresholdId: ID of the new threshold</tt> </tt>
+<a name="L281"></a><tt class="py-lineno">281</tt>  <tt class="py-line"><tt class="py-docstring">        @type    dataPoints: [string]</tt> </tt>
+<a name="L282"></a><tt class="py-lineno">282</tt>  <tt class="py-line"><tt class="py-docstring">        @keyword dataPoints: List of data points to select for this threshold</tt> </tt>
+<a name="L283"></a><tt class="py-lineno">283</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:  DirectResponse</tt> </tt>
+<a name="L284"></a><tt class="py-lineno">284</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Success message</tt> </tt>
+<a name="L285"></a><tt class="py-lineno">285</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L286"></a><tt class="py-lineno">286</tt>  <tt class="py-line">        <tt class="py-name">uid</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-string">'uid'</tt><tt class="py-op">]</tt> </tt>
+<a name="L287"></a><tt class="py-lineno">287</tt>  <tt class="py-line">        <tt class="py-name">thresholdType</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-string">'thresholdType'</tt><tt class="py-op">]</tt> </tt>
+<a name="L288"></a><tt class="py-lineno">288</tt>  <tt class="py-line">        <tt class="py-name">thresholdId</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-string">'thresholdId'</tt><tt class="py-op">]</tt> </tt>
+<a name="L289"></a><tt class="py-lineno">289</tt>  <tt class="py-line">        <tt class="py-name">dataPoints</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'dataPoints'</tt><tt class="py-op">,</tt> <tt class="py-name">None</tt><tt class="py-op">)</tt> </tt>
+<a name="L290"></a><tt class="py-lineno">290</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-29" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-29', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L291"></a><tt class="py-lineno">291</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-30" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.addThreshold()=apidoc.Zuul.routers.template.TemplateRouter-class.html#addThreshold"><a title="apidoc.Zuul.routers.template.TemplateRouter.addThreshold" class="py-name" href="#" onclick="return doclink('link-30', 'addThreshold', 'link-30');">addThreshold</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">,</tt> <tt class="py-name">thresholdType</tt><tt class="py-op">,</tt> <tt class="py-name">thresholdId</tt><tt class="py-op">,</tt> <tt class="py-name">dataPoints</tt><tt class="py-op">)</tt> </tt>
+<a name="L292"></a><tt class="py-lineno">292</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L293"></a><tt class="py-lineno">293</tt>  <tt class="py-line"> </tt>
+<a name="L294"></a><tt class="py-lineno">294</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.removeThreshold"></a><div id="TemplateRouter.removeThreshold-def"><a name="L295"></a><tt class="py-lineno">295</tt> <a class="py-toggle" href="#" id="TemplateRouter.removeThreshold-toggle" onclick="return toggle('TemplateRouter.removeThreshold');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#removeThreshold">removeThreshold</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.removeThreshold-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.removeThreshold-expanded"><a name="L296"></a><tt class="py-lineno">296</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L297"></a><tt class="py-lineno">297</tt>  <tt class="py-line"><tt class="py-docstring">        Remove a threshold.</tt> </tt>
+<a name="L298"></a><tt class="py-lineno">298</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L299"></a><tt class="py-lineno">299</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L300"></a><tt class="py-lineno">300</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique identifier of threshold to remove</tt> </tt>
+<a name="L301"></a><tt class="py-lineno">301</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:  DirectResponse</tt> </tt>
+<a name="L302"></a><tt class="py-lineno">302</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Success message</tt> </tt>
+<a name="L303"></a><tt class="py-lineno">303</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L304"></a><tt class="py-lineno">304</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-31" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-31', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L305"></a><tt class="py-lineno">305</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-32" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.removeThreshold()=apidoc.Zuul.routers.template.TemplateRouter-class.html#removeThreshold"><a title="apidoc.Zuul.routers.template.TemplateRouter.removeThreshold" class="py-name" href="#" onclick="return doclink('link-32', 'removeThreshold', 'link-32');">removeThreshold</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L306"></a><tt class="py-lineno">306</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L307"></a><tt class="py-lineno">307</tt>  <tt class="py-line"> </tt>
+<a name="TemplateRouter.getThresholdTypes"></a><div id="TemplateRouter.getThresholdTypes-def"><a name="L308"></a><tt class="py-lineno">308</tt> <a class="py-toggle" href="#" id="TemplateRouter.getThresholdTypes-toggle" onclick="return toggle('TemplateRouter.getThresholdTypes');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#getThresholdTypes">getThresholdTypes</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">query</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.getThresholdTypes-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.getThresholdTypes-expanded"><a name="L309"></a><tt class="py-lineno">309</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L310"></a><tt class="py-lineno">310</tt>  <tt class="py-line"><tt class="py-docstring">        Get a list of available threshold types.</tt> </tt>
+<a name="L311"></a><tt class="py-lineno">311</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L312"></a><tt class="py-lineno">312</tt>  <tt class="py-line"><tt class="py-docstring">        @type  query: string</tt> </tt>
+<a name="L313"></a><tt class="py-lineno">313</tt>  <tt class="py-line"><tt class="py-docstring">        @param query: not used</tt> </tt>
+<a name="L314"></a><tt class="py-lineno">314</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   [dictionary]</tt> </tt>
+<a name="L315"></a><tt class="py-lineno">315</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  List of objects representing threshold types</tt> </tt>
+<a name="L316"></a><tt class="py-lineno">316</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L317"></a><tt class="py-lineno">317</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-33" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-33', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L318"></a><tt class="py-lineno">318</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-34" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.getThresholdTypes()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getThresholdTypes"><a title="apidoc.Zuul.routers.template.TemplateRouter.getThresholdTypes" class="py-name" href="#" onclick="return doclink('link-34', 'getThresholdTypes', 'link-34');">getThresholdTypes</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L319"></a><tt class="py-lineno">319</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">=</tt><tt class="py-name">data</tt><tt class="py-op">)</tt>  </tt>
+</div><a name="L320"></a><tt class="py-lineno">320</tt>  <tt class="py-line"> </tt>
+<a name="TemplateRouter.getDataSourceTypes"></a><div id="TemplateRouter.getDataSourceTypes-def"><a name="L321"></a><tt class="py-lineno">321</tt> <a class="py-toggle" href="#" id="TemplateRouter.getDataSourceTypes-toggle" onclick="return toggle('TemplateRouter.getDataSourceTypes');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#getDataSourceTypes">getDataSourceTypes</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">query</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.getDataSourceTypes-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.getDataSourceTypes-expanded"><a name="L322"></a><tt class="py-lineno">322</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L323"></a><tt class="py-lineno">323</tt>  <tt class="py-line"><tt class="py-docstring">        Get a list of available data source types.</tt> </tt>
+<a name="L324"></a><tt class="py-lineno">324</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L325"></a><tt class="py-lineno">325</tt>  <tt class="py-line"><tt class="py-docstring">        @type  query: string</tt> </tt>
+<a name="L326"></a><tt class="py-lineno">326</tt>  <tt class="py-line"><tt class="py-docstring">        @param query: not used</tt> </tt>
+<a name="L327"></a><tt class="py-lineno">327</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   [dictionary]</tt> </tt>
+<a name="L328"></a><tt class="py-lineno">328</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  List of objects representing data source types</tt> </tt>
+<a name="L329"></a><tt class="py-lineno">329</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L330"></a><tt class="py-lineno">330</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-35" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-35', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L331"></a><tt class="py-lineno">331</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-36" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.getDataSourceTypes()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getDataSourceTypes"><a title="apidoc.Zuul.routers.template.TemplateRouter.getDataSourceTypes" class="py-name" href="#" onclick="return doclink('link-36', 'getDataSourceTypes', 'link-36');">getDataSourceTypes</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L332"></a><tt class="py-lineno">332</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">=</tt><tt class="py-name">data</tt><tt class="py-op">)</tt>  </tt>
+</div><a name="L333"></a><tt class="py-lineno">333</tt>  <tt class="py-line"> </tt>
+<a name="TemplateRouter.getGraphs"></a><div id="TemplateRouter.getGraphs-def"><a name="L334"></a><tt class="py-lineno">334</tt> <a class="py-toggle" href="#" id="TemplateRouter.getGraphs-toggle" onclick="return toggle('TemplateRouter.getGraphs');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#getGraphs">getGraphs</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">,</tt> <tt class="py-param">query</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.getGraphs-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.getGraphs-expanded"><a name="L335"></a><tt class="py-lineno">335</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L336"></a><tt class="py-lineno">336</tt>  <tt class="py-line"><tt class="py-docstring">        Get the graph definitions for a template.</tt> </tt>
+<a name="L337"></a><tt class="py-lineno">337</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L338"></a><tt class="py-lineno">338</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L339"></a><tt class="py-lineno">339</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique ID of a template</tt> </tt>
+<a name="L340"></a><tt class="py-lineno">340</tt>  <tt class="py-line"><tt class="py-docstring">        @type  query: string</tt> </tt>
+<a name="L341"></a><tt class="py-lineno">341</tt>  <tt class="py-line"><tt class="py-docstring">        @param query: not used</tt> </tt>
+<a name="L342"></a><tt class="py-lineno">342</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   [dictionary]</tt> </tt>
+<a name="L343"></a><tt class="py-lineno">343</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  List of objects representing representing graphs</tt> </tt>
+<a name="L344"></a><tt class="py-lineno">344</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L345"></a><tt class="py-lineno">345</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-37" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-37', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L346"></a><tt class="py-lineno">346</tt>  <tt class="py-line">        <tt class="py-name">graphs</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-38" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.getGraphs()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getGraphs"><a title="apidoc.Zuul.routers.template.TemplateRouter.getGraphs" class="py-name" href="#" onclick="return doclink('link-38', 'getGraphs', 'link-38');">getGraphs</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L347"></a><tt class="py-lineno">347</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">graphs</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L348"></a><tt class="py-lineno">348</tt>  <tt class="py-line"> </tt>
+<a name="L349"></a><tt class="py-lineno">349</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.addDataPointToGraph"></a><div id="TemplateRouter.addDataPointToGraph-def"><a name="L350"></a><tt class="py-lineno">350</tt> <a class="py-toggle" href="#" id="TemplateRouter.addDataPointToGraph-toggle" onclick="return toggle('TemplateRouter.addDataPointToGraph');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#addDataPointToGraph">addDataPointToGraph</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">dataPointUid</tt><tt class="py-op">,</tt> <tt class="py-param">graphUid</tt><tt class="py-op">,</tt> <tt class="py-param">includeThresholds</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.addDataPointToGraph-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.addDataPointToGraph-expanded"><a name="L351"></a><tt class="py-lineno">351</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L352"></a><tt class="py-lineno">352</tt>  <tt class="py-line"><tt class="py-docstring">        Add a data point to a graph.</tt> </tt>
+<a name="L353"></a><tt class="py-lineno">353</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L354"></a><tt class="py-lineno">354</tt>  <tt class="py-line"><tt class="py-docstring">        @type  dataPointUid: string</tt> </tt>
+<a name="L355"></a><tt class="py-lineno">355</tt>  <tt class="py-line"><tt class="py-docstring">        @param dataPointUid: Unique ID of the data point to add to graph</tt> </tt>
+<a name="L356"></a><tt class="py-lineno">356</tt>  <tt class="py-line"><tt class="py-docstring">        @type  graphUid: string</tt> </tt>
+<a name="L357"></a><tt class="py-lineno">357</tt>  <tt class="py-line"><tt class="py-docstring">        @param graphUid: Unique ID of the graph to add data point to</tt> </tt>
+<a name="L358"></a><tt class="py-lineno">358</tt>  <tt class="py-line"><tt class="py-docstring">        @type  includeThresholds: boolean</tt> </tt>
+<a name="L359"></a><tt class="py-lineno">359</tt>  <tt class="py-line"><tt class="py-docstring">        @param includeThresholds: (optional) True to include related thresholds</tt> </tt>
+<a name="L360"></a><tt class="py-lineno">360</tt>  <tt class="py-line"><tt class="py-docstring">                                  (default: False)</tt> </tt>
+<a name="L361"></a><tt class="py-lineno">361</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L362"></a><tt class="py-lineno">362</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  Success message</tt> </tt>
+<a name="L363"></a><tt class="py-lineno">363</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L364"></a><tt class="py-lineno">364</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-39" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-39', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L365"></a><tt class="py-lineno">365</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-40" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.addDataPointToGraph()=apidoc.Zuul.routers.template.TemplateRouter-class.html#addDataPointToGraph"><a title="apidoc.Zuul.routers.template.TemplateRouter.addDataPointToGraph" class="py-name" href="#" onclick="return doclink('link-40', 'addDataPointToGraph', 'link-40');">addDataPointToGraph</a></tt><tt class="py-op">(</tt><tt class="py-name">dataPointUid</tt><tt class="py-op">,</tt> <tt class="py-name">graphUid</tt><tt class="py-op">,</tt> <tt class="py-name">includeThresholds</tt><tt class="py-op">)</tt> </tt>
+<a name="L366"></a><tt class="py-lineno">366</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L367"></a><tt class="py-lineno">367</tt>  <tt class="py-line"> </tt>
+<a name="TemplateRouter.getCopyTargets"></a><div id="TemplateRouter.getCopyTargets-def"><a name="L368"></a><tt class="py-lineno">368</tt> <a class="py-toggle" href="#" id="TemplateRouter.getCopyTargets-toggle" onclick="return toggle('TemplateRouter.getCopyTargets');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#getCopyTargets">getCopyTargets</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">,</tt> <tt class="py-param">query</tt><tt class="py-op">=</tt><tt class="py-string">''</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.getCopyTargets-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.getCopyTargets-expanded"><a name="L369"></a><tt class="py-lineno">369</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L370"></a><tt class="py-lineno">370</tt>  <tt class="py-line"><tt class="py-docstring">        Get a list of available device classes to copy a template to.</tt> </tt>
+<a name="L371"></a><tt class="py-lineno">371</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L372"></a><tt class="py-lineno">372</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L373"></a><tt class="py-lineno">373</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique ID of the template to copy</tt> </tt>
+<a name="L374"></a><tt class="py-lineno">374</tt>  <tt class="py-line"><tt class="py-docstring">        @type  query: string</tt> </tt>
+<a name="L375"></a><tt class="py-lineno">375</tt>  <tt class="py-line"><tt class="py-docstring">        @param query: (optional) Filter the returned targets' names based on this</tt> </tt>
+<a name="L376"></a><tt class="py-lineno">376</tt>  <tt class="py-line"><tt class="py-docstring">                      parameter (default: '')</tt> </tt>
+<a name="L377"></a><tt class="py-lineno">377</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L378"></a><tt class="py-lineno">378</tt>  <tt class="py-line"><tt class="py-docstring">        @return: B{Properties}:</tt> </tt>
+<a name="L379"></a><tt class="py-lineno">379</tt>  <tt class="py-line"><tt class="py-docstring">            - data: ([dictionary]) List of objects containing an available device</tt> </tt>
+<a name="L380"></a><tt class="py-lineno">380</tt>  <tt class="py-line"><tt class="py-docstring">             class UID and a human-readable label for that class</tt> </tt>
+<a name="L381"></a><tt class="py-lineno">381</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L382"></a><tt class="py-lineno">382</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-41" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-41', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L383"></a><tt class="py-lineno">383</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-42" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.getCopyTargets()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getCopyTargets"><a title="apidoc.Zuul.routers.template.TemplateRouter.getCopyTargets" class="py-name" href="#" onclick="return doclink('link-42', 'getCopyTargets', 'link-42');">getCopyTargets</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">,</tt> <tt id="link-43" class="py-name" targets="Method apidoc.Zuul.routers.events.EventsRouter.query()=apidoc.Zuul.routers.events.EventsRouter-class.html#query,Method apidoc.Zuul.routers.service.ServiceRouter.query()=apidoc.Zuul.routers.service.ServiceRouter-class.html#query"><a title="apidoc.Zuul.routers.events.EventsRouter.query
+apidoc.Zuul.routers.service.ServiceRouter.query" class="py-name" href="#" onclick="return doclink('link-43', 'query', 'link-43');">query</a></tt><tt class="py-op">)</tt> <tt class="py-op">)</tt> </tt>
+<a name="L384"></a><tt class="py-lineno">384</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">=</tt><tt class="py-name">data</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L385"></a><tt class="py-lineno">385</tt>  <tt class="py-line">     </tt>
+<a name="L386"></a><tt class="py-lineno">386</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.copyTemplate"></a><div id="TemplateRouter.copyTemplate-def"><a name="L387"></a><tt class="py-lineno">387</tt> <a class="py-toggle" href="#" id="TemplateRouter.copyTemplate-toggle" onclick="return toggle('TemplateRouter.copyTemplate');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#copyTemplate">copyTemplate</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">,</tt> <tt class="py-param">targetUid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.copyTemplate-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.copyTemplate-expanded"><a name="L388"></a><tt class="py-lineno">388</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L389"></a><tt class="py-lineno">389</tt>  <tt class="py-line"><tt class="py-docstring">        Copy a template to a device or device class.</tt> </tt>
+<a name="L390"></a><tt class="py-lineno">390</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L391"></a><tt class="py-lineno">391</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L392"></a><tt class="py-lineno">392</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique ID of the template to copy</tt> </tt>
+<a name="L393"></a><tt class="py-lineno">393</tt>  <tt class="py-line"><tt class="py-docstring">        @type  targetUid: string</tt> </tt>
+<a name="L394"></a><tt class="py-lineno">394</tt>  <tt class="py-line"><tt class="py-docstring">        @param targetUid: Unique ID of the device or device class to bind to template</tt> </tt>
+<a name="L395"></a><tt class="py-lineno">395</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:  DirectResponse</tt> </tt>
+<a name="L396"></a><tt class="py-lineno">396</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Success message</tt> </tt>
+<a name="L397"></a><tt class="py-lineno">397</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L398"></a><tt class="py-lineno">398</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-44" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-44', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L399"></a><tt class="py-lineno">399</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-45" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.copyTemplate()=apidoc.Zuul.routers.template.TemplateRouter-class.html#copyTemplate"><a title="apidoc.Zuul.routers.template.TemplateRouter.copyTemplate" class="py-name" href="#" onclick="return doclink('link-45', 'copyTemplate', 'link-45');">copyTemplate</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">,</tt> <tt class="py-name">targetUid</tt><tt class="py-op">)</tt> </tt>
+<a name="L400"></a><tt class="py-lineno">400</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L401"></a><tt class="py-lineno">401</tt>  <tt class="py-line"> </tt>
+<a name="L402"></a><tt class="py-lineno">402</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.addGraphDefinition"></a><div id="TemplateRouter.addGraphDefinition-def"><a name="L403"></a><tt class="py-lineno">403</tt> <a class="py-toggle" href="#" id="TemplateRouter.addGraphDefinition-toggle" onclick="return toggle('TemplateRouter.addGraphDefinition');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#addGraphDefinition">addGraphDefinition</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">templateUid</tt><tt class="py-op">,</tt> <tt class="py-param">graphDefinitionId</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.addGraphDefinition-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.addGraphDefinition-expanded"><a name="L404"></a><tt class="py-lineno">404</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L405"></a><tt class="py-lineno">405</tt>  <tt class="py-line"><tt class="py-docstring">        Add a new graph definition to a template.</tt> </tt>
+<a name="L406"></a><tt class="py-lineno">406</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L407"></a><tt class="py-lineno">407</tt>  <tt class="py-line"><tt class="py-docstring">        @type  templateUid: string</tt> </tt>
+<a name="L408"></a><tt class="py-lineno">408</tt>  <tt class="py-line"><tt class="py-docstring">        @param templateUid: Unique ID of the template to add graph definition to</tt> </tt>
+<a name="L409"></a><tt class="py-lineno">409</tt>  <tt class="py-line"><tt class="py-docstring">        @type  graphDefinitionId: string</tt> </tt>
+<a name="L410"></a><tt class="py-lineno">410</tt>  <tt class="py-line"><tt class="py-docstring">        @param graphDefinitionId: ID of the new graph definition</tt> </tt>
+<a name="L411"></a><tt class="py-lineno">411</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:  DirectResponse</tt> </tt>
+<a name="L412"></a><tt class="py-lineno">412</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Success message</tt> </tt>
+<a name="L413"></a><tt class="py-lineno">413</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L414"></a><tt class="py-lineno">414</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-46" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-46', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L415"></a><tt class="py-lineno">415</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-47" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.addGraphDefinition()=apidoc.Zuul.routers.template.TemplateRouter-class.html#addGraphDefinition"><a title="apidoc.Zuul.routers.template.TemplateRouter.addGraphDefinition" class="py-name" href="#" onclick="return doclink('link-47', 'addGraphDefinition', 'link-47');">addGraphDefinition</a></tt><tt class="py-op">(</tt><tt class="py-name">templateUid</tt><tt class="py-op">,</tt> <tt class="py-name">graphDefinitionId</tt><tt class="py-op">)</tt> </tt>
+<a name="L416"></a><tt class="py-lineno">416</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L417"></a><tt class="py-lineno">417</tt>  <tt class="py-line"> </tt>
+<a name="L418"></a><tt class="py-lineno">418</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.deleteDataSource"></a><div id="TemplateRouter.deleteDataSource-def"><a name="L419"></a><tt class="py-lineno">419</tt> <a class="py-toggle" href="#" id="TemplateRouter.deleteDataSource-toggle" onclick="return toggle('TemplateRouter.deleteDataSource');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#deleteDataSource">deleteDataSource</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.deleteDataSource-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.deleteDataSource-expanded"><a name="L420"></a><tt class="py-lineno">420</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L421"></a><tt class="py-lineno">421</tt>  <tt class="py-line"><tt class="py-docstring">        Delete a data source.</tt> </tt>
+<a name="L422"></a><tt class="py-lineno">422</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L423"></a><tt class="py-lineno">423</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L424"></a><tt class="py-lineno">424</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique ID of the data source to delete</tt> </tt>
+<a name="L425"></a><tt class="py-lineno">425</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:  DirectResponse</tt> </tt>
+<a name="L426"></a><tt class="py-lineno">426</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Success message</tt> </tt>
+<a name="L427"></a><tt class="py-lineno">427</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L428"></a><tt class="py-lineno">428</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-48" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-48', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L429"></a><tt class="py-lineno">429</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-49" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.deleteDataSource()=apidoc.Zuul.routers.template.TemplateRouter-class.html#deleteDataSource"><a title="apidoc.Zuul.routers.template.TemplateRouter.deleteDataSource" class="py-name" href="#" onclick="return doclink('link-49', 'deleteDataSource', 'link-49');">deleteDataSource</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L430"></a><tt class="py-lineno">430</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L431"></a><tt class="py-lineno">431</tt>  <tt class="py-line"> </tt>
+<a name="L432"></a><tt class="py-lineno">432</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.deleteDataPoint"></a><div id="TemplateRouter.deleteDataPoint-def"><a name="L433"></a><tt class="py-lineno">433</tt> <a class="py-toggle" href="#" id="TemplateRouter.deleteDataPoint-toggle" onclick="return toggle('TemplateRouter.deleteDataPoint');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#deleteDataPoint">deleteDataPoint</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.deleteDataPoint-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.deleteDataPoint-expanded"><a name="L434"></a><tt class="py-lineno">434</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L435"></a><tt class="py-lineno">435</tt>  <tt class="py-line"><tt class="py-docstring">        Delete a data point.</tt> </tt>
+<a name="L436"></a><tt class="py-lineno">436</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L437"></a><tt class="py-lineno">437</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L438"></a><tt class="py-lineno">438</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique ID of the data point to delete</tt> </tt>
+<a name="L439"></a><tt class="py-lineno">439</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:  DirectResponse</tt> </tt>
+<a name="L440"></a><tt class="py-lineno">440</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Success message</tt> </tt>
+<a name="L441"></a><tt class="py-lineno">441</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L442"></a><tt class="py-lineno">442</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-50" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-50', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L443"></a><tt class="py-lineno">443</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-51" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.deleteDataPoint()=apidoc.Zuul.routers.template.TemplateRouter-class.html#deleteDataPoint"><a title="apidoc.Zuul.routers.template.TemplateRouter.deleteDataPoint" class="py-name" href="#" onclick="return doclink('link-51', 'deleteDataPoint', 'link-51');">deleteDataPoint</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L444"></a><tt class="py-lineno">444</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L445"></a><tt class="py-lineno">445</tt>  <tt class="py-line">     </tt>
+<a name="L446"></a><tt class="py-lineno">446</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.deleteGraphDefinition"></a><div id="TemplateRouter.deleteGraphDefinition-def"><a name="L447"></a><tt class="py-lineno">447</tt> <a class="py-toggle" href="#" id="TemplateRouter.deleteGraphDefinition-toggle" onclick="return toggle('TemplateRouter.deleteGraphDefinition');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#deleteGraphDefinition">deleteGraphDefinition</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.deleteGraphDefinition-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.deleteGraphDefinition-expanded"><a name="L448"></a><tt class="py-lineno">448</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L449"></a><tt class="py-lineno">449</tt>  <tt class="py-line"><tt class="py-docstring">        Delete a graph definition.</tt> </tt>
+<a name="L450"></a><tt class="py-lineno">450</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L451"></a><tt class="py-lineno">451</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L452"></a><tt class="py-lineno">452</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique ID of the graph definition to delete</tt> </tt>
+<a name="L453"></a><tt class="py-lineno">453</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:  DirectResponse</tt> </tt>
+<a name="L454"></a><tt class="py-lineno">454</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Success message</tt> </tt>
+<a name="L455"></a><tt class="py-lineno">455</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L456"></a><tt class="py-lineno">456</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-52" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-52', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L457"></a><tt class="py-lineno">457</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-53" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.deleteGraphDefinition()=apidoc.Zuul.routers.template.TemplateRouter-class.html#deleteGraphDefinition"><a title="apidoc.Zuul.routers.template.TemplateRouter.deleteGraphDefinition" class="py-name" href="#" onclick="return doclink('link-53', 'deleteGraphDefinition', 'link-53');">deleteGraphDefinition</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L458"></a><tt class="py-lineno">458</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L459"></a><tt class="py-lineno">459</tt>  <tt class="py-line"> </tt>
+<a name="L460"></a><tt class="py-lineno">460</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.deleteGraphPoint"></a><div id="TemplateRouter.deleteGraphPoint-def"><a name="L461"></a><tt class="py-lineno">461</tt> <a class="py-toggle" href="#" id="TemplateRouter.deleteGraphPoint-toggle" onclick="return toggle('TemplateRouter.deleteGraphPoint');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#deleteGraphPoint">deleteGraphPoint</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.deleteGraphPoint-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.deleteGraphPoint-expanded"><a name="L462"></a><tt class="py-lineno">462</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L463"></a><tt class="py-lineno">463</tt>  <tt class="py-line"><tt class="py-docstring">        Delete a graph point.</tt> </tt>
+<a name="L464"></a><tt class="py-lineno">464</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L465"></a><tt class="py-lineno">465</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L466"></a><tt class="py-lineno">466</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique ID of the graph point to delete</tt> </tt>
+<a name="L467"></a><tt class="py-lineno">467</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:  DirectResponse</tt> </tt>
+<a name="L468"></a><tt class="py-lineno">468</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Success message</tt> </tt>
+<a name="L469"></a><tt class="py-lineno">469</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L470"></a><tt class="py-lineno">470</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-54" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-54', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L471"></a><tt class="py-lineno">471</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-55" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.deleteGraphPoint()=apidoc.Zuul.routers.template.TemplateRouter-class.html#deleteGraphPoint"><a title="apidoc.Zuul.routers.template.TemplateRouter.deleteGraphPoint" class="py-name" href="#" onclick="return doclink('link-55', 'deleteGraphPoint', 'link-55');">deleteGraphPoint</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L472"></a><tt class="py-lineno">472</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L473"></a><tt class="py-lineno">473</tt>  <tt class="py-line"> </tt>
+<a name="TemplateRouter.getGraphPoints"></a><div id="TemplateRouter.getGraphPoints-def"><a name="L474"></a><tt class="py-lineno">474</tt> <a class="py-toggle" href="#" id="TemplateRouter.getGraphPoints-toggle" onclick="return toggle('TemplateRouter.getGraphPoints');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#getGraphPoints">getGraphPoints</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.getGraphPoints-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.getGraphPoints-expanded"><a name="L475"></a><tt class="py-lineno">475</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L476"></a><tt class="py-lineno">476</tt>  <tt class="py-line"><tt class="py-docstring">        Get a list of graph points for a graph definition.</tt> </tt>
+<a name="L477"></a><tt class="py-lineno">477</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L478"></a><tt class="py-lineno">478</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L479"></a><tt class="py-lineno">479</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique ID of a graph definition</tt> </tt>
+<a name="L480"></a><tt class="py-lineno">480</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:  DirectResponse</tt> </tt>
+<a name="L481"></a><tt class="py-lineno">481</tt>  <tt class="py-line"><tt class="py-docstring">        @return: B{Properties}:</tt> </tt>
+<a name="L482"></a><tt class="py-lineno">482</tt>  <tt class="py-line"><tt class="py-docstring">            - data: ([dictionary]) List of objects representing graph points</tt> </tt>
+<a name="L483"></a><tt class="py-lineno">483</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L484"></a><tt class="py-lineno">484</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-56" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-56', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L485"></a><tt class="py-lineno">485</tt>  <tt class="py-line">        <tt class="py-name">graphPoints</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-57" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.getGraphPoints()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getGraphPoints"><a title="apidoc.Zuul.routers.template.TemplateRouter.getGraphPoints" class="py-name" href="#" onclick="return doclink('link-57', 'getGraphPoints', 'link-57');">getGraphPoints</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L486"></a><tt class="py-lineno">486</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">=</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">graphPoints</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L487"></a><tt class="py-lineno">487</tt>  <tt class="py-line"> </tt>
+<a name="TemplateRouter.getInfo"></a><div id="TemplateRouter.getInfo-def"><a name="L488"></a><tt class="py-lineno">488</tt> <a class="py-toggle" href="#" id="TemplateRouter.getInfo-toggle" onclick="return toggle('TemplateRouter.getInfo');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#getInfo">getInfo</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.getInfo-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.getInfo-expanded"><a name="L489"></a><tt class="py-lineno">489</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L490"></a><tt class="py-lineno">490</tt>  <tt class="py-line"><tt class="py-docstring">        Get the properties of an object.</tt> </tt>
+<a name="L491"></a><tt class="py-lineno">491</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L492"></a><tt class="py-lineno">492</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L493"></a><tt class="py-lineno">493</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique identifier of an object</tt> </tt>
+<a name="L494"></a><tt class="py-lineno">494</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L495"></a><tt class="py-lineno">495</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}</tt> </tt>
+<a name="L496"></a><tt class="py-lineno">496</tt>  <tt class="py-line"><tt class="py-docstring">            - data: (dictionary) Object properties</tt> </tt>
+<a name="L497"></a><tt class="py-lineno">497</tt>  <tt class="py-line"><tt class="py-docstring">            - form: (dictionary) Object representing an ExtJS form for the object</tt> </tt>
+<a name="L498"></a><tt class="py-lineno">498</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L499"></a><tt class="py-lineno">499</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-58" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-58', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L500"></a><tt class="py-lineno">500</tt>  <tt class="py-line">        <tt class="py-name">info</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-59" class="py-name" targets="Method apidoc.Zuul.routers.device.DeviceRouter.getInfo()=apidoc.Zuul.routers.device.DeviceRouter-class.html#getInfo,Method apidoc.Zuul.routers.mibs.MibRouter.getInfo()=apidoc.Zuul.routers.mibs.MibRouter-class.html#getInfo,Method apidoc.Zuul.routers.network.NetworkRouter.getInfo()=apidoc.Zuul.routers.network.NetworkRouter-class.html#getInfo,Method apidoc.Zuul.routers.process.ProcessRouter.getInfo()=apidoc.Zuul.routers.process.ProcessRouter-class.html#getInfo,Method apidoc.Zuul.routers.service.ServiceRouter.getInfo()=apidoc.Zuul.routers.service.ServiceRouter-class.html#getInfo,Method apidoc.Zuul.routers.template.TemplateRouter.getInfo()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getInfo"><a title="apidoc.Zuul.routers.device.DeviceRouter.getInfo
+apidoc.Zuul.routers.mibs.MibRouter.getInfo
+apidoc.Zuul.routers.network.NetworkRouter.getInfo
+apidoc.Zuul.routers.process.ProcessRouter.getInfo
+apidoc.Zuul.routers.service.ServiceRouter.getInfo
+apidoc.Zuul.routers.template.TemplateRouter.getInfo" class="py-name" href="#" onclick="return doclink('link-59', 'getInfo', 'link-59');">getInfo</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L501"></a><tt class="py-lineno">501</tt>  <tt class="py-line">        <tt class="py-name">form</tt> <tt class="py-op">=</tt> <tt class="py-name">IFormBuilder</tt><tt class="py-op">(</tt><tt class="py-name">info</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt class="py-name">render</tt><tt class="py-op">(</tt><tt class="py-name">fieldsets</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">)</tt> </tt>
+<a name="L502"></a><tt class="py-lineno">502</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">(</tt><tt class="py-name">success</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">,</tt> <tt class="py-name">data</tt><tt class="py-op">=</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">info</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">form</tt><tt class="py-op">=</tt><tt class="py-name">form</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L503"></a><tt class="py-lineno">503</tt>  <tt class="py-line"> </tt>
+<a name="L504"></a><tt class="py-lineno">504</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.addThresholdToGraph"></a><div id="TemplateRouter.addThresholdToGraph-def"><a name="L505"></a><tt class="py-lineno">505</tt> <a class="py-toggle" href="#" id="TemplateRouter.addThresholdToGraph-toggle" onclick="return toggle('TemplateRouter.addThresholdToGraph');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#addThresholdToGraph">addThresholdToGraph</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">graphUid</tt><tt class="py-op">,</tt> <tt class="py-param">thresholdUid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.addThresholdToGraph-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.addThresholdToGraph-expanded"><a name="L506"></a><tt class="py-lineno">506</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L507"></a><tt class="py-lineno">507</tt>  <tt class="py-line"><tt class="py-docstring">        Add a threshold to a graph definition.</tt> </tt>
+<a name="L508"></a><tt class="py-lineno">508</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L509"></a><tt class="py-lineno">509</tt>  <tt class="py-line"><tt class="py-docstring">        @type  graphUid: string</tt> </tt>
+<a name="L510"></a><tt class="py-lineno">510</tt>  <tt class="py-line"><tt class="py-docstring">        @param graphUid: Unique ID of the graph definition to add threshold to</tt> </tt>
+<a name="L511"></a><tt class="py-lineno">511</tt>  <tt class="py-line"><tt class="py-docstring">        @type  thresholdUid: string</tt> </tt>
+<a name="L512"></a><tt class="py-lineno">512</tt>  <tt class="py-line"><tt class="py-docstring">        @param thresholdUid: Unique ID of the threshold to add</tt> </tt>
+<a name="L513"></a><tt class="py-lineno">513</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L514"></a><tt class="py-lineno">514</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  Success message</tt> </tt>
+<a name="L515"></a><tt class="py-lineno">515</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L516"></a><tt class="py-lineno">516</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-60" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-60', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L517"></a><tt class="py-lineno">517</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-61" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.addThresholdToGraph()=apidoc.Zuul.routers.template.TemplateRouter-class.html#addThresholdToGraph"><a title="apidoc.Zuul.routers.template.TemplateRouter.addThresholdToGraph" class="py-name" href="#" onclick="return doclink('link-61', 'addThresholdToGraph', 'link-61');">addThresholdToGraph</a></tt><tt class="py-op">(</tt><tt class="py-name">graphUid</tt><tt class="py-op">,</tt> <tt class="py-name">thresholdUid</tt><tt class="py-op">)</tt> </tt>
+<a name="L518"></a><tt class="py-lineno">518</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L519"></a><tt class="py-lineno">519</tt>  <tt class="py-line"> </tt>
+<a name="L520"></a><tt class="py-lineno">520</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.addCustomToGraph"></a><div id="TemplateRouter.addCustomToGraph-def"><a name="L521"></a><tt class="py-lineno">521</tt> <a class="py-toggle" href="#" id="TemplateRouter.addCustomToGraph-toggle" onclick="return toggle('TemplateRouter.addCustomToGraph');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#addCustomToGraph">addCustomToGraph</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">graphUid</tt><tt class="py-op">,</tt> <tt class="py-param">customId</tt><tt class="py-op">,</tt> <tt class="py-param">customType</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.addCustomToGraph-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.addCustomToGraph-expanded"><a name="L522"></a><tt class="py-lineno">522</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L523"></a><tt class="py-lineno">523</tt>  <tt class="py-line"><tt class="py-docstring">        Add a custom graph point to a graph definition.</tt> </tt>
+<a name="L524"></a><tt class="py-lineno">524</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L525"></a><tt class="py-lineno">525</tt>  <tt class="py-line"><tt class="py-docstring">        @type  graphUid: string</tt> </tt>
+<a name="L526"></a><tt class="py-lineno">526</tt>  <tt class="py-line"><tt class="py-docstring">        @param graphUid: Unique ID of the graph definition to add graph point to</tt> </tt>
+<a name="L527"></a><tt class="py-lineno">527</tt>  <tt class="py-line"><tt class="py-docstring">        @type  customId: string</tt> </tt>
+<a name="L528"></a><tt class="py-lineno">528</tt>  <tt class="py-line"><tt class="py-docstring">        @param customId: ID of the new custom graph point</tt> </tt>
+<a name="L529"></a><tt class="py-lineno">529</tt>  <tt class="py-line"><tt class="py-docstring">        @type  customType: string</tt> </tt>
+<a name="L530"></a><tt class="py-lineno">530</tt>  <tt class="py-line"><tt class="py-docstring">        @param customType: Type of the new graph point. From getGraphInstructionTypes()</tt> </tt>
+<a name="L531"></a><tt class="py-lineno">531</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:  DirectResponse</tt> </tt>
+<a name="L532"></a><tt class="py-lineno">532</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Success message</tt> </tt>
+<a name="L533"></a><tt class="py-lineno">533</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L534"></a><tt class="py-lineno">534</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-62" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-62', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L535"></a><tt class="py-lineno">535</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-63" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.addCustomToGraph()=apidoc.Zuul.routers.template.TemplateRouter-class.html#addCustomToGraph"><a title="apidoc.Zuul.routers.template.TemplateRouter.addCustomToGraph" class="py-name" href="#" onclick="return doclink('link-63', 'addCustomToGraph', 'link-63');">addCustomToGraph</a></tt><tt class="py-op">(</tt><tt class="py-name">graphUid</tt><tt class="py-op">,</tt> <tt class="py-name">customId</tt><tt class="py-op">,</tt> <tt class="py-name">customType</tt><tt class="py-op">)</tt> </tt>
+<a name="L536"></a><tt class="py-lineno">536</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L537"></a><tt class="py-lineno">537</tt>  <tt class="py-line"> </tt>
+<a name="TemplateRouter.getGraphInstructionTypes"></a><div id="TemplateRouter.getGraphInstructionTypes-def"><a name="L538"></a><tt class="py-lineno">538</tt> <a class="py-toggle" href="#" id="TemplateRouter.getGraphInstructionTypes-toggle" onclick="return toggle('TemplateRouter.getGraphInstructionTypes');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#getGraphInstructionTypes">getGraphInstructionTypes</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">query</tt><tt class="py-op">=</tt><tt class="py-string">''</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.getGraphInstructionTypes-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.getGraphInstructionTypes-expanded"><a name="L539"></a><tt class="py-lineno">539</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L540"></a><tt class="py-lineno">540</tt>  <tt class="py-line"><tt class="py-docstring">        Get a list of available instruction types for graph points.</tt> </tt>
+<a name="L541"></a><tt class="py-lineno">541</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L542"></a><tt class="py-lineno">542</tt>  <tt class="py-line"><tt class="py-docstring">        @type  query: string</tt> </tt>
+<a name="L543"></a><tt class="py-lineno">543</tt>  <tt class="py-line"><tt class="py-docstring">        @param query: not used</tt> </tt>
+<a name="L544"></a><tt class="py-lineno">544</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L545"></a><tt class="py-lineno">545</tt>  <tt class="py-line"><tt class="py-docstring">        @return: B{Properties}:</tt> </tt>
+<a name="L546"></a><tt class="py-lineno">546</tt>  <tt class="py-line"><tt class="py-docstring">            - data: ([dictionary]) List of objects representing instruction types</tt> </tt>
+<a name="L547"></a><tt class="py-lineno">547</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L548"></a><tt class="py-lineno">548</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-64" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-64', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L549"></a><tt class="py-lineno">549</tt>  <tt class="py-line">        <tt class="py-name">types</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-65" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.getGraphInstructionTypes()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getGraphInstructionTypes"><a title="apidoc.Zuul.routers.template.TemplateRouter.getGraphInstructionTypes" class="py-name" href="#" onclick="return doclink('link-65', 'getGraphInstructionTypes', 'link-65');">getGraphInstructionTypes</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L550"></a><tt class="py-lineno">550</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">=</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">types</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L551"></a><tt class="py-lineno">551</tt>  <tt class="py-line"> </tt>
+<a name="L552"></a><tt class="py-lineno">552</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.setGraphPointSequence"></a><div id="TemplateRouter.setGraphPointSequence-def"><a name="L553"></a><tt class="py-lineno">553</tt> <a class="py-toggle" href="#" id="TemplateRouter.setGraphPointSequence-toggle" onclick="return toggle('TemplateRouter.setGraphPointSequence');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#setGraphPointSequence">setGraphPointSequence</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uids</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.setGraphPointSequence-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.setGraphPointSequence-expanded"><a name="L554"></a><tt class="py-lineno">554</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L555"></a><tt class="py-lineno">555</tt>  <tt class="py-line"><tt class="py-docstring">        Sets the sequence of graph points in a graph definition.</tt> </tt>
+<a name="L556"></a><tt class="py-lineno">556</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L557"></a><tt class="py-lineno">557</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uids: [string]</tt> </tt>
+<a name="L558"></a><tt class="py-lineno">558</tt>  <tt class="py-line"><tt class="py-docstring">        @param uids: List of graph point UID's in desired order</tt> </tt>
+<a name="L559"></a><tt class="py-lineno">559</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:  DirectResponse</tt> </tt>
+<a name="L560"></a><tt class="py-lineno">560</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Success message</tt> </tt>
+<a name="L561"></a><tt class="py-lineno">561</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L562"></a><tt class="py-lineno">562</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-66" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-66', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L563"></a><tt class="py-lineno">563</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-67" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.setGraphPointSequence()=apidoc.Zuul.routers.template.TemplateRouter-class.html#setGraphPointSequence"><a title="apidoc.Zuul.routers.template.TemplateRouter.setGraphPointSequence" class="py-name" href="#" onclick="return doclink('link-67', 'setGraphPointSequence', 'link-67');">setGraphPointSequence</a></tt><tt class="py-op">(</tt><tt class="py-name">uids</tt><tt class="py-op">)</tt> </tt>
+<a name="L564"></a><tt class="py-lineno">564</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L565"></a><tt class="py-lineno">565</tt>  <tt class="py-line"> </tt>
+<a name="TemplateRouter.getGraphDefinition"></a><div id="TemplateRouter.getGraphDefinition-def"><a name="L566"></a><tt class="py-lineno">566</tt> <a class="py-toggle" href="#" id="TemplateRouter.getGraphDefinition-toggle" onclick="return toggle('TemplateRouter.getGraphDefinition');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#getGraphDefinition">getGraphDefinition</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.getGraphDefinition-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.getGraphDefinition-expanded"><a name="L567"></a><tt class="py-lineno">567</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L568"></a><tt class="py-lineno">568</tt>  <tt class="py-line"><tt class="py-docstring">        Get a graph definition.</tt> </tt>
+<a name="L569"></a><tt class="py-lineno">569</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L570"></a><tt class="py-lineno">570</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L571"></a><tt class="py-lineno">571</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique ID of the graph definition to retrieve</tt> </tt>
+<a name="L572"></a><tt class="py-lineno">572</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L573"></a><tt class="py-lineno">573</tt>  <tt class="py-line"><tt class="py-docstring">        @return: B{Properties}:</tt> </tt>
+<a name="L574"></a><tt class="py-lineno">574</tt>  <tt class="py-line"><tt class="py-docstring">            - data: (dictionary) Object representing a graph definition</tt> </tt>
+<a name="L575"></a><tt class="py-lineno">575</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L576"></a><tt class="py-lineno">576</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-68" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-68', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L577"></a><tt class="py-lineno">577</tt>  <tt class="py-line">        <tt class="py-name">graphDef</tt> <tt class="py-op">=</tt> <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-69" class="py-name" targets="Method apidoc.Zuul.routers.template.TemplateRouter.getGraphDefinition()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getGraphDefinition"><a title="apidoc.Zuul.routers.template.TemplateRouter.getGraphDefinition" class="py-name" href="#" onclick="return doclink('link-69', 'getGraphDefinition', 'link-69');">getGraphDefinition</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L578"></a><tt class="py-lineno">578</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">=</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">graphDef</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L579"></a><tt class="py-lineno">579</tt>  <tt class="py-line"> </tt>
+<a name="L580"></a><tt class="py-lineno">580</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.setGraphDefinition"></a><div id="TemplateRouter.setGraphDefinition-def"><a name="L581"></a><tt class="py-lineno">581</tt> <a class="py-toggle" href="#" id="TemplateRouter.setGraphDefinition-toggle" onclick="return toggle('TemplateRouter.setGraphDefinition');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#setGraphDefinition">setGraphDefinition</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">data</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.setGraphDefinition-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.setGraphDefinition-expanded"><a name="L582"></a><tt class="py-lineno">582</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L583"></a><tt class="py-lineno">583</tt>  <tt class="py-line"><tt class="py-docstring">        Set attributes on an graph definition.</tt> </tt>
+<a name="L584"></a><tt class="py-lineno">584</tt>  <tt class="py-line"><tt class="py-docstring">        This method accepts any keyword argument for the property that you wish</tt> </tt>
+<a name="L585"></a><tt class="py-lineno">585</tt>  <tt class="py-line"><tt class="py-docstring">        to set. Properties are enumerated via getGraphDefinition(). The only</tt> </tt>
+<a name="L586"></a><tt class="py-lineno">586</tt>  <tt class="py-line"><tt class="py-docstring">        required property is "uid".</tt> </tt>
+<a name="L587"></a><tt class="py-lineno">587</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L588"></a><tt class="py-lineno">588</tt>  <tt class="py-line"><tt class="py-docstring">        @type    uid: string</tt> </tt>
+<a name="L589"></a><tt class="py-lineno">589</tt>  <tt class="py-line"><tt class="py-docstring">        @keyword uid: Unique identifier of an object</tt> </tt>
+<a name="L590"></a><tt class="py-lineno">590</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:  DirectResponse</tt> </tt>
+<a name="L591"></a><tt class="py-lineno">591</tt>  <tt class="py-line"><tt class="py-docstring">        @return: B{Properties}:</tt> </tt>
+<a name="L592"></a><tt class="py-lineno">592</tt>  <tt class="py-line"><tt class="py-docstring">            - data: (dictionary) The modified object</tt> </tt>
+<a name="L593"></a><tt class="py-lineno">593</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L594"></a><tt class="py-lineno">594</tt>  <tt class="py-line">        <tt class="py-string">"""</tt> </tt>
+<a name="L595"></a><tt class="py-lineno">595</tt>  <tt class="py-line"><tt class="py-string">        Set a graph definition.</tt> </tt>
+<a name="L596"></a><tt class="py-lineno">596</tt>  <tt class="py-line"><tt class="py-string">        """</tt> </tt>
+<a name="L597"></a><tt class="py-lineno">597</tt>  <tt class="py-line">        <tt class="py-name">uid</tt> <tt class="py-op">=</tt> <tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-string">'uid'</tt><tt class="py-op">]</tt> </tt>
+<a name="L598"></a><tt class="py-lineno">598</tt>  <tt class="py-line">        <tt class="py-keyword">del</tt> <tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-string">'uid'</tt><tt class="py-op">]</tt> </tt>
+<a name="L599"></a><tt class="py-lineno">599</tt>  <tt class="py-line">        <tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-string">'log'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-string">'log'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">data</tt> </tt>
+<a name="L600"></a><tt class="py-lineno">600</tt>  <tt class="py-line">        <tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-string">'base'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-string">'base'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">data</tt> </tt>
+<a name="L601"></a><tt class="py-lineno">601</tt>  <tt class="py-line">        <tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-string">'hasSummary'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-string">'hasSummary'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">data</tt> </tt>
+<a name="L602"></a><tt class="py-lineno">602</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">int_attr</tt> <tt class="py-keyword">in</tt> <tt class="py-op">(</tt><tt class="py-string">'miny'</tt><tt class="py-op">,</tt> <tt class="py-string">'maxy'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L603"></a><tt class="py-lineno">603</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L604"></a><tt class="py-lineno">604</tt>  <tt class="py-line">                <tt class="py-name">x</tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-name">int_attr</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L605"></a><tt class="py-lineno">605</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt> <tt class="py-op">(</tt><tt class="py-name">ValueError</tt><tt class="py-op">,</tt> <tt class="py-name">KeyError</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L606"></a><tt class="py-lineno">606</tt>  <tt class="py-line">                <tt class="py-name">x</tt> <tt class="py-op">=</tt> <tt class="py-op">-</tt><tt class="py-number">1</tt> </tt>
+<a name="L607"></a><tt class="py-lineno">607</tt>  <tt class="py-line">            <tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-name">int_attr</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">x</tt> </tt>
+<a name="L608"></a><tt class="py-lineno">608</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-70" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-70', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L609"></a><tt class="py-lineno">609</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt id="link-71" class="py-name"><a title="apidoc.Zuul.routers.device.DeviceRouter.setInfo
+apidoc.Zuul.routers.mibs.MibRouter.setInfo
+apidoc.Zuul.routers.network.NetworkRouter.setInfo
+apidoc.Zuul.routers.process.ProcessRouter.setInfo
+apidoc.Zuul.routers.service.ServiceRouter.setInfo
+apidoc.Zuul.routers.template.TemplateRouter.setInfo" class="py-name" href="#" onclick="return doclink('link-71', 'setInfo', 'link-28');">setInfo</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">,</tt> <tt class="py-name">data</tt><tt class="py-op">)</tt> </tt>
+<a name="L610"></a><tt class="py-lineno">610</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L611"></a><tt class="py-lineno">611</tt>  <tt class="py-line">         </tt>
+<a name="L612"></a><tt class="py-lineno">612</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="TemplateRouter.setGraphDefinitionSequence"></a><div id="TemplateRouter.setGraphDefinitionSequence-def"><a name="L613"></a><tt class="py-lineno">613</tt> <a class="py-toggle" href="#" id="TemplateRouter.setGraphDefinitionSequence-toggle" onclick="return toggle('TemplateRouter.setGraphDefinitionSequence');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.template.TemplateRouter-class.html#setGraphDefinitionSequence">setGraphDefinitionSequence</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uids</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="TemplateRouter.setGraphDefinitionSequence-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="TemplateRouter.setGraphDefinitionSequence-expanded"><a name="L614"></a><tt class="py-lineno">614</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L615"></a><tt class="py-lineno">615</tt>  <tt class="py-line"><tt class="py-docstring">        Sets the sequence of graph definitions.</tt> </tt>
+<a name="L616"></a><tt class="py-lineno">616</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L617"></a><tt class="py-lineno">617</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uids: [string]</tt> </tt>
+<a name="L618"></a><tt class="py-lineno">618</tt>  <tt class="py-line"><tt class="py-docstring">        @param uids: List of graph definition UID's in desired order</tt> </tt>
+<a name="L619"></a><tt class="py-lineno">619</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:  DirectResponse</tt> </tt>
+<a name="L620"></a><tt class="py-lineno">620</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Success message</tt> </tt>
+<a name="L621"></a><tt class="py-lineno">621</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L622"></a><tt class="py-lineno">622</tt>  <tt class="py-line">        <tt class="py-name">facade</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-72" class="py-name"><a title="apidoc.Zuul.routers.TreeRouter._getFacade
+apidoc.Zuul.routers.device.DeviceRouter._getFacade
+apidoc.Zuul.routers.mibs.MibRouter._getFacade
+apidoc.Zuul.routers.process.ProcessRouter._getFacade
+apidoc.Zuul.routers.service.ServiceRouter._getFacade
+apidoc.Zuul.routers.template.TemplateRouter._getFacade
+apidoc.Zuul.routers.zenpack.ZenPackRouter._getFacade" class="py-name" href="#" onclick="return doclink('link-72', '_getFacade', 'link-0');">_getFacade</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L623"></a><tt class="py-lineno">623</tt>  <tt class="py-line">        <tt class="py-name">facade</tt><tt class="py-op">.</tt><tt class="py-name">_setGraphDefinitionSequence</tt><tt class="py-op">(</tt><tt class="py-name">uids</tt><tt class="py-op">)</tt> </tt>
+<a name="L624"></a><tt class="py-lineno">624</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L625"></a><tt class="py-lineno">625</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="apidoc.Zuul.routers-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Sep 22 15:27:06 2010
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>apidoc.Zuul.routers.service</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="apidoc.Zuul.routers-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;apidoc ::
+        Package&nbsp;Zuul ::
+        <a href="apidoc.Zuul.routers-module.html">Package&nbsp;routers</a> ::
+        Module&nbsp;service
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="apidoc.Zuul.routers.service-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="apidoc.Zuul.routers.service-module.html">Module apidoc.Zuul.routers.service</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">###########################################################################</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># This program is part of Zenoss Core, an open source monitoring platform.</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (C) 2009, Zenoss Inc.</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># This program is free software; you can redistribute it and/or modify it</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># under the terms of the GNU General Public License version 2 as published by</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"># the Free Software Foundation.</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"># For complete information please visit: http://www.zenoss.com/oss/</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment">###########################################################################</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-docstring">Operations for Services.</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring">Available at:  /zport/dmd/service_router</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt> <tt class="py-keyword">import</tt> <tt class="py-name">Zuul</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Package apidoc.Zuul.routers=apidoc.Zuul.routers-module.html"><a title="apidoc.Zuul.routers" class="py-name" href="#" onclick="return doclink('link-0', 'routers', 'link-0');">routers</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Class apidoc.Zuul.routers.TreeRouter=apidoc.Zuul.routers.TreeRouter-class.html"><a title="apidoc.Zuul.routers.TreeRouter" class="py-name" href="#" onclick="return doclink('link-1', 'TreeRouter', 'link-1');">TreeRouter</a></tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">decorators</tt> <tt class="py-keyword">import</tt> <tt class="py-name">require</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">ZenUtils</tt><tt class="py-op">.</tt><tt class="py-name">Ext</tt> <tt class="py-keyword">import</tt> <tt class="py-name">DirectResponse</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">ZenUtils</tt><tt class="py-op">.</tt><tt class="py-name">jsonutils</tt> <tt class="py-keyword">import</tt> <tt class="py-name">unjson</tt> </tt>
+<a name="ServiceRouter"></a><div id="ServiceRouter-def"><a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt> <a class="py-toggle" href="#" id="ServiceRouter-toggle" onclick="return toggle('ServiceRouter');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="apidoc.Zuul.routers.service.ServiceRouter-class.html">ServiceRouter</a><tt class="py-op">(</tt><tt class="py-base-class">TreeRouter</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceRouter-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="ServiceRouter-expanded"><a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">    A JSON/ExtDirect interface to operations on services</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line"> </tt>
+<a name="ServiceRouter.__init__"></a><div id="ServiceRouter.__init__-def"><a name="L30"></a><tt class="py-lineno"> 30</tt> <a class="py-toggle" href="#" id="ServiceRouter.__init__-toggle" onclick="return toggle('ServiceRouter.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.service.ServiceRouter-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">context</tt><tt class="py-op">,</tt> <tt class="py-param">request</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceRouter.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ServiceRouter.__init__-expanded"><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt> <tt class="py-op">=</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">getFacade</tt><tt class="py-op">(</tt><tt class="py-string">'service'</tt><tt class="py-op">)</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">context</tt> <tt class="py-op">=</tt> <tt class="py-name">context</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">request</tt> <tt class="py-op">=</tt> <tt class="py-name">request</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-2" class="py-name" targets="Class apidoc.Zuul.routers.service.ServiceRouter=apidoc.Zuul.routers.service.ServiceRouter-class.html"><a title="apidoc.Zuul.routers.service.ServiceRouter" class="py-name" href="#" onclick="return doclink('link-2', 'ServiceRouter', 'link-2');">ServiceRouter</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Method apidoc.Zuul.routers.events.EventsRouter.__init__()=apidoc.Zuul.routers.events.EventsRouter-class.html#__init__,Method apidoc.Zuul.routers.messaging.MessagingRouter.__init__()=apidoc.Zuul.routers.messaging.MessagingRouter-class.html#__init__,Method apidoc.Zuul.routers.mibs.MibRouter.__init__()=apidoc.Zuul.routers.mibs.MibRouter-class.html#__init__,Method apidoc.Zuul.routers.network.NetworkRouter.__init__()=apidoc.Zuul.routers.network.NetworkRouter-class.html#__init__,Method apidoc.Zuul.routers.service.ServiceRouter.__init__()=apidoc.Zuul.routers.service.ServiceRouter-class.html#__init__"><a title="apidoc.Zuul.routers.events.EventsRouter.__init__
+apidoc.Zuul.routers.messaging.MessagingRouter.__init__
+apidoc.Zuul.routers.mibs.MibRouter.__init__
+apidoc.Zuul.routers.network.NetworkRouter.__init__
+apidoc.Zuul.routers.service.ServiceRouter.__init__" class="py-name" href="#" onclick="return doclink('link-3', '__init__', 'link-3');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">context</tt><tt class="py-op">,</tt> <tt class="py-name">request</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"> </tt>
+<a name="ServiceRouter._getFacade"></a><div id="ServiceRouter._getFacade-def"><a name="L36"></a><tt class="py-lineno"> 36</tt> <a class="py-toggle" href="#" id="ServiceRouter._getFacade-toggle" onclick="return toggle('ServiceRouter._getFacade');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.service.ServiceRouter-class.html#_getFacade">_getFacade</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceRouter._getFacade-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ServiceRouter._getFacade-expanded"><a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt> </tt>
+</div><a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"> </tt>
+<a name="ServiceRouter._canDeleteUid"></a><div id="ServiceRouter._canDeleteUid-def"><a name="L39"></a><tt class="py-lineno"> 39</tt> <a class="py-toggle" href="#" id="ServiceRouter._canDeleteUid-toggle" onclick="return toggle('ServiceRouter._canDeleteUid');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.service.ServiceRouter-class.html#_canDeleteUid">_canDeleteUid</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt><tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceRouter._canDeleteUid-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ServiceRouter._canDeleteUid-expanded"><a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-comment"># check the number of levels deep it is</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-name">levels</tt> <tt class="py-op">=</tt> <tt class="py-name">len</tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">'/'</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">levels</tt> <tt class="py-op">&gt;</tt> <tt class="py-number">5</tt> </tt>
+</div><a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="ServiceRouter.addClass"></a><div id="ServiceRouter.addClass-def"><a name="L45"></a><tt class="py-lineno"> 45</tt> <a class="py-toggle" href="#" id="ServiceRouter.addClass-toggle" onclick="return toggle('ServiceRouter.addClass');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.service.ServiceRouter-class.html#addClass">addClass</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">contextUid</tt><tt class="py-op">,</tt> <tt class="py-param">id</tt><tt class="py-op">,</tt> <tt class="py-param">posQuery</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceRouter.addClass-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ServiceRouter.addClass-expanded"><a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">        Add a new service class.</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring">        @type  contextUid: string</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-docstring">        @param contextUid: Unique ID of the service ogranizer to add new class to</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-docstring">        @type  id: string</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line"><tt class="py-docstring">        @param id: ID of the new service</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"><tt class="py-docstring">        @type  posQuery: dictionary</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line"><tt class="py-docstring">        @param posQuery: Object defining a query where the returned position will lie</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">             - newIndex: (integer) Index of the newly added class in the query</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring">             defined by posQuery</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line">        <tt class="py-name">newUid</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name" targets="Method apidoc.Zuul.routers.service.ServiceRouter.addClass()=apidoc.Zuul.routers.service.ServiceRouter-class.html#addClass"><a title="apidoc.Zuul.routers.service.ServiceRouter.addClass" class="py-name" href="#" onclick="return doclink('link-4', 'addClass', 'link-4');">addClass</a></tt><tt class="py-op">(</tt><tt class="py-name">contextUid</tt><tt class="py-op">,</tt> <tt class="py-name">id</tt><tt class="py-op">)</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">posQuery</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'params'</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">basestring</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">            <tt class="py-name">posQuery</tt><tt class="py-op">[</tt><tt class="py-string">'params'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> <tt class="py-name">unjson</tt><tt class="py-op">(</tt><tt class="py-name">posQuery</tt><tt class="py-op">[</tt><tt class="py-string">'params'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-name">result</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt class="py-name">getList</tt><tt class="py-op">(</tt><tt class="py-op">**</tt><tt class="py-name">posQuery</tt><tt class="py-op">)</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">        <tt class="py-keyword">for</tt> <tt class="py-name">count</tt><tt class="py-op">,</tt> <tt class="py-name">serviceInfo</tt> <tt class="py-keyword">in</tt> <tt class="py-name">enumerate</tt><tt class="py-op">(</tt><tt class="py-name">result</tt><tt class="py-op">[</tt><tt class="py-string">'serviceInfos'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">serviceInfo</tt><tt class="py-op">.</tt><tt class="py-name">uid</tt> <tt class="py-op">==</tt> <tt class="py-name">newUid</tt><tt class="py-op">:</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line">                <tt class="py-name">newIndex</tt> <tt class="py-op">=</tt> <tt class="py-name">count</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">                <tt class="py-keyword">break</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt class="py-name">Exception</tt><tt class="py-op">(</tt><tt class="py-string">'The new service was added, but the system was '</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">                            <tt class="py-string">'unable to add it to the list.'</tt><tt class="py-op">)</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">(</tt><tt class="py-name">newIndex</tt><tt class="py-op">=</tt><tt class="py-name">newIndex</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"> </tt>
+<a name="ServiceRouter.query"></a><div id="ServiceRouter.query-def"><a name="L73"></a><tt class="py-lineno"> 73</tt> <a class="py-toggle" href="#" id="ServiceRouter.query-toggle" onclick="return toggle('ServiceRouter.query');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.service.ServiceRouter-class.html#query">query</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">limit</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">start</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">sort</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">dir</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">params</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">              <tt class="py-param">history</tt><tt class="py-op">=</tt><tt class="py-name">False</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">criteria</tt><tt class="py-op">=</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceRouter.query-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ServiceRouter.query-expanded"><a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">        Retrieve a list of services based on a set of parameters.</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">        @type  limit: integer</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring">        @param limit: (optional) Number of items to return; used in pagination</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line"><tt class="py-docstring">                      (default: None)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring">        @type  start: integer</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-docstring">        @param start: (optional) Offset to return the results from; used in</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring">                      pagination (default: None)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring">        @type  sort: string</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-docstring">        @param sort: (optional) Key on which to sort the return results (default:</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-docstring">                     None)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"><tt class="py-docstring">        @type  dir: string</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line"><tt class="py-docstring">        @param dir: (optional) Sort order; can be either 'ASC' or 'DESC'</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring">                    (default: None)</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring">        @type  params: dictionary</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring">        @param params: (optional) Key-value pair of filters for this search.</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring">        @type  history: boolean</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">        @param history: not used</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Service class UID to query</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-docstring">        @type  criteria: list</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-docstring">        @param criteria: not used</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring">             - services: ([dictionary]) List of objects representing services</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">             - totalCount: (integer) Total number of services</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-docstring">             - hash: (string) Hashcheck of the current services state</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring">             - disabled: (boolean) True if current user cannot manage services</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">uid</tt> <tt class="py-keyword">is</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">            <tt class="py-name">uid</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">context</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">params</tt><tt class="py-op">,</tt> <tt class="py-name">basestring</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line">            <tt class="py-name">params</tt> <tt class="py-op">=</tt> <tt class="py-name">unjson</tt><tt class="py-op">(</tt><tt class="py-name">params</tt><tt class="py-op">)</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">        <tt class="py-name">services</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt class="py-name">getList</tt><tt class="py-op">(</tt><tt class="py-name">limit</tt><tt class="py-op">,</tt> <tt class="py-name">start</tt><tt class="py-op">,</tt> <tt class="py-name">sort</tt><tt class="py-op">,</tt> <tt class="py-name">dir</tt><tt class="py-op">,</tt> <tt class="py-name">params</tt><tt class="py-op">,</tt> <tt class="py-name">uid</tt><tt class="py-op">,</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line">                                  <tt class="py-name">criteria</tt><tt class="py-op">)</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">        <tt class="py-name">disabled</tt> <tt class="py-op">=</tt> <tt class="py-keyword">not</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">checkPermission</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line"> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">services</tt><tt class="py-op">[</tt><tt class="py-string">'serviceInfos'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">(</tt><tt class="py-name">services</tt><tt class="py-op">=</tt><tt class="py-name">data</tt><tt class="py-op">,</tt> <tt class="py-name">totalCount</tt><tt class="py-op">=</tt><tt class="py-name">services</tt><tt class="py-op">[</tt><tt class="py-string">'total'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> </tt>
+<a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line">                              <tt class="py-name">hash</tt><tt class="py-op">=</tt><tt class="py-name">services</tt><tt class="py-op">[</tt><tt class="py-string">'hash'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">disabled</tt><tt class="py-op">=</tt><tt class="py-name">disabled</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L119"></a><tt class="py-lineno">119</tt>  <tt class="py-line"> </tt>
+<a name="ServiceRouter.getTree"></a><div id="ServiceRouter.getTree-def"><a name="L120"></a><tt class="py-lineno">120</tt> <a class="py-toggle" href="#" id="ServiceRouter.getTree-toggle" onclick="return toggle('ServiceRouter.getTree');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.service.ServiceRouter-class.html#getTree">getTree</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">id</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceRouter.getTree-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ServiceRouter.getTree-expanded"><a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-docstring">        Returns the tree structure of an organizer hierarchy.</tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"><tt class="py-docstring">        @type  id: string</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-docstring">        @param id: Id of the root node of the tree to be returned</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   [dictionary]</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  Object representing the tree</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line">        <tt class="py-name">tree</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method apidoc.Zuul.routers.device.DeviceRouter.getTree()=apidoc.Zuul.routers.device.DeviceRouter-class.html#getTree,Method apidoc.Zuul.routers.mibs.MibRouter.getTree()=apidoc.Zuul.routers.mibs.MibRouter-class.html#getTree,Method apidoc.Zuul.routers.network.NetworkRouter.getTree()=apidoc.Zuul.routers.network.NetworkRouter-class.html#getTree,Method apidoc.Zuul.routers.process.ProcessRouter.getTree()=apidoc.Zuul.routers.process.ProcessRouter-class.html#getTree,Method apidoc.Zuul.routers.report.ReportRouter.getTree()=apidoc.Zuul.routers.report.ReportRouter-class.html#getTree,Method apidoc.Zuul.routers.service.ServiceRouter.getTree()=apidoc.Zuul.routers.service.ServiceRouter-class.html#getTree"><a title="apidoc.Zuul.routers.device.DeviceRouter.getTree
+apidoc.Zuul.routers.mibs.MibRouter.getTree
+apidoc.Zuul.routers.network.NetworkRouter.getTree
+apidoc.Zuul.routers.process.ProcessRouter.getTree
+apidoc.Zuul.routers.report.ReportRouter.getTree
+apidoc.Zuul.routers.service.ServiceRouter.getTree" class="py-name" href="#" onclick="return doclink('link-5', 'getTree', 'link-5');">getTree</a></tt><tt class="py-op">(</tt><tt class="py-name">id</tt><tt class="py-op">)</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">tree</tt><tt class="py-op">)</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">[</tt><tt class="py-name">data</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line"> </tt>
+<a name="ServiceRouter.getOrganizerTree"></a><div id="ServiceRouter.getOrganizerTree-def"><a name="L133"></a><tt class="py-lineno">133</tt> <a class="py-toggle" href="#" id="ServiceRouter.getOrganizerTree-toggle" onclick="return toggle('ServiceRouter.getOrganizerTree');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.service.ServiceRouter-class.html#getOrganizerTree">getOrganizerTree</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">id</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceRouter.getOrganizerTree-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ServiceRouter.getOrganizerTree-expanded"><a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line"><tt class="py-docstring">        Returns the tree structure of an organizer hierarchy, only including</tt> </tt>
+<a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"><tt class="py-docstring">        organizers.</tt> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L138"></a><tt class="py-lineno">138</tt>  <tt class="py-line"><tt class="py-docstring">        @type  id: string</tt> </tt>
+<a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line"><tt class="py-docstring">        @param id: Id of the root node of the tree to be returned</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   [dictionary]</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  Object representing the organizer tree</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line">        <tt class="py-name">tree</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Method apidoc.Zuul.routers.mibs.MibRouter.getOrganizerTree()=apidoc.Zuul.routers.mibs.MibRouter-class.html#getOrganizerTree,Method apidoc.Zuul.routers.service.ServiceRouter.getOrganizerTree()=apidoc.Zuul.routers.service.ServiceRouter-class.html#getOrganizerTree"><a title="apidoc.Zuul.routers.mibs.MibRouter.getOrganizerTree
+apidoc.Zuul.routers.service.ServiceRouter.getOrganizerTree" class="py-name" href="#" onclick="return doclink('link-6', 'getOrganizerTree', 'link-6');">getOrganizerTree</a></tt><tt class="py-op">(</tt><tt class="py-name">id</tt><tt class="py-op">)</tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">tree</tt><tt class="py-op">)</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">[</tt><tt class="py-name">data</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"> </tt>
+<a name="ServiceRouter.getInfo"></a><div id="ServiceRouter.getInfo-def"><a name="L147"></a><tt class="py-lineno">147</tt> <a class="py-toggle" href="#" id="ServiceRouter.getInfo-toggle" onclick="return toggle('ServiceRouter.getInfo');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.service.ServiceRouter-class.html#getInfo">getInfo</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">,</tt> <tt class="py-param">keys</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceRouter.getInfo-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ServiceRouter.getInfo-expanded"><a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line"><tt class="py-docstring">        Get the properties of a service.</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L152"></a><tt class="py-lineno">152</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique identifier of a service</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line"><tt class="py-docstring">        @type  keys: list</tt> </tt>
+<a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line"><tt class="py-docstring">        @param keys: (optional) List of keys to include in the returned</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line"><tt class="py-docstring">                     dictionary. If None then all keys will be returned</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"><tt class="py-docstring">                     (default: None)</tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line"><tt class="py-docstring">            - data: (dictionary) Object representing a service's properties</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"><tt class="py-docstring">            - disabled: (boolean) True if current user cannot manage services</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line">        <tt id="link-7" class="py-name" targets="Module apidoc.Zuul.routers.service=apidoc.Zuul.routers.service-module.html"><a title="apidoc.Zuul.routers.service" class="py-name" href="#" onclick="return doclink('link-7', 'service', 'link-7');">service</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method apidoc.Zuul.routers.device.DeviceRouter.getInfo()=apidoc.Zuul.routers.device.DeviceRouter-class.html#getInfo,Method apidoc.Zuul.routers.mibs.MibRouter.getInfo()=apidoc.Zuul.routers.mibs.MibRouter-class.html#getInfo,Method apidoc.Zuul.routers.network.NetworkRouter.getInfo()=apidoc.Zuul.routers.network.NetworkRouter-class.html#getInfo,Method apidoc.Zuul.routers.process.ProcessRouter.getInfo()=apidoc.Zuul.routers.process.ProcessRouter-class.html#getInfo,Method apidoc.Zuul.routers.service.ServiceRouter.getInfo()=apidoc.Zuul.routers.service.ServiceRouter-class.html#getInfo,Method apidoc.Zuul.routers.template.TemplateRouter.getInfo()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getInfo"><a title="apidoc.Zuul.routers.device.DeviceRouter.getInfo
+apidoc.Zuul.routers.mibs.MibRouter.getInfo
+apidoc.Zuul.routers.network.NetworkRouter.getInfo
+apidoc.Zuul.routers.process.ProcessRouter.getInfo
+apidoc.Zuul.routers.service.ServiceRouter.getInfo
+apidoc.Zuul.routers.template.TemplateRouter.getInfo" class="py-name" href="#" onclick="return doclink('link-8', 'getInfo', 'link-8');">getInfo</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt id="link-9" class="py-name"><a title="apidoc.Zuul.routers.service" class="py-name" href="#" onclick="return doclink('link-9', 'service', 'link-7');">service</a></tt><tt class="py-op">,</tt> <tt class="py-name">keys</tt><tt class="py-op">)</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line">        <tt class="py-name">disabled</tt> <tt class="py-op">=</tt> <tt class="py-keyword">not</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">checkPermission</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">=</tt><tt class="py-name">data</tt><tt class="py-op">,</tt> <tt class="py-name">disabled</tt><tt class="py-op">=</tt><tt class="py-name">disabled</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line"> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="ServiceRouter.setInfo"></a><div id="ServiceRouter.setInfo-def"><a name="L168"></a><tt class="py-lineno">168</tt> <a class="py-toggle" href="#" id="ServiceRouter.setInfo-toggle" onclick="return toggle('ServiceRouter.setInfo');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.service.ServiceRouter-class.html#setInfo">setInfo</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">data</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceRouter.setInfo-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ServiceRouter.setInfo-expanded"><a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line"><tt class="py-docstring">        Set attributes on a service.</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"><tt class="py-docstring">        This method accepts any keyword argument for the property that you wish</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line"><tt class="py-docstring">        to set. The only required property is "uid".</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line"><tt class="py-docstring">        @type    uid: string</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line"><tt class="py-docstring">        @keyword uid: Unique identifier of a service</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  Success message</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">        <tt id="link-10" class="py-name"><a title="apidoc.Zuul.routers.service" class="py-name" href="#" onclick="return doclink('link-10', 'service', 'link-7');">service</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="apidoc.Zuul.routers.device.DeviceRouter.getInfo
+apidoc.Zuul.routers.mibs.MibRouter.getInfo
+apidoc.Zuul.routers.network.NetworkRouter.getInfo
+apidoc.Zuul.routers.process.ProcessRouter.getInfo
+apidoc.Zuul.routers.service.ServiceRouter.getInfo
+apidoc.Zuul.routers.template.TemplateRouter.getInfo" class="py-name" href="#" onclick="return doclink('link-11', 'getInfo', 'link-8');">getInfo</a></tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-string">'uid'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">data</tt><tt class="py-op">.</tt><tt class="py-name">has_key</tt><tt class="py-op">(</tt><tt class="py-string">'serviceKeys'</tt><tt class="py-op">)</tt> <tt class="py-keyword">and</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-string">'serviceKeys'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">str</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L181"></a><tt class="py-lineno">181</tt>  <tt class="py-line">            <tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-string">'serviceKeys'</tt><tt class="py-op">]</tt> <tt class="py-op">=</tt> \ </tt>
+<a name="L182"></a><tt class="py-lineno">182</tt>  <tt class="py-line">                    <tt class="py-name">tuple</tt><tt class="py-op">(</tt><tt class="py-op">[</tt><tt class="py-name">l</tt><tt class="py-op">.</tt><tt class="py-name">strip</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> <tt class="py-keyword">for</tt> <tt class="py-name">l</tt> <tt class="py-keyword">in</tt> <tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-string">'serviceKeys'</tt><tt class="py-op">]</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">','</tt><tt class="py-op">)</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L183"></a><tt class="py-lineno">183</tt>  <tt class="py-line">        <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">unmarshal</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">,</tt> <tt id="link-12" class="py-name"><a title="apidoc.Zuul.routers.service" class="py-name" href="#" onclick="return doclink('link-12', 'service', 'link-7');">service</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L184"></a><tt class="py-lineno">184</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L185"></a><tt class="py-lineno">185</tt>  <tt class="py-line"> </tt>
+<a name="ServiceRouter.getInstances"></a><div id="ServiceRouter.getInstances-def"><a name="L186"></a><tt class="py-lineno">186</tt> <a class="py-toggle" href="#" id="ServiceRouter.getInstances-toggle" onclick="return toggle('ServiceRouter.getInstances');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.service.ServiceRouter-class.html#getInstances">getInstances</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">,</tt> <tt class="py-param">start</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">params</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">limit</tt><tt class="py-op">=</tt><tt class="py-number">50</tt><tt class="py-op">,</tt> <tt class="py-param">sort</tt><tt class="py-op">=</tt><tt class="py-string">'name'</tt><tt class="py-op">,</tt> </tt>
+<a name="L187"></a><tt class="py-lineno">187</tt>  <tt class="py-line">                   <tt class="py-param">dir</tt><tt class="py-op">=</tt><tt class="py-string">'ASC'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceRouter.getInstances-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ServiceRouter.getInstances-expanded"><a name="L188"></a><tt class="py-lineno">188</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L189"></a><tt class="py-lineno">189</tt>  <tt class="py-line"><tt class="py-docstring">        Get a list of instances for a service UID.</tt> </tt>
+<a name="L190"></a><tt class="py-lineno">190</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L191"></a><tt class="py-lineno">191</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L192"></a><tt class="py-lineno">192</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Service UID to get instances of</tt> </tt>
+<a name="L193"></a><tt class="py-lineno">193</tt>  <tt class="py-line"><tt class="py-docstring">        @type  start: integer</tt> </tt>
+<a name="L194"></a><tt class="py-lineno">194</tt>  <tt class="py-line"><tt class="py-docstring">        @param start: (optional) Offset to return the results from; used in</tt> </tt>
+<a name="L195"></a><tt class="py-lineno">195</tt>  <tt class="py-line"><tt class="py-docstring">                      pagination (default: 0)</tt> </tt>
+<a name="L196"></a><tt class="py-lineno">196</tt>  <tt class="py-line"><tt class="py-docstring">        @type  params: dictionary</tt> </tt>
+<a name="L197"></a><tt class="py-lineno">197</tt>  <tt class="py-line"><tt class="py-docstring">        @param params: (optional) Key-value pair of filters for this search.</tt> </tt>
+<a name="L198"></a><tt class="py-lineno">198</tt>  <tt class="py-line"><tt class="py-docstring">        @type  limit: integer</tt> </tt>
+<a name="L199"></a><tt class="py-lineno">199</tt>  <tt class="py-line"><tt class="py-docstring">        @param limit: (optional) Number of items to return; used in pagination</tt> </tt>
+<a name="L200"></a><tt class="py-lineno">200</tt>  <tt class="py-line"><tt class="py-docstring">                      (default: 50)</tt> </tt>
+<a name="L201"></a><tt class="py-lineno">201</tt>  <tt class="py-line"><tt class="py-docstring">        @type  sort: string</tt> </tt>
+<a name="L202"></a><tt class="py-lineno">202</tt>  <tt class="py-line"><tt class="py-docstring">        @param sort: (optional) Key on which to sort the return results (default:</tt> </tt>
+<a name="L203"></a><tt class="py-lineno">203</tt>  <tt class="py-line"><tt class="py-docstring">                     'name')</tt> </tt>
+<a name="L204"></a><tt class="py-lineno">204</tt>  <tt class="py-line"><tt class="py-docstring">        @type  dir: string</tt> </tt>
+<a name="L205"></a><tt class="py-lineno">205</tt>  <tt class="py-line"><tt class="py-docstring">        @param dir: (optional) Sort order; can be either 'ASC' or 'DESC'</tt> </tt>
+<a name="L206"></a><tt class="py-lineno">206</tt>  <tt class="py-line"><tt class="py-docstring">                    (default: 'ASC')</tt> </tt>
+<a name="L207"></a><tt class="py-lineno">207</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L208"></a><tt class="py-lineno">208</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L209"></a><tt class="py-lineno">209</tt>  <tt class="py-line"><tt class="py-docstring">             - data: ([dictionary]) List of objects representing service instances</tt> </tt>
+<a name="L210"></a><tt class="py-lineno">210</tt>  <tt class="py-line"><tt class="py-docstring">             - totalCount: (integer) Total number of instances</tt> </tt>
+<a name="L211"></a><tt class="py-lineno">211</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L212"></a><tt class="py-lineno">212</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">params</tt><tt class="py-op">,</tt> <tt class="py-name">basestring</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L213"></a><tt class="py-lineno">213</tt>  <tt class="py-line">            <tt class="py-name">params</tt> <tt class="py-op">=</tt> <tt class="py-name">unjson</tt><tt class="py-op">(</tt><tt class="py-name">params</tt><tt class="py-op">)</tt> </tt>
+<a name="L214"></a><tt class="py-lineno">214</tt>  <tt class="py-line">        <tt class="py-name">instances</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Method apidoc.Zuul.routers.process.ProcessRouter.getInstances()=apidoc.Zuul.routers.process.ProcessRouter-class.html#getInstances,Method apidoc.Zuul.routers.service.ServiceRouter.getInstances()=apidoc.Zuul.routers.service.ServiceRouter-class.html#getInstances"><a title="apidoc.Zuul.routers.process.ProcessRouter.getInstances
+apidoc.Zuul.routers.service.ServiceRouter.getInstances" class="py-name" href="#" onclick="return doclink('link-13', 'getInstances', 'link-13');">getInstances</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">,</tt> <tt class="py-name">start</tt><tt class="py-op">=</tt><tt class="py-name">start</tt><tt class="py-op">,</tt> <tt class="py-name">params</tt><tt class="py-op">=</tt><tt class="py-name">params</tt><tt class="py-op">,</tt> </tt>
+<a name="L215"></a><tt class="py-lineno">215</tt>  <tt class="py-line">                                          <tt class="py-name">limit</tt><tt class="py-op">=</tt><tt class="py-name">limit</tt><tt class="py-op">,</tt> <tt class="py-name">sort</tt><tt class="py-op">=</tt><tt class="py-name">sort</tt><tt class="py-op">,</tt> <tt class="py-name">dir</tt><tt class="py-op">=</tt><tt class="py-name">dir</tt><tt class="py-op">)</tt> </tt>
+<a name="L216"></a><tt class="py-lineno">216</tt>  <tt class="py-line"> </tt>
+<a name="L217"></a><tt class="py-lineno">217</tt>  <tt class="py-line">        <tt class="py-name">keys</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'description'</tt><tt class="py-op">,</tt> <tt class="py-string">'device'</tt><tt class="py-op">,</tt> <tt class="py-string">'locking'</tt><tt class="py-op">,</tt> <tt class="py-string">'monitored'</tt><tt class="py-op">,</tt> <tt class="py-string">'name'</tt><tt class="py-op">,</tt> </tt>
+<a name="L218"></a><tt class="py-lineno">218</tt>  <tt class="py-line">                <tt class="py-string">'status'</tt><tt class="py-op">,</tt> <tt class="py-string">'uid'</tt><tt class="py-op">]</tt> </tt>
+<a name="L219"></a><tt class="py-lineno">219</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">instances</tt><tt class="py-op">,</tt> <tt class="py-name">keys</tt><tt class="py-op">)</tt> </tt>
+<a name="L220"></a><tt class="py-lineno">220</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">=</tt><tt class="py-name">data</tt><tt class="py-op">,</tt> <tt class="py-name">totalCount</tt><tt class="py-op">=</tt><tt class="py-name">instances</tt><tt class="py-op">.</tt><tt class="py-name">total</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L221"></a><tt class="py-lineno">221</tt>  <tt class="py-line"> </tt>
+<a name="L222"></a><tt class="py-lineno">222</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="ServiceRouter.moveServices"></a><div id="ServiceRouter.moveServices-def"><a name="L223"></a><tt class="py-lineno">223</tt> <a class="py-toggle" href="#" id="ServiceRouter.moveServices-toggle" onclick="return toggle('ServiceRouter.moveServices');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.service.ServiceRouter-class.html#moveServices">moveServices</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">sourceUids</tt><tt class="py-op">,</tt> <tt class="py-param">targetUid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceRouter.moveServices-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ServiceRouter.moveServices-expanded"><a name="L224"></a><tt class="py-lineno">224</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L225"></a><tt class="py-lineno">225</tt>  <tt class="py-line"><tt class="py-docstring">        Move service(s) from one organizer to another.</tt> </tt>
+<a name="L226"></a><tt class="py-lineno">226</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L227"></a><tt class="py-lineno">227</tt>  <tt class="py-line"><tt class="py-docstring">        @type  sourceUids: [string]</tt> </tt>
+<a name="L228"></a><tt class="py-lineno">228</tt>  <tt class="py-line"><tt class="py-docstring">        @param sourceUids: UID(s) of the service(s) to move</tt> </tt>
+<a name="L229"></a><tt class="py-lineno">229</tt>  <tt class="py-line"><tt class="py-docstring">        @type  targetUid: string</tt> </tt>
+<a name="L230"></a><tt class="py-lineno">230</tt>  <tt class="py-line"><tt class="py-docstring">        @param targetUid: UID of the organizer to move to</tt> </tt>
+<a name="L231"></a><tt class="py-lineno">231</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L232"></a><tt class="py-lineno">232</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  Success messsage</tt> </tt>
+<a name="L233"></a><tt class="py-lineno">233</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L234"></a><tt class="py-lineno">234</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name" targets="Method apidoc.Zuul.routers.service.ServiceRouter.moveServices()=apidoc.Zuul.routers.service.ServiceRouter-class.html#moveServices"><a title="apidoc.Zuul.routers.service.ServiceRouter.moveServices" class="py-name" href="#" onclick="return doclink('link-14', 'moveServices', 'link-14');">moveServices</a></tt><tt class="py-op">(</tt><tt class="py-name">sourceUids</tt><tt class="py-op">,</tt> <tt class="py-name">targetUid</tt><tt class="py-op">)</tt> </tt>
+<a name="L235"></a><tt class="py-lineno">235</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L236"></a><tt class="py-lineno">236</tt>  <tt class="py-line"> </tt>
+<a name="ServiceRouter.getUnmonitoredStartModes"></a><div id="ServiceRouter.getUnmonitoredStartModes-def"><a name="L237"></a><tt class="py-lineno">237</tt> <a class="py-toggle" href="#" id="ServiceRouter.getUnmonitoredStartModes-toggle" onclick="return toggle('ServiceRouter.getUnmonitoredStartModes');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.service.ServiceRouter-class.html#getUnmonitoredStartModes">getUnmonitoredStartModes</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceRouter.getUnmonitoredStartModes-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ServiceRouter.getUnmonitoredStartModes-expanded"><a name="L238"></a><tt class="py-lineno">238</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L239"></a><tt class="py-lineno">239</tt>  <tt class="py-line"><tt class="py-docstring">        Get a list of unmonitored start modes for a Windows service.</tt> </tt>
+<a name="L240"></a><tt class="py-lineno">240</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L241"></a><tt class="py-lineno">241</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L242"></a><tt class="py-lineno">242</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique ID of a Windows service.</tt> </tt>
+<a name="L243"></a><tt class="py-lineno">243</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L244"></a><tt class="py-lineno">244</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L245"></a><tt class="py-lineno">245</tt>  <tt class="py-line"><tt class="py-docstring">            - data: ([string]) List of unmonitored start modes for a Windows service</tt> </tt>
+<a name="L246"></a><tt class="py-lineno">246</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L247"></a><tt class="py-lineno">247</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-15" class="py-name" targets="Method apidoc.Zuul.routers.service.ServiceRouter.getUnmonitoredStartModes()=apidoc.Zuul.routers.service.ServiceRouter-class.html#getUnmonitoredStartModes"><a title="apidoc.Zuul.routers.service.ServiceRouter.getUnmonitoredStartModes" class="py-name" href="#" onclick="return doclink('link-15', 'getUnmonitoredStartModes', 'link-15');">getUnmonitoredStartModes</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L248"></a><tt class="py-lineno">248</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">=</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L249"></a><tt class="py-lineno">249</tt>  <tt class="py-line"> </tt>
+<a name="ServiceRouter.getMonitoredStartModes"></a><div id="ServiceRouter.getMonitoredStartModes-def"><a name="L250"></a><tt class="py-lineno">250</tt> <a class="py-toggle" href="#" id="ServiceRouter.getMonitoredStartModes-toggle" onclick="return toggle('ServiceRouter.getMonitoredStartModes');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.service.ServiceRouter-class.html#getMonitoredStartModes">getMonitoredStartModes</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="ServiceRouter.getMonitoredStartModes-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="ServiceRouter.getMonitoredStartModes-expanded"><a name="L251"></a><tt class="py-lineno">251</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L252"></a><tt class="py-lineno">252</tt>  <tt class="py-line"><tt class="py-docstring">        Get a list of monitored start modes for a Windows service.</tt> </tt>
+<a name="L253"></a><tt class="py-lineno">253</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L254"></a><tt class="py-lineno">254</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L255"></a><tt class="py-lineno">255</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique ID of a Windows service.</tt> </tt>
+<a name="L256"></a><tt class="py-lineno">256</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L257"></a><tt class="py-lineno">257</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L258"></a><tt class="py-lineno">258</tt>  <tt class="py-line"><tt class="py-docstring">            - data: ([string]) List of monitored start modes for a Windows service</tt> </tt>
+<a name="L259"></a><tt class="py-lineno">259</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L260"></a><tt class="py-lineno">260</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-16" class="py-name" targets="Method apidoc.Zuul.routers.service.ServiceRouter.getMonitoredStartModes()=apidoc.Zuul.routers.service.ServiceRouter-class.html#getMonitoredStartModes"><a title="apidoc.Zuul.routers.service.ServiceRouter.getMonitoredStartModes" class="py-name" href="#" onclick="return doclink('link-16', 'getMonitoredStartModes', 'link-16');">getMonitoredStartModes</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L261"></a><tt class="py-lineno">261</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">=</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L262"></a><tt class="py-lineno">262</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="apidoc.Zuul.routers-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Sep 22 15:27:06 2010
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

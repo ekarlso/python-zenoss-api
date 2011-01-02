@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>apidoc.Zuul.routers.network</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="apidoc.Zuul.routers-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;apidoc ::
+        Package&nbsp;Zuul ::
+        <a href="apidoc.Zuul.routers-module.html">Package&nbsp;routers</a> ::
+        Module&nbsp;network
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="apidoc.Zuul.routers.network-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="apidoc.Zuul.routers.network-module.html">Module apidoc.Zuul.routers.network</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment">###########################################################################</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-comment"># This program is part of Zenoss Core, an open source monitoring platform.</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-comment"># Copyright (C) 2010, Zenoss Inc.</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-comment"># This program is free software; you can redistribute it and/or modify it</tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-comment"># under the terms of the GNU General Public License version 2 as published by</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-comment"># the Free Software Foundation.</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-comment"># For complete information please visit: http://www.zenoss.com/oss/</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-comment">#</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"><tt class="py-comment">###########################################################################</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-docstring">Operations for Networks.</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring">Available at:  /zport/dmd/network_router</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">"""</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line"> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">logging</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">ZenUtils</tt><tt class="py-op">.</tt><tt class="py-name">Ext</tt> <tt class="py-keyword">import</tt> <tt class="py-name">DirectRouter</tt><tt class="py-op">,</tt> <tt class="py-name">DirectResponse</tt> </tt>
+<a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">decorators</tt> <tt class="py-keyword">import</tt> <tt class="py-name">require</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">interfaces</tt> <tt class="py-keyword">import</tt> <tt class="py-name">ITreeNode</tt> </tt>
+<a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt><tt class="py-op">.</tt><tt class="py-name">ZenUtils</tt><tt class="py-op">.</tt><tt class="py-name">jsonutils</tt> <tt class="py-keyword">import</tt> <tt class="py-name">unjson</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">Products</tt> <tt class="py-keyword">import</tt> <tt class="py-name">Zuul</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt id="link-0" class="py-name" targets="Variable apidoc.Zuul.routers.device.log=apidoc.Zuul.routers.device-module.html#log,Variable apidoc.Zuul.routers.events.log=apidoc.Zuul.routers.events-module.html#log,Variable apidoc.Zuul.routers.log=apidoc.Zuul.routers-module.html#log,Variable apidoc.Zuul.routers.mibs.log=apidoc.Zuul.routers.mibs-module.html#log,Variable apidoc.Zuul.routers.network.log=apidoc.Zuul.routers.network-module.html#log,Variable apidoc.Zuul.routers.report.log=apidoc.Zuul.routers.report-module.html#log,Variable apidoc.Zuul.routers.zenpack.log=apidoc.Zuul.routers.zenpack-module.html#log"><a title="apidoc.Zuul.routers.device.log
+apidoc.Zuul.routers.events.log
+apidoc.Zuul.routers.log
+apidoc.Zuul.routers.mibs.log
+apidoc.Zuul.routers.network.log
+apidoc.Zuul.routers.report.log
+apidoc.Zuul.routers.zenpack.log" class="py-name" href="#" onclick="return doclink('link-0', 'log', 'link-0');">log</a></tt> <tt class="py-op">=</tt> <tt class="py-name">logging</tt><tt class="py-op">.</tt><tt class="py-name">getLogger</tt><tt class="py-op">(</tt><tt class="py-string">'zen.NetworkRouter'</tt><tt class="py-op">)</tt> </tt>
+<a name="NetworkRouter"></a><div id="NetworkRouter-def"><a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt> <a class="py-toggle" href="#" id="NetworkRouter-toggle" onclick="return toggle('NetworkRouter');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="apidoc.Zuul.routers.network.NetworkRouter-class.html">NetworkRouter</a><tt class="py-op">(</tt><tt class="py-base-class">DirectRouter</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NetworkRouter-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="NetworkRouter-expanded"><a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">    A JSON/ExtDirect interface to operations on networks</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"> </tt>
+<a name="NetworkRouter.__init__"></a><div id="NetworkRouter.__init__-def"><a name="L33"></a><tt class="py-lineno"> 33</tt> <a class="py-toggle" href="#" id="NetworkRouter.__init__-toggle" onclick="return toggle('NetworkRouter.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.network.NetworkRouter-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">context</tt><tt class="py-op">,</tt> <tt class="py-param">request</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NetworkRouter.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NetworkRouter.__init__-expanded"><a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line">        <tt class="py-name">super</tt><tt class="py-op">(</tt><tt id="link-1" class="py-name" targets="Class apidoc.Zuul.routers.network.NetworkRouter=apidoc.Zuul.routers.network.NetworkRouter-class.html"><a title="apidoc.Zuul.routers.network.NetworkRouter" class="py-name" href="#" onclick="return doclink('link-1', 'NetworkRouter', 'link-1');">NetworkRouter</a></tt><tt class="py-op">,</tt> <tt class="py-name">self</tt><tt class="py-op">)</tt><tt class="py-op">.</tt><tt id="link-2" class="py-name" targets="Method apidoc.Zuul.routers.events.EventsRouter.__init__()=apidoc.Zuul.routers.events.EventsRouter-class.html#__init__,Method apidoc.Zuul.routers.messaging.MessagingRouter.__init__()=apidoc.Zuul.routers.messaging.MessagingRouter-class.html#__init__,Method apidoc.Zuul.routers.mibs.MibRouter.__init__()=apidoc.Zuul.routers.mibs.MibRouter-class.html#__init__,Method apidoc.Zuul.routers.network.NetworkRouter.__init__()=apidoc.Zuul.routers.network.NetworkRouter-class.html#__init__,Method apidoc.Zuul.routers.service.ServiceRouter.__init__()=apidoc.Zuul.routers.service.ServiceRouter-class.html#__init__"><a title="apidoc.Zuul.routers.events.EventsRouter.__init__
+apidoc.Zuul.routers.messaging.MessagingRouter.__init__
+apidoc.Zuul.routers.mibs.MibRouter.__init__
+apidoc.Zuul.routers.network.NetworkRouter.__init__
+apidoc.Zuul.routers.service.ServiceRouter.__init__" class="py-name" href="#" onclick="return doclink('link-2', '__init__', 'link-2');">__init__</a></tt><tt class="py-op">(</tt><tt class="py-name">context</tt><tt class="py-op">,</tt> <tt class="py-name">request</tt><tt class="py-op">)</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt> <tt class="py-op">=</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">getFacade</tt><tt class="py-op">(</tt><tt class="py-string">'network'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="NetworkRouter.discoverDevices"></a><div id="NetworkRouter.discoverDevices-def"><a name="L38"></a><tt class="py-lineno"> 38</tt> <a class="py-toggle" href="#" id="NetworkRouter.discoverDevices-toggle" onclick="return toggle('NetworkRouter.discoverDevices');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.network.NetworkRouter-class.html#discoverDevices">discoverDevices</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NetworkRouter.discoverDevices-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NetworkRouter.discoverDevices-expanded"><a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"><tt class="py-docstring">        Discover devices on a network.</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique identifier of the network to discover</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"><tt class="py-docstring">           - jobId: (integer) The id of the discovery job</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">        <tt class="py-name">jobStatus</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-3" class="py-name" targets="Method apidoc.Zuul.routers.network.NetworkRouter.discoverDevices()=apidoc.Zuul.routers.network.NetworkRouter-class.html#discoverDevices"><a title="apidoc.Zuul.routers.network.NetworkRouter.discoverDevices" class="py-name" href="#" onclick="return doclink('link-3', 'discoverDevices', 'link-3');">discoverDevices</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">jobStatus</tt><tt class="py-op">:</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">jobId</tt><tt class="py-op">=</tt><tt class="py-name">jobStatus</tt><tt class="py-op">.</tt><tt class="py-name">id</tt><tt class="py-op">)</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">            <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">fail</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line"> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="NetworkRouter.addNode"></a><div id="NetworkRouter.addNode-def"><a name="L55"></a><tt class="py-lineno"> 55</tt> <a class="py-toggle" href="#" id="NetworkRouter.addNode-toggle" onclick="return toggle('NetworkRouter.addNode');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.network.NetworkRouter-class.html#addNode">addNode</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">newSubnet</tt><tt class="py-op">,</tt> <tt class="py-param">contextUid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NetworkRouter.addNode-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NetworkRouter.addNode-expanded"><a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line"><tt class="py-docstring">        Add a new subnet.</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"><tt class="py-docstring">        @type  newSubnet: string</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"><tt class="py-docstring">        @param newSubnet: New subnet to add</tt> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line"><tt class="py-docstring">        @type  contextUid: string</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line"><tt class="py-docstring">        @param contextUid: Unique identifier of the network parent of the new subnet</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-docstring">           - newNode: (dictionary) An object representing the new subnet node</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-comment"># If the user doesn't include a mask, reject the request.</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-string">'/'</tt> <tt class="py-keyword">not</tt> <tt class="py-keyword">in</tt> <tt class="py-name">newSubnet</tt><tt class="py-op">:</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">            <tt class="py-name">response</tt> <tt class="py-op">=</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">fail</tt><tt class="py-op">(</tt><tt class="py-string">'You must include a subnet mask.'</tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line">            <tt class="py-keyword">try</tt><tt class="py-op">:</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line">                <tt class="py-name">netip</tt><tt class="py-op">,</tt> <tt class="py-name">netmask</tt> <tt class="py-op">=</tt> <tt class="py-name">newSubnet</tt><tt class="py-op">.</tt><tt class="py-name">split</tt><tt class="py-op">(</tt><tt class="py-string">'/'</tt><tt class="py-op">)</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line">                <tt class="py-name">netmask</tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">netmask</tt><tt class="py-op">)</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">                <tt class="py-name">foundSubnet</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt class="py-name">findSubnet</tt><tt class="py-op">(</tt><tt class="py-name">netip</tt><tt class="py-op">,</tt> <tt class="py-name">netmask</tt><tt class="py-op">,</tt> <tt class="py-string">'/zport/dmd/Networks'</tt><tt class="py-op">)</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line">                 </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">foundSubnet</tt> <tt class="py-keyword">is</tt> <tt class="py-keyword">not</tt> <tt class="py-name">None</tt><tt class="py-op">:</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">                    <tt class="py-name">response</tt> <tt class="py-op">=</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">fail</tt><tt class="py-op">(</tt><tt class="py-string">'Did not add duplicate subnet: %s (%s/%s)'</tt> <tt class="py-op">%</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line">                                                   <tt class="py-op">(</tt><tt class="py-name">newSubnet</tt><tt class="py-op">,</tt> <tt class="py-name">foundSubnet</tt><tt class="py-op">.</tt><tt class="py-name">id</tt><tt class="py-op">,</tt> <tt class="py-name">foundSubnet</tt><tt class="py-op">.</tt><tt class="py-name">netmask</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line">                <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">                    <tt class="py-name">newNet</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt class="py-name">addSubnet</tt><tt class="py-op">(</tt><tt class="py-name">newSubnet</tt><tt class="py-op">,</tt> <tt class="py-name">contextUid</tt><tt class="py-op">)</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">                    <tt class="py-name">node</tt> <tt class="py-op">=</tt> <tt class="py-name">ITreeNode</tt><tt class="py-op">(</tt><tt class="py-name">newNet</tt><tt class="py-op">)</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">                    <tt class="py-name">response</tt> <tt class="py-op">=</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">newNode</tt><tt class="py-op">=</tt><tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">node</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">            <tt class="py-keyword">except</tt> <tt class="py-name">Exception</tt> <tt class="py-keyword">as</tt> <tt class="py-name">error</tt><tt class="py-op">:</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line">                <tt id="link-4" class="py-name"><a title="apidoc.Zuul.routers.device.log
+apidoc.Zuul.routers.events.log
+apidoc.Zuul.routers.log
+apidoc.Zuul.routers.mibs.log
+apidoc.Zuul.routers.network.log
+apidoc.Zuul.routers.report.log
+apidoc.Zuul.routers.zenpack.log" class="py-name" href="#" onclick="return doclink('link-4', 'log', 'link-0');">log</a></tt><tt class="py-op">.</tt><tt class="py-name">exception</tt><tt class="py-op">(</tt><tt class="py-name">error</tt><tt class="py-op">)</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line">                <tt class="py-name">response</tt> <tt class="py-op">=</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">fail</tt><tt class="py-op">(</tt><tt class="py-string">'Error adding subnet: %s (%s)'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">newSubnet</tt><tt class="py-op">,</tt> <tt class="py-name">error</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line"> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">response</tt> </tt>
+</div><a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="NetworkRouter.deleteNode"></a><div id="NetworkRouter.deleteNode-def"><a name="L91"></a><tt class="py-lineno"> 91</tt> <a class="py-toggle" href="#" id="NetworkRouter.deleteNode-toggle" onclick="return toggle('NetworkRouter.deleteNode');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.network.NetworkRouter-class.html#deleteNode">deleteNode</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NetworkRouter.deleteNode-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NetworkRouter.deleteNode-expanded"><a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">        Delete a subnet.</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique identifier of the subnet to delete</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}:</tt> </tt>
+<a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"><tt class="py-docstring">           - tree: (dictionary) An object representing the new network tree</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt class="py-name">deleteSubnet</tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">tree</tt><tt class="py-op">=</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method apidoc.Zuul.routers.device.DeviceRouter.getTree()=apidoc.Zuul.routers.device.DeviceRouter-class.html#getTree,Method apidoc.Zuul.routers.mibs.MibRouter.getTree()=apidoc.Zuul.routers.mibs.MibRouter-class.html#getTree,Method apidoc.Zuul.routers.network.NetworkRouter.getTree()=apidoc.Zuul.routers.network.NetworkRouter-class.html#getTree,Method apidoc.Zuul.routers.process.ProcessRouter.getTree()=apidoc.Zuul.routers.process.ProcessRouter-class.html#getTree,Method apidoc.Zuul.routers.report.ReportRouter.getTree()=apidoc.Zuul.routers.report.ReportRouter-class.html#getTree,Method apidoc.Zuul.routers.service.ServiceRouter.getTree()=apidoc.Zuul.routers.service.ServiceRouter-class.html#getTree"><a title="apidoc.Zuul.routers.device.DeviceRouter.getTree
+apidoc.Zuul.routers.mibs.MibRouter.getTree
+apidoc.Zuul.routers.network.NetworkRouter.getTree
+apidoc.Zuul.routers.process.ProcessRouter.getTree
+apidoc.Zuul.routers.report.ReportRouter.getTree
+apidoc.Zuul.routers.service.ServiceRouter.getTree" class="py-name" href="#" onclick="return doclink('link-5', 'getTree', 'link-5');">getTree</a></tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"> </tt>
+<a name="NetworkRouter.getTree"></a><div id="NetworkRouter.getTree-def"><a name="L104"></a><tt class="py-lineno">104</tt> <a class="py-toggle" href="#" id="NetworkRouter.getTree-toggle" onclick="return toggle('NetworkRouter.getTree');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.network.NetworkRouter-class.html#getTree">getTree</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">id</tt><tt class="py-op">=</tt><tt class="py-string">'/zport/dmd/Networks'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NetworkRouter.getTree-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NetworkRouter.getTree-expanded"><a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line"><tt class="py-docstring">        Returns the tree structure of an organizer hierarchy where</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line"><tt class="py-docstring">        the root node is the organizer identified by the id parameter.</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"><tt class="py-docstring">        @type  id: string</tt> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line"><tt class="py-docstring">        @param id: Id of the root node of the tree to be returned. Defaults to</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line"><tt class="py-docstring">                   the Networks tree root.</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   [dictionary]</tt> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  Object representing the tree</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-name">tree</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name"><a title="apidoc.Zuul.routers.device.DeviceRouter.getTree
+apidoc.Zuul.routers.mibs.MibRouter.getTree
+apidoc.Zuul.routers.network.NetworkRouter.getTree
+apidoc.Zuul.routers.process.ProcessRouter.getTree
+apidoc.Zuul.routers.report.ReportRouter.getTree
+apidoc.Zuul.routers.service.ServiceRouter.getTree" class="py-name" href="#" onclick="return doclink('link-6', 'getTree', 'link-5');">getTree</a></tt><tt class="py-op">(</tt><tt class="py-name">id</tt><tt class="py-op">)</tt> </tt>
+<a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">tree</tt><tt class="py-op">)</tt> </tt>
+<a name="L117"></a><tt class="py-lineno">117</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-op">[</tt><tt class="py-name">data</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L118"></a><tt class="py-lineno">118</tt>  <tt class="py-line"> </tt>
+<a name="NetworkRouter.getInfo"></a><div id="NetworkRouter.getInfo-def"><a name="L119"></a><tt class="py-lineno">119</tt> <a class="py-toggle" href="#" id="NetworkRouter.getInfo-toggle" onclick="return toggle('NetworkRouter.getInfo');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.network.NetworkRouter-class.html#getInfo">getInfo</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">,</tt> <tt class="py-param">keys</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NetworkRouter.getInfo-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NetworkRouter.getInfo-expanded"><a name="L120"></a><tt class="py-lineno">120</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L121"></a><tt class="py-lineno">121</tt>  <tt class="py-line"><tt class="py-docstring">        Returns a dictionary of the properties of an object</tt> </tt>
+<a name="L122"></a><tt class="py-lineno">122</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L123"></a><tt class="py-lineno">123</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L124"></a><tt class="py-lineno">124</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique identifier of an object</tt> </tt>
+<a name="L125"></a><tt class="py-lineno">125</tt>  <tt class="py-line"><tt class="py-docstring">        @type  keys: list</tt> </tt>
+<a name="L126"></a><tt class="py-lineno">126</tt>  <tt class="py-line"><tt class="py-docstring">        @param keys: (optional) List of keys to include in the returned</tt> </tt>
+<a name="L127"></a><tt class="py-lineno">127</tt>  <tt class="py-line"><tt class="py-docstring">                     dictionary. If None then all keys will be returned</tt> </tt>
+<a name="L128"></a><tt class="py-lineno">128</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype:   DirectResponse</tt> </tt>
+<a name="L129"></a><tt class="py-lineno">129</tt>  <tt class="py-line"><tt class="py-docstring">        @return:  B{Properties}</tt> </tt>
+<a name="L130"></a><tt class="py-lineno">130</tt>  <tt class="py-line"><tt class="py-docstring">            - data: (dictionary) Object properties</tt> </tt>
+<a name="L131"></a><tt class="py-lineno">131</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L132"></a><tt class="py-lineno">132</tt>  <tt class="py-line">        <tt id="link-7" class="py-name" targets="Module apidoc.Zuul.routers.network=apidoc.Zuul.routers.network-module.html"><a title="apidoc.Zuul.routers.network" class="py-name" href="#" onclick="return doclink('link-7', 'network', 'link-7');">network</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method apidoc.Zuul.routers.device.DeviceRouter.getInfo()=apidoc.Zuul.routers.device.DeviceRouter-class.html#getInfo,Method apidoc.Zuul.routers.mibs.MibRouter.getInfo()=apidoc.Zuul.routers.mibs.MibRouter-class.html#getInfo,Method apidoc.Zuul.routers.network.NetworkRouter.getInfo()=apidoc.Zuul.routers.network.NetworkRouter-class.html#getInfo,Method apidoc.Zuul.routers.process.ProcessRouter.getInfo()=apidoc.Zuul.routers.process.ProcessRouter-class.html#getInfo,Method apidoc.Zuul.routers.service.ServiceRouter.getInfo()=apidoc.Zuul.routers.service.ServiceRouter-class.html#getInfo,Method apidoc.Zuul.routers.template.TemplateRouter.getInfo()=apidoc.Zuul.routers.template.TemplateRouter-class.html#getInfo"><a title="apidoc.Zuul.routers.device.DeviceRouter.getInfo
+apidoc.Zuul.routers.mibs.MibRouter.getInfo
+apidoc.Zuul.routers.network.NetworkRouter.getInfo
+apidoc.Zuul.routers.process.ProcessRouter.getInfo
+apidoc.Zuul.routers.service.ServiceRouter.getInfo
+apidoc.Zuul.routers.template.TemplateRouter.getInfo" class="py-name" href="#" onclick="return doclink('link-8', 'getInfo', 'link-8');">getInfo</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">)</tt> </tt>
+<a name="L133"></a><tt class="py-lineno">133</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt id="link-9" class="py-name"><a title="apidoc.Zuul.routers.network" class="py-name" href="#" onclick="return doclink('link-9', 'network', 'link-7');">network</a></tt><tt class="py-op">,</tt> <tt class="py-name">keys</tt><tt class="py-op">)</tt> </tt>
+<a name="L134"></a><tt class="py-lineno">134</tt>  <tt class="py-line">        <tt class="py-name">disabled</tt> <tt class="py-op">=</tt> <tt class="py-keyword">not</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">checkPermission</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="L135"></a><tt class="py-lineno">135</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">=</tt><tt class="py-name">data</tt><tt class="py-op">,</tt> <tt class="py-name">disabled</tt><tt class="py-op">=</tt><tt class="py-name">disabled</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L136"></a><tt class="py-lineno">136</tt>  <tt class="py-line"> </tt>
+<a name="L137"></a><tt class="py-lineno">137</tt>  <tt class="py-line">    <tt class="py-decorator">@</tt><tt class="py-decorator">require</tt><tt class="py-op">(</tt><tt class="py-string">'Manage DMD'</tt><tt class="py-op">)</tt> </tt>
+<a name="NetworkRouter.setInfo"></a><div id="NetworkRouter.setInfo-def"><a name="L138"></a><tt class="py-lineno">138</tt> <a class="py-toggle" href="#" id="NetworkRouter.setInfo-toggle" onclick="return toggle('NetworkRouter.setInfo');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.network.NetworkRouter-class.html#setInfo">setInfo</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">data</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NetworkRouter.setInfo-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NetworkRouter.setInfo-expanded"><a name="L139"></a><tt class="py-lineno">139</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L140"></a><tt class="py-lineno">140</tt>  <tt class="py-line"><tt class="py-docstring">        Main method for setting attributes on a device or device organizer.</tt> </tt>
+<a name="L141"></a><tt class="py-lineno">141</tt>  <tt class="py-line"><tt class="py-docstring">        This method accepts any keyword argument for the property that you wish</tt> </tt>
+<a name="L142"></a><tt class="py-lineno">142</tt>  <tt class="py-line"><tt class="py-docstring">        to set. The only required property is "uid".</tt> </tt>
+<a name="L143"></a><tt class="py-lineno">143</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L144"></a><tt class="py-lineno">144</tt>  <tt class="py-line"><tt class="py-docstring">        @type    uid: string</tt> </tt>
+<a name="L145"></a><tt class="py-lineno">145</tt>  <tt class="py-line"><tt class="py-docstring">        @keyword uid: Unique identifier of an object</tt> </tt>
+<a name="L146"></a><tt class="py-lineno">146</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: DirectResponse</tt> </tt>
+<a name="L147"></a><tt class="py-lineno">147</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L148"></a><tt class="py-lineno">148</tt>  <tt class="py-line">        <tt id="link-10" class="py-name"><a title="apidoc.Zuul.routers.network" class="py-name" href="#" onclick="return doclink('link-10', 'network', 'link-7');">network</a></tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-11" class="py-name"><a title="apidoc.Zuul.routers.device.DeviceRouter.getInfo
+apidoc.Zuul.routers.mibs.MibRouter.getInfo
+apidoc.Zuul.routers.network.NetworkRouter.getInfo
+apidoc.Zuul.routers.process.ProcessRouter.getInfo
+apidoc.Zuul.routers.service.ServiceRouter.getInfo
+apidoc.Zuul.routers.template.TemplateRouter.getInfo" class="py-name" href="#" onclick="return doclink('link-11', 'getInfo', 'link-8');">getInfo</a></tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">[</tt><tt class="py-string">'uid'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L149"></a><tt class="py-lineno">149</tt>  <tt class="py-line">        <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">unmarshal</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">,</tt> <tt id="link-12" class="py-name"><a title="apidoc.Zuul.routers.network" class="py-name" href="#" onclick="return doclink('link-12', 'network', 'link-7');">network</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L150"></a><tt class="py-lineno">150</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L151"></a><tt class="py-lineno">151</tt>  <tt class="py-line"> </tt>
+<a name="NetworkRouter.getIpAddresses"></a><div id="NetworkRouter.getIpAddresses-def"><a name="L152"></a><tt class="py-lineno">152</tt> <a class="py-toggle" href="#" id="NetworkRouter.getIpAddresses-toggle" onclick="return toggle('NetworkRouter.getIpAddresses');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="apidoc.Zuul.routers.network.NetworkRouter-class.html#getIpAddresses">getIpAddresses</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">uid</tt><tt class="py-op">,</tt> <tt class="py-param">start</tt><tt class="py-op">=</tt><tt class="py-number">0</tt><tt class="py-op">,</tt> <tt class="py-param">params</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">,</tt> <tt class="py-param">limit</tt><tt class="py-op">=</tt><tt class="py-number">50</tt><tt class="py-op">,</tt> <tt class="py-param">sort</tt><tt class="py-op">=</tt><tt class="py-string">'name'</tt><tt class="py-op">,</tt> </tt>
+<a name="L153"></a><tt class="py-lineno">153</tt>  <tt class="py-line">                   <tt class="py-param">order</tt><tt class="py-op">=</tt><tt class="py-string">'ASC'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="NetworkRouter.getIpAddresses-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="NetworkRouter.getIpAddresses-expanded"><a name="L154"></a><tt class="py-lineno">154</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L155"></a><tt class="py-lineno">155</tt>  <tt class="py-line"><tt class="py-docstring">        Given a subnet, get a list of IP addresses and their relations.</tt> </tt>
+<a name="L156"></a><tt class="py-lineno">156</tt>  <tt class="py-line"><tt class="py-docstring"></tt> </tt>
+<a name="L157"></a><tt class="py-lineno">157</tt>  <tt class="py-line"><tt class="py-docstring">        @type  uid: string</tt> </tt>
+<a name="L158"></a><tt class="py-lineno">158</tt>  <tt class="py-line"><tt class="py-docstring">        @param uid: Unique identifier of a subnet</tt> </tt>
+<a name="L159"></a><tt class="py-lineno">159</tt>  <tt class="py-line"><tt class="py-docstring">        @type  start: integer</tt> </tt>
+<a name="L160"></a><tt class="py-lineno">160</tt>  <tt class="py-line"><tt class="py-docstring">        @param start: Offset to return the results from; used in pagination</tt> </tt>
+<a name="L161"></a><tt class="py-lineno">161</tt>  <tt class="py-line"><tt class="py-docstring">        @type  params: string</tt> </tt>
+<a name="L162"></a><tt class="py-lineno">162</tt>  <tt class="py-line"><tt class="py-docstring">        @param params: Not used</tt> </tt>
+<a name="L163"></a><tt class="py-lineno">163</tt>  <tt class="py-line"><tt class="py-docstring">        @type  limit: integer</tt> </tt>
+<a name="L164"></a><tt class="py-lineno">164</tt>  <tt class="py-line"><tt class="py-docstring">        @param limit: Number of items to return; used in pagination</tt> </tt>
+<a name="L165"></a><tt class="py-lineno">165</tt>  <tt class="py-line"><tt class="py-docstring">        @type  sort: string</tt> </tt>
+<a name="L166"></a><tt class="py-lineno">166</tt>  <tt class="py-line"><tt class="py-docstring">        @param sort: (optional) Key on which to sort the return results;</tt> </tt>
+<a name="L167"></a><tt class="py-lineno">167</tt>  <tt class="py-line"><tt class="py-docstring">                     defaults to 'name'</tt> </tt>
+<a name="L168"></a><tt class="py-lineno">168</tt>  <tt class="py-line"><tt class="py-docstring">        @type  order: string</tt> </tt>
+<a name="L169"></a><tt class="py-lineno">169</tt>  <tt class="py-line"><tt class="py-docstring">        @param order: Sort order; can be either 'ASC' or 'DESC'</tt> </tt>
+<a name="L170"></a><tt class="py-lineno">170</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: DirectResponse</tt> </tt>
+<a name="L171"></a><tt class="py-lineno">171</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L172"></a><tt class="py-lineno">172</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">isinstance</tt><tt class="py-op">(</tt><tt class="py-name">params</tt><tt class="py-op">,</tt> <tt class="py-name">basestring</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L173"></a><tt class="py-lineno">173</tt>  <tt class="py-line">            <tt class="py-name">params</tt> <tt class="py-op">=</tt> <tt class="py-name">unjson</tt><tt class="py-op">(</tt><tt class="py-name">params</tt><tt class="py-op">)</tt> </tt>
+<a name="L174"></a><tt class="py-lineno">174</tt>  <tt class="py-line">        <tt class="py-name">instances</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">api</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Method apidoc.Zuul.routers.network.NetworkRouter.getIpAddresses()=apidoc.Zuul.routers.network.NetworkRouter-class.html#getIpAddresses"><a title="apidoc.Zuul.routers.network.NetworkRouter.getIpAddresses" class="py-name" href="#" onclick="return doclink('link-13', 'getIpAddresses', 'link-13');">getIpAddresses</a></tt><tt class="py-op">(</tt><tt class="py-name">uid</tt><tt class="py-op">=</tt><tt class="py-name">uid</tt><tt class="py-op">,</tt> <tt class="py-name">start</tt><tt class="py-op">=</tt><tt class="py-name">start</tt><tt class="py-op">,</tt> <tt class="py-name">params</tt><tt class="py-op">=</tt><tt class="py-name">params</tt><tt class="py-op">,</tt> </tt>
+<a name="L175"></a><tt class="py-lineno">175</tt>  <tt class="py-line">                                          <tt class="py-name">limit</tt><tt class="py-op">=</tt><tt class="py-name">limit</tt><tt class="py-op">,</tt> <tt class="py-name">sort</tt><tt class="py-op">=</tt><tt class="py-name">sort</tt><tt class="py-op">,</tt> <tt class="py-name">dir</tt><tt class="py-op">=</tt><tt class="py-name">order</tt><tt class="py-op">)</tt> </tt>
+<a name="L176"></a><tt class="py-lineno">176</tt>  <tt class="py-line"> </tt>
+<a name="L177"></a><tt class="py-lineno">177</tt>  <tt class="py-line">        <tt class="py-name">keys</tt> <tt class="py-op">=</tt> <tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">,</tt> <tt class="py-string">'device'</tt><tt class="py-op">,</tt> <tt class="py-string">'interface'</tt><tt class="py-op">,</tt> <tt class="py-string">'pingstatus'</tt><tt class="py-op">,</tt> <tt class="py-string">'snmpstatus'</tt><tt class="py-op">,</tt> <tt class="py-string">'uid'</tt><tt class="py-op">]</tt> </tt>
+<a name="L178"></a><tt class="py-lineno">178</tt>  <tt class="py-line">        <tt class="py-name">data</tt> <tt class="py-op">=</tt> <tt class="py-name">Zuul</tt><tt class="py-op">.</tt><tt class="py-name">marshal</tt><tt class="py-op">(</tt><tt class="py-name">instances</tt><tt class="py-op">,</tt> <tt class="py-name">keys</tt><tt class="py-op">)</tt> </tt>
+<a name="L179"></a><tt class="py-lineno">179</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">DirectResponse</tt><tt class="py-op">.</tt><tt class="py-name">succeed</tt><tt class="py-op">(</tt><tt class="py-name">data</tt><tt class="py-op">=</tt><tt class="py-name">data</tt><tt class="py-op">,</tt> <tt class="py-name">totalCount</tt><tt class="py-op">=</tt><tt class="py-name">instances</tt><tt class="py-op">.</tt><tt class="py-name">total</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L180"></a><tt class="py-lineno">180</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="apidoc.Zuul.routers-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Sep 22 15:27:06 2010
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

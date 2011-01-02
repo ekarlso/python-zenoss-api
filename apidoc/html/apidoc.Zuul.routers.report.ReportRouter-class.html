@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>apidoc.Zuul.routers.report.ReportRouter</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="apidoc.Zuul.routers-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Package&nbsp;apidoc ::
+        Package&nbsp;Zuul ::
+        <a href="apidoc.Zuul.routers-module.html">Package&nbsp;routers</a> ::
+        <a href="apidoc.Zuul.routers.report-module.html">Module&nbsp;report</a> ::
+        Class&nbsp;ReportRouter
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="apidoc.Zuul.routers.report.ReportRouter-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class ReportRouter</h1><p class="nomargin-top"><span class="codelink"><a href="apidoc.Zuul.routers.report-pysrc.html#ReportRouter">source&nbsp;code</a></span></p>
+<pre class="base-tree">
+Products.ZenUtils.Ext.DirectRouter --+
+                                     |
+                                    <strong class="uidshort">ReportRouter</strong>
+</pre>
+
+<hr />
+<p>A JSON/ExtDirect interface to operations on reports</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Instance Methods</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-InstanceMethods"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">DirectResponse</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="apidoc.Zuul.routers.report.ReportRouter-class.html#getReportTypes" class="summary-sig-name">getReportTypes</a>(<span class="summary-sig-arg">self</span>)</span><br />
+      Get the available report types.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="apidoc.Zuul.routers.report-pysrc.html#ReportRouter.getReportTypes">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">[dictionary]</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="apidoc.Zuul.routers.report.ReportRouter-class.html#getTree" class="summary-sig-name">getTree</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">id</span>=<span class="summary-sig-default">'/zport/dmd/Reports'</span>)</span><br />
+      Returns the tree structure of an organizer hierarchy where the root 
+      node is the organizer identified by the id parameter.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="apidoc.Zuul.routers.report-pysrc.html#ReportRouter.getTree">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_getReportOrganizersTree"></a><span class="summary-sig-name">_getReportOrganizersTree</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">reportOrg</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="apidoc.Zuul.routers.report-pysrc.html#ReportRouter._getReportOrganizersTree">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">DirectResponse</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="apidoc.Zuul.routers.report.ReportRouter-class.html#addNode" class="summary-sig-name">addNode</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">nodeType</span>,
+        <span class="summary-sig-arg">contextUid</span>,
+        <span class="summary-sig-arg">id</span>)</span><br />
+      Add a new report or report organizer.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="apidoc.Zuul.routers.report-pysrc.html#ReportRouter.addNode">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">[dictionary]</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="apidoc.Zuul.routers.report.ReportRouter-class.html#deleteNode" class="summary-sig-name">deleteNode</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">uid</span>)</span><br />
+      Remove a report or report organizer.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="apidoc.Zuul.routers.report-pysrc.html#ReportRouter.deleteNode">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">[dictionary]</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="apidoc.Zuul.routers.report.ReportRouter-class.html#moveNode" class="summary-sig-name">moveNode</a>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">uids</span>,
+        <span class="summary-sig-arg">target</span>)</span><br />
+      Move a report or report organizer from one organizer to another.</td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="apidoc.Zuul.routers.report-pysrc.html#ReportRouter.moveNode">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_createTreeNode"></a><span class="summary-sig-name">_createTreeNode</span>(<span class="summary-sig-arg">self</span>,
+        <span class="summary-sig-arg">represented</span>)</span></td>
+          <td align="right" valign="top">
+            <span class="codelink"><a href="apidoc.Zuul.routers.report-pysrc.html#ReportRouter._createTreeNode">source&nbsp;code</a></span>
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="apidoc.Zuul.routers.report.ReportRouter-class.html#_newReportTypes" class="summary-name" onclick="show_private();">_newReportTypes</a> = <code title="['customDeviceReport', 'graphReport', 'multiGraphReport',]">['customDeviceReport', 'graphReport', 'multi<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="apidoc.Zuul.routers.report.ReportRouter-class.html#_reportMenuItems" class="summary-name" onclick="show_private();">_reportMenuItems</a> = <code title="[_t('Custom Device Report'), _t('Graph Report'), _t('Multi-Graph Repor\
+t'),]">[_t('Custom Device Report'), _t('Graph Repo<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="apidoc.Zuul.routers.report.ReportRouter-class.html#_createOrganizers" class="summary-name" onclick="show_private();">_createOrganizers</a> = <code title="{_newReportTypes [0]: 'Custom Device Reports', _newReportTypes [1]: 'G\
+raph Reports', _newReportTypes [2]: 'Multi-Graph Reports',}">{_newReportTypes [0]: 'Custom Device Repor<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="apidoc.Zuul.routers.report.ReportRouter-class.html#_createMethods" class="summary-name" onclick="show_private();">_createMethods</a> = <code title="{_newReportTypes [0]: 'manage_addDeviceReport', _newReportTypes [1]: '\
+manage_addGraphReport', _newReportTypes [2]: 'manage_addMultiGraphRepo\
+rt',}">{_newReportTypes [0]: 'manage_addDeviceReport<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="apidoc.Zuul.routers.report.ReportRouter-class.html#_essentialNodes" class="summary-name" onclick="show_private();">_essentialNodes</a> = <code title="['/zport/dmd/Reports', '/zport/dmd/Reports/Custom%20Device%20Reports',\
+ '/zport/dmd/Reports/Graph%20Reports', '/zport/dmd/Reports/Multi-Graph\
+%20Reports',]">['/zport/dmd/Reports', '/zport/dmd/Reports/C<code class="variable-ellipsis">...</code></code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Method Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-MethodDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="getReportTypes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getReportTypes</span>(<span class="sig-arg">self</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="apidoc.Zuul.routers.report-pysrc.html#ReportRouter.getReportTypes">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get the available report types.</p>
+  <dl class="fields">
+    <dt>Returns: DirectResponse</dt>
+        <dd><b>Properties</b>:
+          <ul>
+            <li>
+              menuText: ([string]) Human readable list of report types
+            </li>
+            <li>
+              reportTypes: ([string]) A list of the available report types
+            </li>
+          </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTree"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTree</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">id</span>=<span class="sig-default">'/zport/dmd/Reports'</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="apidoc.Zuul.routers.report-pysrc.html#ReportRouter.getTree">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the tree structure of an organizer hierarchy where the root 
+  node is the organizer identified by the id parameter.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>id</code></strong> (string) - (optional) Id of the root node of the tree to be returned 
+          (default: Reports)</li>
+    </ul></dd>
+    <dt>Returns: [dictionary]</dt>
+        <dd>Object representing the tree</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="addNode"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">addNode</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">nodeType</span>,
+        <span class="sig-arg">contextUid</span>,
+        <span class="sig-arg">id</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="apidoc.Zuul.routers.report-pysrc.html#ReportRouter.addNode">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Add a new report or report organizer.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>nodeType</code></strong> (string) - Type of new node. Can either be 'organizer' or one of the report 
+          types returned from getReportTypes()</li>
+        <li><strong class="pname"><code>contextUid</code></strong> (string) - The organizer where the new node should be added</li>
+        <li><strong class="pname"><code>id</code></strong> (string) - The new node's ID</li>
+    </ul></dd>
+    <dt>Returns: DirectResponse</dt>
+        <dd><b>Properties</b>:
+          <ul>
+            <li>
+              tree: (dictionary) Object representing the new Reports tree
+            </li>
+            <li>
+              newNode: (dictionary) Object representing the added node
+            </li>
+          </ul></dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@require('Manage DMD')</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="deleteNode"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">deleteNode</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">uid</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="apidoc.Zuul.routers.report-pysrc.html#ReportRouter.deleteNode">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove a report or report organizer.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>uid</code></strong> (string) - The UID of the node to delete</li>
+    </ul></dd>
+    <dt>Returns: [dictionary]</dt>
+        <dd><b>Properties</b>:
+          <ul>
+            <li>
+              tree: (dictionary) Object representing the new Reports tree
+            </li>
+          </ul></dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@require('Manage DMD')</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="moveNode"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">moveNode</span>(<span class="sig-arg">self</span>,
+        <span class="sig-arg">uids</span>,
+        <span class="sig-arg">target</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    ><span class="codelink"><a href="apidoc.Zuul.routers.report-pysrc.html#ReportRouter.moveNode">source&nbsp;code</a></span>&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Move a report or report organizer from one organizer to another.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>uids</code></strong> ([string]) - The UID's of nodes to move</li>
+        <li><strong class="pname"><code>target</code></strong> (string) - The UID of the target Report organizer</li>
+    </ul></dd>
+    <dt>Returns: [dictionary]</dt>
+        <dd><b>Properties</b>:
+          <ul>
+            <li>
+              tree: (dictionary) Object representing the new Reports tree
+            </li>
+            <li>
+              newNode: (dictionary) Object representing the moved node
+            </li>
+          </ul></dd>
+    <dt>Decorators:</dt>
+    <dd><ul class="nomargin-top">
+        <li><code>@require('Manage DMD')</code></li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== CLASS VARIABLE DETAILS ==================== -->
+<a name="section-ClassVariableDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Class Variable Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-ClassVariableDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="_newReportTypes"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_newReportTypes</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+['customDeviceReport', 'graphReport', 'multiGraphReport',]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_reportMenuItems"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_reportMenuItems</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+[_t('Custom Device Report'), _t('Graph Report'), _t('Multi-Graph Repor<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+t'),]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_createOrganizers"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_createOrganizers</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{_newReportTypes [0]: 'Custom Device Reports', _newReportTypes [1]: 'G<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+raph Reports', _newReportTypes [2]: 'Multi-Graph Reports',}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_createMethods"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_createMethods</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+{_newReportTypes [0]: 'manage_addDeviceReport', _newReportTypes [1]: '<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+manage_addGraphReport', _newReportTypes [2]: 'manage_addMultiGraphRepo<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+rt',}
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="_essentialNodes"></a>
+<div class="private">
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <h3 class="epydoc">_essentialNodes</h3>
+  
+  <dl class="fields">
+  </dl>
+  <dl class="fields">
+    <dt>Value:</dt>
+      <dd><table><tr><td><pre class="variable">
+['/zport/dmd/Reports', '/zport/dmd/Reports/Custom%20Device%20Reports',<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+ '/zport/dmd/Reports/Graph%20Reports', '/zport/dmd/Reports/Multi-Graph<span class="variable-linewrap"><img src="crarr.png" alt="\" /></span>
+%20Reports',]
+</pre></td></tr></table>
+</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="apidoc.Zuul.routers-module.html">Home</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Wed Sep 22 15:27:06 2010
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
