@@ -10,7 +10,6 @@ from zope.interface import Interface
 
 sys.path.append(os.path.dirname(__file__))
 
-
 class IPlugin(Interface):
     """
     Interface that must be implented by all routers
@@ -22,8 +21,16 @@ class PluginManager:
 
     def __init__(self, folder):
         """Load all available definitions stored in folder"""
-        folder = os.path.abspath(folder)
 
+        # Woop, loop through the paths and set the folder to path if folder
+        # exists in one of the items in sys.path
+        for path in sys.path:
+            path = os.path.abspath(path + "/" + folder)
+            if os.path.isdir(path):
+                folder = path
+                break
+
+        # Is it there?
         if not os.path.isdir(folder):
             logging.error(
                 "Unable to load plugins because '%s' is not a folder" % folder
@@ -56,7 +63,7 @@ class PluginManager:
         # Add the definition only if the class is available
         if hasattr(definition, definition.info["class"]):
             self.definitions[definition.info["name"]] = definition
-            logging.info("Loaded %s" % name)
+            logging.info("Loaded '%s'" % name)
 
     def loadSingle(self, name, *args, **kwargs):
         """
@@ -91,7 +98,7 @@ class PluginManager:
         loaded = {}
         logging.info("Attempting to load up definitions - '%s'" %
             " ".join(self.definitions.keys()))
-        self.loadSingle("network", args, kwargs)
         for definition in self.definitions.keys():
             loaded[definition] = self.loadSingle(definition, *args, **kwargs)
-        print loaded
+
+        return loaded
