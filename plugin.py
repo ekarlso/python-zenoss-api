@@ -66,6 +66,32 @@ class PluginManager:
         any other parameters passed will be sent to the __init__ function
         of the definition, including those passed by keyword
         """
-        print self.definitions
+        logging.info("Loading definition '%s'" % name)
         definition = self.definitions[name]
-        return getattr(definition, definition.info["class"])(*args, **kwargs)
+        try:
+            instance = getattr(
+                definition, definition.info["class"])(*args, **kwargs)
+        except TypeError, e:
+            logging.fatal(
+                "Failed when loading definition '%s / %s'\n%s" %
+                    (name, definition, e))
+            return None
+
+        return instance
+
+    def loadAll(self, *args, **kwargs):
+        """
+        Creates an instance of each definition in definitions loaded when the
+        manager is instantiated - should only be used if the definitions works
+        the same ways.
+
+        returns a dict of {"name": instance}
+        params passed to *args and **kwargs will be passed to each definition
+        """
+        loaded = {}
+        logging.info("Attempting to load up definitions - '%s'" %
+            " ".join(self.definitions.keys()))
+        self.loadSingle("network", args, kwargs)
+        for definition in self.definitions.keys():
+            loaded[definition] = self.loadSingle(definition, *args, **kwargs)
+        print loaded
