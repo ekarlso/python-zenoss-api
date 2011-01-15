@@ -65,7 +65,7 @@ class PluginManager:
             self.definitions[definition.info["name"]] = definition
             logging.info("Loaded '%s'" % name)
 
-    def loadSingle(self, name, *args, **kwargs):
+    def loadSingle(self, name, *args, **kw):
         """
         Creates a new instance of a definition
         name - name of the definition to create
@@ -75,9 +75,12 @@ class PluginManager:
         """
         logging.info("Loading definition '%s'" % name)
         definition = self.definitions[name]
+        if "pathinfo" in kw:
+            fp = (definition.__file__, os.path.dirname(definition.__file__))
+            kw["path"] = fp
         try:
             instance = getattr(
-                definition, definition.info["class"])(*args, **kwargs)
+                definition, definition.info["class"])(*args, **kw)
         except TypeError, e:
             logging.fatal(
                 "Failed when loading definition '%s / %s'\n%s" %
@@ -86,19 +89,19 @@ class PluginManager:
 
         return instance
 
-    def loadAll(self, *args, **kwargs):
+    def loadAll(self, *args, **kw):
         """
         Creates an instance of each definition in definitions loaded when the
         manager is instantiated - should only be used if the definitions works
         the same ways.
 
         returns a dict of {"name": instance}
-        params passed to *args and **kwargs will be passed to each definition
+        params passed to *args and **kw will be passed to each definition
         """
         loaded = {}
         logging.info("Attempting to load up definitions - '%s'" %
             " ".join(self.definitions.keys()))
         for definition in self.definitions.keys():
-            loaded[definition] = self.loadSingle(definition, *args, **kwargs)
+            loaded[definition] = self.loadSingle(definition, *args, **kw)
 
         return loaded
