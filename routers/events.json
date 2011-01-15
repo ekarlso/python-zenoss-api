@@ -1,0 +1,26 @@
+{
+    "query": {
+        "defaults": {
+            "limit": 0,
+            "start": 0,
+            "sort": "lastTime",
+            "dir": "DESC",
+            "history": 0
+        }
+    },
+    "queryHistory": {
+        "defaults": {
+            "limit": 0,
+            "start": 0,
+            "sort": "lastTime",
+            "dir": "DESC",
+            "params": 1
+        }
+    },
+    "acknowledge": {
+        "defaults": {
+            "direction": "DESC",
+            "history": 0
+        }
+    }
+}
