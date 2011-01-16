@@ -175,7 +175,7 @@ class Router:
         # Add the Content-type
         req.add_header("Content-type", args.get("content", self._content))
 
-        return self.opener.open(req, reqdata).read()
+        return json.loads(self.opener.open(req, reqdata).read())
 
     def _setattr(self, name, value):
         """
