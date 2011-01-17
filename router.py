@@ -42,10 +42,15 @@ class RouterBase(object):
         # Load up defaults from json file
         self._load_argdata()
 
-    def _build_args(self, args):
+    def _build_args(self, args=None):
         """
         Build / check the args before running a call
         """
+        if args is None:
+            args = {}
+        elif type(args).__name__ != "dict":
+            raise ValueError("Args needs to be a dict!")
+
         # Get argdata
         current = self._get_argdata(utils.funcParent())
 
