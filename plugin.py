@@ -10,10 +10,6 @@ from zope.interface import Interface
 
 sys.path.append(os.path.dirname(__file__))
 
-class IPlugin(Interface):
-    """
-    Interface that must be implented by all routers
-    """
 
 class PluginManager:
     definitions = {}
