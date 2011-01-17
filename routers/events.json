@@ -22,5 +22,49 @@
             "direction": "DESC",
             "history": 0
         }
+    },
+    "unacknowledge": {
+        "defaults": {
+            "direction": "DESC",
+            "history": 0
+        }
+    },
+    "reopen": {
+        "defaults": {
+            "direction": "DESC",
+            "history": 0
+        }
+    },
+    "close": {
+        "defaults": {
+            "direction": "DESC",
+            "history": 0
+        }
+    },
+    "detail": {
+        "defaults": {
+            "history": 0
+        },
+        "required": ["evid"]
+    },
+    "write_log": {
+        "defaults": {
+            "history": 0
+        },
+        "required": ["evid", "message"]
+    },
+    "classify": {
+        "defaults": {
+            "history": 0
+        },
+        "required": ["evids", "evclass"]
+    },
+    "add_event": {
+        "required": ["summary", "device", "component", "severity", "evclasskey", "evclass"]
+    },
+    "column_config": {
+        "defaults": {
+            "history": 0
+        }
     }
 }
