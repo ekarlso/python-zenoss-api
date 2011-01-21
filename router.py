@@ -39,63 +39,45 @@ class RouterBase(object):
         # Router passed from parent
         self._router = router
 
-        # Load up defaults from json file
-        self._load_argdata()
-
-    def _build_args(self, args=None):
+    def _check_args(func):
         """
         Build / check the args before running a call
         """
-        if args is None:
-            args = {}
-        elif type(args).__name__ != "dict":
-            raise ValueError("Args needs to be a dict!")
+        def wrapped(self, args, **kw):
+            """"
+            This is the function that's called from a router inheriting the
+            base, it takes this:
 
-        # Get argdata
-        current = self._get_argdata(utils.funcParent())
+            args:
+                The keywords from the callee containing the data that will be
+                passed onto _request as args
+            keywords:
+                method: What method will be used for the request
+            """
+            # Log it all
+            logging.info("Arguments: '%s' || Keywords: '%s'" % (args, kw))
 
-        # Let's set the defaults
-        for key, val in current["defaults"].iteritems():
-            if key not in args:
-                args[key] = val
-        return args
+            # Arguments are none? Set it to a dict
+            if args is None:
+                args = {}
 
-    def _get_argdata(self, name):
-        """
-        Get's the defaults for the call
-        """
-        data = self._argdata.get(name, None)
-        return data
+            # Add standards if not there
+            if "std" in kw:
+                args.update(kw["std"])
 
-    def _load_argdata(self):
-        """
-        Load the argdata for the router
-        """
-        # Set the json filename for the defaults for this router, raise an
-        # IOError if not there.
-        fp = re.sub("\.\w+$", "", self._path[0]) + ".json"
-        if not os.path.isfile(fp):
-            raise IOError("File for defaults '%s' not found" % fp)
+            method = kw.get("method", utils.funcParent())
 
-        logging.debug("Loading defaults for '%s'" % self._module)
+            return func(self, args, method)
+        return wrapped
 
-        # Open and load JSON
-        data = open(fp)
-        self._argdata = json.load(data)
-
-    def _request(self, args):
+    @_check_args
+    def _request(self, args, method):
         """
         Deals with the request - executes self._router._request to get the
         results
 
-        Sets up args etc before passing then to the parsent _request
+        Sets up args etc before passing then to the parent _request
         """
-        # If no method was given in args set it to the name of the caller
-        if "method" not in args:
-            method = utils.funcParent()
-        else:
-            method = args["method"]
-
         data = {
             "location": self.location,
             "action": self.action,
@@ -103,7 +85,7 @@ class RouterBase(object):
             "data": [args]
         }
 
-        logging.info("Arguments are '%s'" % data)
+        logging.info("Router Arguments '%s'" % data)
 
         resp = None
         try:
