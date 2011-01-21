@@ -43,6 +43,7 @@ class RouterBase(object):
         """
         Build / check the args before running a call
         """
+
         def wrapped(self, args, **kw):
             """"
             This is the function that's called from a router inheriting the
@@ -82,8 +83,7 @@ class RouterBase(object):
             "location": self.location,
             "action": self.action,
             "method": method,
-            "data": [args]
-        }
+            "data": [args]}
 
         logging.info("Router Arguments '%s'" % data)
 
@@ -125,10 +125,10 @@ class Router:
         Login to the Zenoss API
         """
         loginParams = urllib.urlencode(dict(
-            __ac_name = self.user,
-            __ac_password = self.password,
-            submitted = 'true',
-            came_from = self.url + "/" + self.dmdloc))
+            __ac_name=self.user,
+            __ac_password=self.password,
+            submitted='true',
+            came_from=self.url + "/" + self.dmdloc))
 
         logging.info("Logging in to Zenoss '%s'" % self.url)
         self.opener.open(
@@ -155,7 +155,7 @@ class Router:
         self._transactions += 1
 
         # Construct the url, log it, and make a request
-        url = self.url + "/" +  self.dmdloc + "/" + args["location"]
+        url = self.url + "/" + self.dmdloc + "/" + args["location"]
         logging.info("Request url is '%s'" % url)
         req = urllib2.Request(url)
 
