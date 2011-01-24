@@ -24,7 +24,7 @@ class Device(RouterBase):
     def addLocationNode(self, type, contextUid, id, description=None,
                         address=None, **kw):
         args = myArgs()[0]
-        return self._request(kw)
+        return self._request(kw, **kw)
 
     def getTree(self, id, **kw):
         args = myArgs()[0]
@@ -131,12 +131,12 @@ class Device(RouterBase):
         args = myArgs()[0]
         return self._request(args, **kw)
 
-    def getEvents(self, uid):
+    def getEvents(self, uid, **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
 
     def loadRanges(self, ranges, hashcheck, uid=None, params=None, sort='name',
-                    dir='ASC'):
+                    dir='ASC', **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
 
