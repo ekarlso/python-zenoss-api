@@ -17,181 +17,213 @@ class Device(RouterBase):
     location = 'device_router'
     action = 'DeviceRouter'
 
-    def addLocationNode(self, type, contentUid, id, **kw):
-        kw.update(myArgs()[0])
+    def addLocationNode(self, type, contextUid, id, description=None,
+                        address=None, **kw):
+        args = myArgs()[0]
         return self._request(kw)
 
-    def getTree(self, uid, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+    def getTree(self, id, **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def getComponents(self, uid, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+    def getComponents(self, uid=None, meta_type=None, keys=None, start=0,
+                    limit=50, sort='name', dir='ASC', name=None, **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def getComponentTree(self, componentUid, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+    def getComponentTree(self, uid=None, id=None, **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def findComponentIndex(self, componentUid, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw, std={'sort': 'name', 'dir': 'ASC'})
+    def findComponentIndex(self, componentUid, uid=None, meta_type=None,
+                            sort='name', dir='ASC', name=None, **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def getForm(self, uid, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def getInfo(self, uid, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+    def getInfo(self, uid, keys=None, **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def setInfo(self, uid, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+    def setInfo(self, uid=None, start=0, params=None, limit=50, sort='name',
+                dir='ASC', **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def setProductInfo(self, uid, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def getDevices(self, **kw):
-        return self._request(
-            kw, std={'start': 0, 'limit': 50, 'sort': 'name', 'dir': 'ASC'})
+    def getDevices(self, uid=None, start=0, params=None, limit=50,
+                    sort='name', dir='ASC', **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def moveDevices(self, uids, target, hashcheck, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw, std={'sort': 'name', 'dir': 'ASC'})
+    def moveDevices(self, uids, target, hashcheck, ranges=(), uid=None,
+                    params=None, sort='name', dir='ASC', **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def pushChanges(self, uids, target, hashcheck, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw, std={'sort': 'name', 'dir': 'ASC'})
+    def pushChanges(self, uids, hashcheck, ranges=(), uid=None, params=None,
+                    sort='name', dir='ASC', **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def lockDevices(self, uids, hashcheck, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw, std={'updates': False, 'deletion': False,
-                            'sendevent': False, 'sort': 'name', 'dir': 'ASC'})
+    def lockDevices(self, uids, hashcheck, ranges=(), updates=False,
+                    deletion=False, sendEvent=False, uid=None, params=None,
+                    sort='name', dir='ASC', **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def resetIp(self, uids, hashcheck, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw, std={'sort': 'name', 'dir': 'ASC', 'ip': ''})
+    def resetIp(self, uids, hashcheck, uid=None, ranges=(), params=None,
+                sort='name', dir='ASC', ip='', **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def resetCommunity(self, uids, hashcheck, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw, std={'sort': 'name', 'dir': 'ASC'})
+    def resetCommunity(self, uids, hashcheck, uid=None, ranges=(), params=None,
+                        sort='name', dir='ASC', **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def setProctionState(self, uids, prodState, hashcheck, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw, std={'sort': 'name', 'dir': 'ASC'})
+    def setProctionState(self, uids, prodState, hashcheck, uid=None, ranges=(),
+                        params=None, sort='name', dir='ASC', **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def setPriority(self, uids, priority, hashcheck, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw, std={'sort': 'name', 'dir': 'ASC'})
+    def setPriority(self, uids, priority, hashcheck, uid=None, ranges=(),
+                    params=None, sort='name', dir='ASC', *kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def setCollector(self, uids, priority, hashcheck, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw, std={'sort': 'name', 'dir': 'ASC'})
+    def setCollector(self, uids, collector, hashcheck, uid=None, ranges=(),
+                    params=None, sort='name', dir='ASC'):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def setComponentsMonitored(self, uids, hashcheck, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw, std={'monitor': False, 'start': 0,
-                            'limit': 50, 'sort': 'name', 'dir': 'ASC'})
+    def setComponentsMonitored(self, uids, hashcheck, monitor=False, uid=None,
+                                ranges=(), meta_type=None, keys=None, start=0,
+                                limit=50, sort='name', dir='ASC', name=None,
+                                **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def lockComponents(self, uids, hashcheck, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw, std={'updates': False, 'deletion': False,
-                            'sendEvent': False, 'start': 0, 'limit': 50,
-                            'sort': 'name', 'dir': 'ASC'})
+    def lockComponents(self, uids, hashcheck, uid=None, ranges=(),
+                        updates=False, deletion=False, sendEvent=False,
+                        meta_type=None, keys=None, start=0, limit=50,
+                        sort='name', dir='ASC', name=None, **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def deleteComponents(self, uids, hashcheck, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw, std={'start': 0, 'limit': 50, 'sort': 'name',
-                            'dir': 'ASC'})
+    def deleteComponents(self, uids, hashcheck, uid=None, ranges=(),
+                        meta_type=None, keys=None, start=0, limit=50,
+                        sort='name', dir='ASC', name=None, **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def getEvents(self, uid, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+    def removeDevices(self, uids, hashcheck, action="remove", uid=None,
+                        ranges=(), params=None, sort='name', dir='ASC', **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def loadRanges(self, ranges, hashcheck, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw, std={'sort': 'name', 'dir': 'ASC'})
+    def getEvents(self, uid):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def loadComponentRanges(self, ranges, hashcheck, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw, std={'start': 0, 'sort': 'name',
-                            'dir': 'ASC'})
+    def loadRanges(self, ranges, hashcheck, uid=None, params=None, sort='name',
+                    dir='ASC'):
+        args = myArgs()[0]
+        return self._request(args, **kw)
+
+    def loadComponentRanges(self, ranges, hashcheck, uid=None, types=(),
+                            meta_type=(), start=0, limit=None, sort='name',
+                            dir='ASC', name=None, **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def getUserCommands(self, uid, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def getProductionStates(self, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def getPriorities(self, **kw):
-        return self._request(kw)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def getCollectors(self, **kw):
-        return self._request(kw)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def getDeviceClasses(self, **kw):
-        return self._request(kw)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def getManufacturerNames(self, **kw):
-        return self._request(kw)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def getHardwareProductNames(self, **kw):
-        return self._request(kw, std={'manufacturer': ''})
+    def getHardwareProductNames(self, manufacturer='', **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def getOSProductNames(self, **kw):
-        return self._request(kw, std={'manufacturer': ''})
+    def getOSProductNames(self, manufacturer='', **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def addDevice(self, deviceName, deviceClass, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw, std={'snmpCommunity': '', 'snmpPort': 161,
-            'collector': 'localhost', 'rackSlot': 0, 'productionstate': 1000,
-            'comments': '', 'hwManufacturer': '', 'hwProductName': '',
-            'osManufacturer': '', 'osProductName': '', 'priority': 3, 'tag': '',
-            'serialNumber': ''})
+    def addDevice(self, deviceName, deviceClass, title=None, snmpCommunity="",
+                    snmpPort=161, model=False, collector='localhost',
+                    rackSlot=0, productionState=1000, comments="",
+                    hwManufacturer="", hwProductName="", osManufacturer="",
+                    osProductName="", priority=3, tag="", serialNumber="",
+                    **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def addLocalTemplate(self, deviceUid, templateId, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def removeLocalTemplate(self, deviceUid, templateId, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+    def removeLocalTemplate(self, deviceUid, templateUid, **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def getLocalTemplates (self, uid, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw, std={'query': False})
+    def getLocalTemplates (self, id, query=None, **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def getTemplates(self, id, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def getUnboundTemplates(self, uid, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+    def getUnboundTemplates(self, id, **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def getBoundTemplates(self, uid, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def setBoundTemplates(self, uid, templateIds, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def resetBoundTemplates(self, uid, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def bindOrUnbindTemplate(self, uid, templateIds, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
-    def getOverridableTemplates(self, uid, **kw):
-        kw.update(myArgs()[0])
-        return self._request(kw, std={'query': False})
+    def getOverridableTemplates(self, uid, query=None, **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def clearGeocodeCache(self, **kw):
-        return self._request(kw)
+        args = myArgs()[0]
+        return self._request(args, **kw)
