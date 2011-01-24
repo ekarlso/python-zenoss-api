@@ -12,7 +12,7 @@ from zope.interface import Interface, implements
 #_plugins = plugin.PluginManager("routers")
 
 
-class IRouter(Interface):
+class IRouterBase(Interface):
     """
     Base interface for all router plugins
     """
@@ -22,7 +22,7 @@ class RouterBase(object):
     """
     Base for every router - has some common settings and functions
     """
-    implements(IRouter)
+    implements(IRouterBase)
 
     action = None
     location = None
