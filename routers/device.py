@@ -2,6 +2,8 @@
 Device router for the Zenoss JSON API
 """
 
+from zope.interface import implements
+
 from zenoss_api.router import RouterBase
 from zenoss_api.interfaces import IDevice
 from zenoss_api.utils import myArgs
@@ -13,6 +15,8 @@ info = {"name": "device",
 
 
 class Device(RouterBase):
+    implements(IDevice)
+
     # Location + action
     location = 'device_router'
     action = 'DeviceRouter'
@@ -48,8 +52,7 @@ class Device(RouterBase):
         args = myArgs()[0]
         return self._request(args, **kw)
 
-    def setInfo(self, uid=None, start=0, params=None, limit=50, sort='name',
-                dir='ASC', **kw):
+    def setInfo(self, uid, **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
 
@@ -192,7 +195,7 @@ class Device(RouterBase):
         args = myArgs()[0]
         return self._request(args, **kw)
 
-    def getLocalTemplates (self, id, query=None, **kw):
+    def getLocalTemplates(self, id, query=None, **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
 
