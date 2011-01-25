@@ -50,7 +50,7 @@ class RouterBase(object):
             base, it takes this:
 
             args:
-                The keywords from the callee containing the data that will be
+                The args from the callee containing the data that will be
                 passed onto _request as args
             keywords:
                 method: What method will be used for the request
@@ -62,11 +62,11 @@ class RouterBase(object):
             if args is None:
                 args = {}
 
-            # Add standards if not there
-            if "std" in kw:
-                args.update(kw["std"])
-
             method = kw.get("method", utils.funcParent())
+
+            for key, val in args.copy().iteritems():
+                if val is None:
+                    args.pop(key)
 
             return func(self, args, method)
         return wrapped
