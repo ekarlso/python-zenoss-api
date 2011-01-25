@@ -1,4 +1,4 @@
-    """
+"""
 Device router for the Zenoss JSON API
 """
 
