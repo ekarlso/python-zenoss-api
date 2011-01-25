@@ -14,7 +14,6 @@ sys.path.append(os.path.dirname(__file__))
 class PluginManager:
     definitions = {}
 
-
     def __init__(self, folder):
         """Load all available definitions stored in folder"""
 
@@ -29,8 +28,7 @@ class PluginManager:
         # Is it there?
         if not os.path.isdir(folder):
             logging.error(
-                "Unable to load plugins because '%s' is not a folder" % folder
-                )
+                "Unable to load plugins because '%s' is not a folder" % folder)
             return
 
         # Append the folder because we need straight access
@@ -48,7 +46,7 @@ class PluginManager:
 
         # Import works the same for py files and package modules so strip!
         if module.endswith(".py"):
-            name = module [:-3]
+            name = module[:-3]
         else:
             name = module
 
