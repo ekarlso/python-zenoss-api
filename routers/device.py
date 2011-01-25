@@ -21,7 +21,6 @@ class Device(RouterBase):
     location = 'device_router'
     action = 'DeviceRouter'
 
-
     def addLocationNode(self, type, contextUid, id, description=None,
                         address=None, **kw):
         args = myArgs()[0]
