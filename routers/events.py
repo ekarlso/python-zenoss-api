@@ -1,4 +1,4 @@
-"""
+    """
 Device router for the Zenoss JSON API
 """
 
@@ -47,26 +47,26 @@ class Events(RouterBase):
     def close(self, evids=None, excludeIds=None, selectState=None, field=None,
                 direction=None, params=None, history=False, uid=None,
                 asof=None):
-        args = self._build_args(args)
-        return self._request(args)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def detail(self, evid, history=False):
-        args = self._build_args(args)
-        return self._request(args)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def write_log(self, evid=None, message=None, history=False):
-        args = self._build_args(args)
-        return self._request(args)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def classify(self, evids, evclass, history=False):
-        args = self._build_args(args)
-        return self._request(args)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def add_event(self, summary, device, component, severity, evclasskey,
                 evclass):
-        args = self._builds_args(args)
-        return self._request(args)
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def column_config(self, uid=None, history=False):
-        args = self._builds_args(args)
-        return self._request(args)
+        args = myArgs()[0]
+        return self._request(args, **kw)
