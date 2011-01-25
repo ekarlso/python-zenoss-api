@@ -4,8 +4,8 @@ Device router for the Zenoss JSON API
 
 from zope.interface import implements
 
-from zenoss_api.router import RouterBase
 from zenoss_api.interfaces import IDevice
+from zenoss_api.router import RouterBase
 from zenoss_api.utils import myArgs
 
 info = {"name": "device",
@@ -20,6 +20,7 @@ class Device(RouterBase):
     # Location + action
     location = 'device_router'
     action = 'DeviceRouter'
+
 
     def addLocationNode(self, type, contextUid, id, description=None,
                         address=None, **kw):
