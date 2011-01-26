@@ -7,7 +7,7 @@ from zope.interface import Interface
 
 class IDevice(Interface):
 
-    def addLocationNode(self, type, contextUid, id,
+    def addLocationNode(type, contextUid, id,
                         description=None, address=None, **kw):
         """
         Adds a new location organizer specified by the parameter id to
@@ -33,7 +33,7 @@ class IDevice(Interface):
             - nodeConfig: (dictionary) The new location's properties
         """
 
-    def getTree(self, id, **kw):
+    def getTree(id, **kw):
         """
         Returns the tree structure of an organizer hierarchy where
         the root node is the organizer identified by the id parameter.
@@ -45,7 +45,7 @@ class IDevice(Interface):
         @return:  Object representing the tree
         """
 
-    def getComponents(self, uid=None, meta_type=None,
+    def getComponents(uid=None, meta_type=None,
                        keys=None, start=0, limit=50,
                        sort='name', dir='ASC', name=None, **kw):
         """
@@ -84,7 +84,7 @@ class IDevice(Interface):
             whether components have changed since last query)
         """
 
-    def getComponentTree(self, uid=None, id=None, **kw):
+    def getComponentTree(uid=None, id=None, **kw):
         """
         Retrieves all of the components set up to be used in a
         tree.
@@ -98,7 +98,7 @@ class IDevice(Interface):
         @return:  Component properties in tree form
         """
 
-    def findComponentIndex(self, componentUid, uid=None, meta_type=None,
+    def findComponentIndex(componentUid, uid=None, meta_type=None,
                                 sort='name', dir='ASC', name=None, **kw):
         """
         Given a component uid and the component search criteria, this retrieves
@@ -126,7 +126,7 @@ class IDevice(Interface):
             - index: (integer) Index of the component
         """
 
-    def getForm(self, uid, **kw):
+    def getForm(uid, **kw):
         """
         Given an object identifier, this returns all of the editable fields
         on that object as well as their ExtJs xtype that one would
@@ -140,7 +140,7 @@ class IDevice(Interface):
             - form: (dictionary) form fields for the object
         """
 
-    def getInfo(self, uid, keys=None, **kw):
+    def getInfo(uid, keys=None, **kw):
         """
         Get the properties of a device or device organizer
 
@@ -157,7 +157,7 @@ class IDevice(Interface):
             setInfo
         """
 
-    def setInfo(self, uid, **kw):
+    def setInfo(uid, **kw):
         """
         Set attributes on a device or device organizer.
         This method accepts any keyword argument for the property that you wish
@@ -169,7 +169,7 @@ class IDevice(Interface):
         @rtype: DirectResponse
         """
 
-    def setProductInfo(self, uid, **kw):
+    def setProductInfo(uid, **kw):
         """
         Sets the ProductInfo on a device. This method has the following valid
         keyword arguments:
@@ -188,7 +188,7 @@ class IDevice(Interface):
         @rtype:  DirectResponse
         """
 
-    def getDevices(self, uid=None, start=0, params=None, limit=50,
+    def getDevices(uid=None, start=0, params=None, limit=50,
                         sort='name', dir='ASC', **kw):
         """
         Retrieves a list of devices. This method supports pagination.
@@ -220,7 +220,7 @@ class IDevice(Interface):
             whether devices have changed since last query)
         """
 
-    def moveDevices(self, uids, target, hashcheck, ranges=(), uid=None,
+    def moveDevices(uids, target, hashcheck, ranges=(), uid=None,
                         params=None, sort='name', dir='ASC', **kw):
         """
         Moves the devices specified by uids to the organizer specified by
@@ -255,7 +255,7 @@ class IDevice(Interface):
             - exports: (integer) Number of devices moved
         """
 
-    def pushChanges(self, uids, hashcheck, ranges=(), uid=None, params=None,
+    def pushChanges(uids, hashcheck, ranges=(), uid=None, params=None,
                         sort='name', dir='ASC', **kw):
         """
         Push changes on device(s) configuration to collectors.
@@ -285,7 +285,7 @@ class IDevice(Interface):
         @return:  Success message
         """
 
-    def lockDevices(self, uids, hashcheck, ranges=(), updates=False,
+    def lockDevices(uids, hashcheck, ranges=(), updates=False,
                             deletion=False, sendEvent=False, uid=None,
                             params=None, sort='name', dir='ASC', **kw):
         """
@@ -325,7 +325,7 @@ class IDevice(Interface):
         @return:  Success or failure message
         """
 
-    def resetIp(self, uids, hashcheck, uid=None, ranges=(), params=None,
+    def resetIp(uids, hashcheck, uid=None, ranges=(), params=None,
                 sort='name', dir='ASC', ip='', **kw):
         """
         Reset IP address(es) of device(s) to the results of a DNS lookup or
@@ -358,7 +358,7 @@ class IDevice(Interface):
         @return:  Success or failure message
         """
 
-    def resetCommunity(self, uids, hashcheck, uid=None, ranges=(), params=None,
+    def resetCommunity(uids, hashcheck, uid=None, ranges=(), params=None,
                         sort='name', dir='ASC', **kw):
         """
         Reset SNMP community string(s) on device(s)
@@ -388,7 +388,7 @@ class IDevice(Interface):
         @return:  Success or failure message
         """
 
-    def setProductionState(self, uids, prodState, hashcheck, uid=None,
+    def setProductionState(uids, prodState, hashcheck, uid=None,
                             ranges=(), params=None, sort='name',
                             dir='ASC', **kw):
         """
@@ -421,7 +421,7 @@ class IDevice(Interface):
         @return:  Success or failure message
         """
 
-    def setPriority(self, uids, priority, hashcheck, uid=None, ranges=(),
+    def setPriority(uids, priority, hashcheck, uid=None, ranges=(),
                     params=None, sort='name', dir='ASC', **kw):
         """
         Set device(s) priority.
@@ -453,7 +453,7 @@ class IDevice(Interface):
         @return:  Success or failure message
         """
 
-    def setCollector(self, uids, collector, hashcheck, uid=None, ranges=(),
+    def setCollector(uids, collector, hashcheck, uid=None, ranges=(),
                     params=None, sort='name', dir='ASC', **kw):
         """
         Set device(s) collector.
@@ -485,7 +485,7 @@ class IDevice(Interface):
         @return:  Success or failure message
         """
 
-    def setComponentsMonitored(self, uids, hashcheck, monitor=False,
+    def setComponentsMonitored(uids, hashcheck, monitor=False,
                                 uid=None, ranges=(), meta_type=None,
                                 keys=None, start=0, limit=50, sort='name',
                                 dir='ASC', name=None):
@@ -529,7 +529,7 @@ class IDevice(Interface):
         @return:  Success or failure message
         """
 
-    def lockComponents(self, uids, hashcheck, uid=None, ranges=(),
+    def lockComponents(uids, hashcheck, uid=None, ranges=(),
                         updates=False, deletion=False, sendEvent=False,
                         meta_type=None, keys=None, start=0, limit=50,
                         sort='name', dir='ASC', name=None, **kw):
@@ -580,7 +580,7 @@ class IDevice(Interface):
         @return:  Success or failure message
         """
 
-    def deleteComponents(self, uids, hashcheck, uid=None, ranges=(),
+    def deleteComponents(uids, hashcheck, uid=None, ranges=(),
                         meta_type=None, keys=None, start=0, limit=50,
                         sort='name', dir='ASC', name=None, **kw):
         """
@@ -621,7 +621,7 @@ class IDevice(Interface):
         @return:  Success or failure message
         """
 
-    def removeDevices(self, uids, hashcheck, action="remove", uid=None,
+    def removeDevices(uids, hashcheck, action="remove", uid=None,
                             ranges=(), params=None, sort='name', dir='ASC',
                             **kw):
         """
@@ -659,7 +659,7 @@ class IDevice(Interface):
             - loctree: ([dictionary]) Object representing the new location tree
         """
 
-    def getEvents(self, uid, **kw):
+    def getEvents(uid, **kw):
         """
         Get events for a device.
 
@@ -671,7 +671,7 @@ class IDevice(Interface):
             - data: ([dictionary]) List of events for a device
         """
 
-    def loadRanges(self, ranges, hashcheck, uid=None, params=None,
+    def loadRanges(ranges, hashcheck, uid=None, params=None,
                     sort='name', dir='ASC', **kw):
         """
         Get a range of device uids.
@@ -698,7 +698,7 @@ class IDevice(Interface):
         @return:  A list of device uids
         """
 
-    def loadComponentRanges(self, ranges, hashcheck, uid=None, types=(),
+    def loadComponentRanges(ranges, hashcheck, uid=None, types=(),
                             meta_type=(), start=0, limit=None,
                             sort='name', dir='ASC', name=None, **kw):
         """
@@ -736,7 +736,7 @@ class IDevice(Interface):
         @return:  A list of component uids
         """
 
-    def getUserCommands(self, uid, **kw):
+    def getUserCommands(uid, **kw):
         """
         Get a list of user commands for a device uid.
 
@@ -747,7 +747,7 @@ class IDevice(Interface):
         @return:  List of objects representing user commands
         """
 
-    def getProductionStates(self, **kw):
+    def getProductionStates(**kw):
         """
         Get a list of available production states.
 
@@ -755,7 +755,7 @@ class IDevice(Interface):
         @return:  List of name/value pairs of available production states
         """
 
-    def getPriorities(self, **kw):
+    def getPriorities(**kw):
         """
         Get a list of available device priorities.
 
@@ -763,7 +763,7 @@ class IDevice(Interface):
         @return:  List of name/value pairs of available device priorities
         """
 
-    def getCollectors(self, **kw):
+    def getCollectors(**kw):
         """
         Get a list of available collectors.
 
@@ -771,7 +771,7 @@ class IDevice(Interface):
         @return:  List of collectors
         """
 
-    def getDeviceClasses(self, **kw):
+    def getDeviceClasses(**kw):
         """
         Get a list of all device classes.
 
@@ -781,7 +781,7 @@ class IDevice(Interface):
             - totalCount: (integer) Total number of device classes
         """
 
-    def getManufacturerNames(self, **kw):
+    def getManufacturerNames(**kw):
         """
         Get a list of all manufacturer names.
 
@@ -791,7 +791,7 @@ class IDevice(Interface):
             - totalCount: (integer) Total number of manufacturer names
         """
 
-    def getHardwareProductNames(self, manufacturer='', **kw):
+    def getHardwareProductNames(manufacturer='', **kw):
         """
         Get a list of all hardware product names from a manufacturer.
 
@@ -804,7 +804,7 @@ class IDevice(Interface):
             - totalCount: (integer) Total number of hardware product names
         """
 
-    def getOSProductNames(self, manufacturer='', **kw):
+    def getOSProductNames(manufacturer='', **kw):
         """
         Get a list of all OS product names from a manufacturer.
 
@@ -817,7 +817,7 @@ class IDevice(Interface):
             - totalCount: (integer) Total number of OS product names
         """
 
-    def addDevice(self, deviceName, deviceClass, title=None,
+    def addDevice(deviceName, deviceClass, title=None,
                     snmpCommunity="", snmpPort=161,
                     model=False, collector='localhost', rackSlot=0,
                     productionState=1000, comments="", hwManufacturer="",
@@ -874,7 +874,7 @@ class IDevice(Interface):
             - jobId: (string) ID of the add device job
         """
 
-    def addLocalTemplate(self, deviceUid, templateId, **kw):
+    def addLocalTemplate(deviceUid, templateId, **kw):
         """
         Adds a local template on a device.
 
@@ -887,7 +887,7 @@ class IDevice(Interface):
         @return: Success message
         """
 
-    def removeLocalTemplate(self, deviceUid, templateUid, **kw):
+    def removeLocalTemplate(deviceUid, templateUid, **kw):
         """
         Removes a locally defined template on a device.
 
@@ -900,7 +900,7 @@ class IDevice(Interface):
         @return: Success message
         """
 
-    def getLocalTemplates(self, uid, query=None, **kw):
+    def getLocalTemplates(uid, query=None, **kw):
         """
         Get a list of locally defined templates on a device.
 
@@ -913,7 +913,7 @@ class IDevice(Interface):
         - data: ([dictionary]) List of objects representing local templates
         """
 
-    def getTemplates(self, id, **kw):
+    def getTemplates(id, **kw):
         """
         Get a list of available templates for a device.
 
@@ -924,7 +924,7 @@ class IDevice(Interface):
             - data: ([dictionary]) List of objects representing templates
         """
 
-    def getUnboundTemplates(self, uid):
+    def getUnboundTemplates(uid):
         """
         Get a list of unbound templates for a device.
 
@@ -936,7 +936,7 @@ class IDevice(Interface):
             - data: ([dictionary]) List of objects representing templates
         """
 
-    def getBoundTemplates(self, uid, **kw):
+    def getBoundTemplates(uid, **kw):
         """
         Get a list of bound templates for a device.
 
@@ -948,7 +948,7 @@ class IDevice(Interface):
             - data: ([dictionary]) List of objects representing templates
         """
 
-    def setBoundTemplates(self, uid, templateIds, **kw):
+    def setBoundTemplates(uid, templateIds, **kw):
         """
         Set a list of templates as bound to a device.
 
@@ -961,7 +961,7 @@ class IDevice(Interface):
         @return:  Success message
         """
 
-    def resetBoundTemplates(self, uid, **kw):
+    def resetBoundTemplates(uid, **kw):
         """
         Remove all bound templates from a device.
 
@@ -972,7 +972,7 @@ class IDevice(Interface):
         @return:  Success message
         """
 
-    def bindOrUnbindTemplate(self, uid, templateUid, **kw):
+    def bindOrUnbindTemplate(uid, templateUid, **kw):
         """
         Bind an unbound template or unbind a bound template from a device.
 
@@ -985,7 +985,7 @@ class IDevice(Interface):
         @return:  Success message
         """
 
-    def getOverridableTemplates(self, uid, query=None, **kw):
+    def getOverridableTemplates(uid, query=None, **kw):
         """
         Get a list of available templates on a device that can be overridden.
 
@@ -999,7 +999,7 @@ class IDevice(Interface):
             - data: ([dictionary]) List of objects representing templates
         """
 
-    def clearGeocodeCache(self):
+    def clearGeocodeCache():
         """
         Clear the Google Maps geocode cache.
 

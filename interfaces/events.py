@@ -7,7 +7,7 @@ from zope.interface import Interface
 
 class IEvents(Interface):
 
-    def query(self, limit=0, start=0, sort='lastTime', dir='DESC',
+    def query(limit=0, start=0, sort='lastTime', dir='DESC',
                 params=None, history=False, uid=None, criteria=(), **kw):
         """
         Query for events.
@@ -41,7 +41,7 @@ class IEvents(Interface):
             - asof: (float) Current time
         """
 
-    def queryHistory(self, limit, start, sort, dir, params, **kw):
+    def queryHistory(limit, start, sort, dir, params, **kw):
         """
         Query history table for events.
 
@@ -66,7 +66,7 @@ class IEvents(Interface):
             - asof: (float) Current time
         """
 
-    def acknowledge(self, evids=None, excludeIds=None, selectState=None,
+    def acknowledge(evids=None, excludeIds=None, selectState=None,
         field=None, direction=None, params=None, history=False,
         uid=None, asof=None, **kw):
         """
@@ -104,7 +104,7 @@ class IEvents(Interface):
         @return:  Success message
         """
 
-    def unacknowledge(self, evids=None, excludeIds=None, selectState=None,
+    def unacknowledge(evids=None, excludeIds=None, selectState=None,
                         field=None, direction=None, params=None,
                         history=False, uid=None, asof=None, **kw):
         """
@@ -142,7 +142,7 @@ class IEvents(Interface):
         @return:  Success message
         """
 
-    def reopen(self, evids=None, excludeIds=None, selectState=None, field=None,
+    def reopen(evids=None, excludeIds=None, selectState=None, field=None,
                 direction=None, params=None, history=False, uid=None,
                 asof=None, **kw):
         """
@@ -179,7 +179,7 @@ class IEvents(Interface):
         @return:  Success message
         """
 
-    def close(self, evids=None, excludeIds=None, selectState=None, field=None,
+    def close(evids=None, excludeIds=None, selectState=None, field=None,
                 direction=None, params=None, history=False, uid=None,
                 asof=None, **kw):
         """
@@ -216,7 +216,7 @@ class IEvents(Interface):
         @return:  Success message
         """
 
-    def detail(self, evid, history=False, **kw):
+    def detail(evid, history=False, **kw):
         """
         Get event details.
 
@@ -232,7 +232,7 @@ class IEvents(Interface):
             event details
         """
 
-    def write_log(self, evid=None, message=None, history=False, **kw):
+    def write_log(evid=None, message=None, history=False, **kw):
         """
         Write a message to an event's log.
 
@@ -248,7 +248,7 @@ class IEvents(Interface):
         @return:  Success message
         """
 
-    def classify(self, evids, evclass, history=False, **kw):
+    def classify(evids, evclass, history=False, **kw):
         """
         Associate event(s) with an event class.
 
@@ -266,7 +266,7 @@ class IEvents(Interface):
             - success: (boolean) True if class update successful
         """
 
-    def add_event(self, summary, device, component, severity, evclasskey,
+    def add_event(summary, device, component, severity, evclasskey,
                 evclass, **kw):
         """
         Create a new event.
@@ -290,7 +290,7 @@ class IEvents(Interface):
             - evid: (string) The id of the created event
         """
 
-    def column_config(self, uid=None, history=False, **kw):
+    def column_config(uid=None, history=False, **kw):
         """
         Get the current event console field column configuration.
 

@@ -77,8 +77,11 @@ class PluginManager:
                 definition, definition.info["class"])(*args, **kw)
         except TypeError, e:
             logging.fatal(
-                "Failed when loading definition '%s / %s'\n%s" %
+                "Failed when loading definition '%s / %s' error - '%s'" %
                     (name, definition, e))
+            return None
+        except NotImplementedError, e:
+            logging.info("Not loading '%s' - not implemented")
             return None
 
         return instance
