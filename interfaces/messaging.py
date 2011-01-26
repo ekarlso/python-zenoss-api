@@ -6,7 +6,8 @@ from zope.interface import Interface
 
 
 class IMessaging(Interface):
-    def getUserMessages(self):
+
+    def getUserMessages():
         """
         Get the queued messages for the logged in user.
 

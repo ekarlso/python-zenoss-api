@@ -6,6 +6,7 @@ from zope.interface import Interface
 
 
 class IMib(Interface):
+
     def getTree(id):
         """
         Returns the tree structure of an organizer hierarchy. Default tree
