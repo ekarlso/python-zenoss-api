@@ -10,7 +10,7 @@
 import curses
 import time
 import texttable
-import api_example
+import zenoss_api
 
 def main(cw):
     # Set up colors
@@ -22,7 +22,7 @@ def main(cw):
     cw.nodelay(1)
 
     # Initialize Zenoss API connection
-    z = api_example.ZenossAPIExample()
+    z = zenoss_api.ZenossAPIExample()
 
     cycles = 21
     # Quit on 'q' or 'Q'
