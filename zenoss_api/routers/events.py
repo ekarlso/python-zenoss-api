@@ -88,6 +88,6 @@ class Events(RouterBase):
         args = myArgs()[0]
         return self._request(args, **kw)
 
-    def column_config(self, uid=None, history=Falsei, **kw):
+    def column_config(self, uid=None, history=False, **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
