@@ -18,7 +18,11 @@
 Device router for the Zenoss JSON API
 """
 
+from zope.interface import implements
+
+from zenoss_api.interfaces import IEvents
 from zenoss_api.router import RouterBase
+from zenoss_api.utils import myArgs
 
 
 info = {"name": "events",
@@ -28,10 +32,11 @@ info = {"name": "events",
 
 
 class Events(RouterBase):
+    implements(IEvents)
+
     # Location + action
     location = 'evconsole_router'
     action = 'EventsRouter'
-
 
     def query(self, limit=0, start=0, sort='lastTime', dir='DESC',
                 params=None, history=False, uid=None, criteria=()):
