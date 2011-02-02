@@ -39,7 +39,7 @@ class Events(RouterBase):
     action = 'EventsRouter'
 
     def query(self, limit=0, start=0, sort='lastTime', dir='DESC',
-                params=None, history=False, uid=None, criteria=()):
+                params=None, history=False, uid=None, criteria=(), **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
 
@@ -49,13 +49,13 @@ class Events(RouterBase):
 
     def acknowledge(self, evids=None, excludeIds=None, selectState=None,
                     field=None, direction=None, params=None, history=False,
-                    uid=None, asof=None):
+                    uid=None, asof=None, **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
 
     def unacknowledge(self, evids=None, excludeIds=None, selectState=None,
                     field=None, direction=None, params=None, history=False,
-                    uid=None, asof=None, **):
+                    uid=None, asof=None, **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
 
