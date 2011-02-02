@@ -55,39 +55,39 @@ class Events(RouterBase):
 
     def unacknowledge(self, evids=None, excludeIds=None, selectState=None,
                     field=None, direction=None, params=None, history=False,
-                    uid=None, asof=None):
+                    uid=None, asof=None, **):
         args = myArgs()[0]
         return self._request(args, **kw)
 
     def reopen(self, evids=None, excludeIds=None, selectState=None,
                 field=None, direction=None, params=None, history=False,
-                uid=None, asof=None):
+                uid=None, asof=None, **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
 
     def close(self, evids=None, excludeIds=None, selectState=None, field=None,
                 direction=None, params=None, history=False, uid=None,
-                asof=None):
+                asof=None, **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
 
-    def detail(self, evid, history=False):
+    def detail(self, evid, history=False, **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
 
-    def write_log(self, evid=None, message=None, history=False):
+    def write_log(self, evid=None, message=None, history=False, **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
 
-    def classify(self, evids, evclass, history=False):
+    def classify(self, evids, evclass, history=False, **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
 
     def add_event(self, summary, device, component, severity, evclasskey,
-                evclass):
+                evclass, **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
 
-    def column_config(self, uid=None, history=False):
+    def column_config(self, uid=None, history=Falsei, **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
