@@ -98,7 +98,7 @@ class RouterBase(object):
             "method": method,
             "data": [args]}
 
-        logging.info("Router Arguments '%s'" % data)
+        logging.debug("Router Arguments '%s'" % data)
 
         resp = None
         try:
@@ -170,7 +170,7 @@ class Router:
 
         # Construct the url, log it, and make a request
         url = self.url + "/" + self.dmdloc + "/" + args["location"]
-        logging.info("Request url is '%s'" % url)
+        logging.debug("Request url is '%s'" % url)
         req = urllib2.Request(url)
 
         # Add the Content-type
