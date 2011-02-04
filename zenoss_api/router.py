@@ -109,7 +109,7 @@ class RouterBase(object):
         return resp
 
 
-class Router:
+class Router(object):
     """
     The router itself, has "Subrouters" which are set as attributes in it.
     """
@@ -118,8 +118,11 @@ class Router:
     _transactions = 0
     _content = "Content-type', 'application/json; charset=utf-8"
 
-    def __init__(self, url, dmdloc, user, password, **kw):
+    def __init__(self, user, password, **kw):
         # Load all the routers..
+
+        dmdloc = kw.get("dmdloc", "/zport/dmd/")
+        url = kw.get("url", "http://localhost:8080/")
 
         obj = routers.Routers(self, pathinfo=True)
         data = obj.routers()
