@@ -36,7 +36,7 @@ setupOptions = {
     'author_email': "",
     'description': "Zenoss JSON API Python Library",
     'long_description': "Zenoss JSON API Python Library",
-    'version': "1.0",
+    'version': "1.0.1",
     'url': "https://projects.bouvet-ds.net/indefero/p/zenoss-api/",
     'license': "",
     'install_requires': install_requires,
