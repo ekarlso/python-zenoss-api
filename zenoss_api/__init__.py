@@ -14,8 +14,21 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import json
+import os.path
+
 from router import Router
 
 
 class ZenossJSONAPI(Router):
-    pass
+    def __init__(self, **kw):
+        rcf = os.path.expanduser("~") + "/.zenossrc"
+
+        config = {}
+        if os.path.exists(rcf):
+            fh = open(rcf)
+            config = json.load(fh)
+
+        config.update(kw)
+
+        super(ZenossJSONAPI, self).__init__(**config)
