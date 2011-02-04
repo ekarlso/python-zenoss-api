@@ -18,13 +18,12 @@
 Code found on the web and modified - don't remember the url
 """
 
+import imp
 import os
 import logging
 import sys
 
 from zope.interface import Interface
-
-sys.path.append(os.path.dirname(__file__))
 
 
 class PluginManager:
@@ -52,24 +51,25 @@ class PluginManager:
 
         # Build list of folders in directory
         to_import = [
-            f for f in os.listdir(folder) if f.endswith(".py") and \
+            os.path.join(folder, f) for f in os.listdir(folder) if f.endswith(".py") and \
                 not f.startswith("__init__")]
 
         # Do the actual importing
-        for module in to_import:
-            self.__initialize_def(module)
+        for mpath in sorted(to_import):
+            self.__initialize_def(mpath)
 
-    def __initialize_def(self, module):
+    def __initialize_def(self, mpath):
         """Attempt to load the definition"""
 
+        basename = os.path.basename(mpath)
         # Import works the same for py files and package modules so strip!
-        if module.endswith(".py"):
-            name = module[:-3]
+        if basename.endswith(".py"):
+            name = basename[:-3]
         else:
-            name = module
+            name = basename
 
         # Do the actual import
-        __import__(name)
+        imp.load_source(name, mpath)
         definition = sys.modules[name]
 
         # Add the definition only if the class is available
