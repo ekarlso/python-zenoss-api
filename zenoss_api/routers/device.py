@@ -107,8 +107,8 @@ class Device(RouterBase):
         args = myArgs()[0]
         return self._request(args, **kw)
 
-    def setProductionState(self, uids, prodState, hashcheck, uid=None, ranges=(),
-                        params=None, sort='name', dir='ASC', **kw):
+    def setProductionState(self, uids, prodState, hashcheck, uid=None,
+                        ranges=(), params=None, sort='name', dir='ASC', **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
 

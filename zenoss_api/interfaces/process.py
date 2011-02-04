@@ -91,7 +91,8 @@ class IProcess(Interface):
 
         @rtype:   DirectResponse
         @return:  B{Properties}:
-            - data: ([dictionary]) List of objects representing process instances
+            - data: ([dictionary]) List of objects representing process
+            instances
             - total: (integer) Total number of instances
         """
 
@@ -115,5 +116,3 @@ class IProcess(Interface):
         @rtype:   DirectResponse
         @return:  Success message
         """
-
-

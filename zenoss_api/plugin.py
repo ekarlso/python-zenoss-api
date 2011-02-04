@@ -51,8 +51,8 @@ class PluginManager:
 
         # Build list of folders in directory
         to_import = [
-            os.path.join(folder, f) for f in os.listdir(folder) if f.endswith(".py") and \
-                not f.startswith("__init__")]
+            os.path.join(folder, f) for f in os.listdir(folder) \
+                if f.endswith(".py") and not f.startswith("__init__")]
 
         # Do the actual importing
         for mpath in sorted(to_import):

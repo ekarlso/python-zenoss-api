@@ -21,7 +21,9 @@ Just load up the routers and hand them off
 from zenoss_api import plugin
 import os.path
 
+
 class Routers(object):
+
     def __init__(self, *arg, **kw):
         path = os.path.dirname(__file__)
         loader = plugin.PluginManager(path)

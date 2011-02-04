@@ -20,7 +20,8 @@
 zenoss-api:  Zenoss JSON API
 """
 
-import os, sys
+import os
+import sys
 
 APPDIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, APPDIR)
@@ -46,5 +47,3 @@ setupOptions = {
 
 if __name__ == '__main__':
     setup(**setupOptions)
-
-

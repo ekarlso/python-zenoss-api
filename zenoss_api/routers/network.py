@@ -37,7 +37,6 @@ class Network(RouterBase):
     location = 'network_router'
     action = 'NetworkRouter'
 
-
     def discoverDevices(self, uid, **kw):
         args = myArgs()[0]
         return self._request(args, **kw)

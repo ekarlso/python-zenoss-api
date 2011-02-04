@@ -33,7 +33,6 @@ class INetwork(Interface):
             - jobId: (integer) The id of the discovery job
         """
 
-
     def addNode(newSubnet, contextUid, **kw):
         """
         Add a new subnet.
@@ -41,7 +40,8 @@ class INetwork(Interface):
         @type  newSubnet: string
         @param newSubnet: New subnet to add
         @type  contextUid: string
-        @param contextUid: Unique identifier of the network parent of the new subnet
+        @param contextUid: Unique identifier of the network parent of the new
+            subnet
 
         @rtype:   DirectResponse
         @return:  B{Properties}:
@@ -121,4 +121,3 @@ class INetwork(Interface):
 
         @rtype: DirectResponse
         """
-

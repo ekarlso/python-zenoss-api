@@ -16,5 +16,6 @@
 
 from router import Router
 
+
 class ZenossJSONAPI(Router):
     pass
