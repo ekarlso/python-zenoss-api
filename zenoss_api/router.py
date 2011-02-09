@@ -30,6 +30,60 @@ class IRouterBase(Interface):
     Base interface for all router plugins
     """
 
+class ITreeRouterBase(Interface):
+    """
+    Class for Treed routers"
+    """
+
+    def addNode(type, contextUid, id, description=None, **kw):
+        """
+        Add a node to the existing tree underneath the node specified
+        by the context UID
+
+        @type  type: string
+        @param type: Either 'class' or 'organizer'
+        @type  contextUid: string
+        @param contextUid: Path to the node that will
+            be the new node's parent (ex. /zport/dmd/Devices)
+        @type  id: string
+        @param id: Identifier of the new node, must be unique in the
+        parent context
+        @type  description: string
+        @param description: (optional) Describes this new node (default: None)
+
+        @rtype:   dictionary
+        @return:  Marshaled form of the created node
+        """
+
+    def deleteNode(uid, **kw):
+        """
+        Deletes a node from the tree.
+
+        B{NOTE}: You can not delete a root node of a tree
+
+        @type  uid: string
+        @param uid: Unique identifier of the node we wish to delete
+
+        @rtype:   DirectResponse
+        @return:  B{Properties}:
+            - msg: (string) Status message
+        """
+
+    def moveOrganizer(targetUid, organizerUid, **kw):
+        """
+        Move the organizer uid to be underneath the organizer
+        specified by the targetUid.
+
+        @type  targetUid: string
+        @param targetUid: New parent of the organizer
+        @type  organizerUid: string
+        @param organizerUid: The organizer to move
+
+        @rtype:   DirectResponse
+        @return:  B{Properties}:
+            - data: (dictionary) Moved organizer
+        """
+
 
 class RouterBase(object):
     """
@@ -192,3 +246,18 @@ class Router(object):
                 setattr(self, name, value)
             except AttributeError, e:
                 logging.error("Failed setting attribute '%s'" % name)
+
+class TreeRouterBase(RouterBase):
+    implements(ITreeRouterBase)
+
+    def addNode(self, type, contextUid, id, description=None, **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
+
+    def deleteNode(self, uid, **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
+
+    def moveOrganizer(self, targetUid, organizerUid, **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
