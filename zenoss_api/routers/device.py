@@ -42,10 +42,6 @@ class Device(RouterBase):
         args = myArgs()[0]
         return self._request(kw, **kw)
 
-    def getTree(self, id, **kw):
-        args = myArgs()[0]
-        return self._request(args, **kw)
-
     def getComponents(self, uid=None, meta_type=None, keys=None, start=0,
                     limit=50, sort='name', dir='ASC', name=None, **kw):
         args = myArgs()[0]
