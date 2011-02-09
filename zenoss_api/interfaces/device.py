@@ -885,6 +885,7 @@ class IDevice(Interface):
         @type  serialNumber: string
         @param serialNumber: (optional) Serial number of this device
             (default: '')
+
         @rtype:   DirectResponse
         @return:  B{Properties}:
             - jobId: (string) ID of the add device job
@@ -924,9 +925,10 @@ class IDevice(Interface):
         @param query: not used
         @type  uid: string
         @param uid: Device uid to query for templates
+
         @rtype:   DirectResponse
         @return:  B{Properties}:
-        - data: ([dictionary]) List of objects representing local templates
+            - data: ([dictionary]) List of objects representing local templates
         """
 
     def getTemplates(id, **kw):
@@ -935,6 +937,7 @@ class IDevice(Interface):
 
         @type  id: string
         @param id: Device uid to query for templates
+
         @rtype:   DirectResponse
         @return:  B{Properties}:
             - data: ([dictionary]) List of objects representing templates

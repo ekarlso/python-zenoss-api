@@ -21,7 +21,7 @@ Device router for the Zenoss JSON API
 from zope.interface import implements
 
 from zenoss_api.interfaces import IDevice
-from zenoss_api.router import RouterBase
+from zenoss_api.router import TreeRouterBase
 from zenoss_api.utils import myArgs
 
 info = {"name": "device",
@@ -30,12 +30,16 @@ info = {"name": "device",
     "class": "Device"}
 
 
-class Device(RouterBase):
+class Device(TreeRouterBase):
     implements(IDevice)
 
     # Location + action
     location = 'device_router'
     action = 'DeviceRouter'
+
+    def getTree(self, id='/zport/dmd/Devices/', **kw):
+        args = myArgs()[0]
+        return self._request(kw, **kw)
 
     def addLocationNode(self, type, contextUid, id, description=None,
                         address=None, **kw):
