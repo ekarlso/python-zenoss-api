@@ -21,7 +21,7 @@ Mibs router for the Zenoss JSON API
 from zope.interface import implements
 
 from zenoss_api.interfaces import IMib
-from zenoss_api.router import RouterBase
+from zenoss_api.router import TreeRouterBase
 from zenoss_api.utils import myArgs
 
 info = {"name": "mib",
@@ -30,7 +30,7 @@ info = {"name": "mib",
     "class": "Mib"}
 
 
-class Mib(RouterBase):
+class Mib(TreeRouterBase):
     implements(IMib)
 
     # Location + action
@@ -39,3 +39,11 @@ class Mib(RouterBase):
 
     def __init__(self, router, **kw):
         raise NotImplementedError("Not available in Zenoss yet")
+
+    def getTree(self, id='/zport/dmd/Mibs/', **kw):
+        args = myArgs()[0]
+        return self._request(kw, **kw)
+
+    def getOrganizerTree(self, id):
+        args = myArgs()[0]
+        return self._request(kw, **kw)

@@ -23,7 +23,7 @@ from zope.interface import Interface
 
 class IMib(Interface):
 
-    def getTree(id):
+    def getTree(id, **kw):
         """
         Returns the tree structure of an organizer hierarchy. Default tree
         root is MIBs.
@@ -35,3 +35,17 @@ class IMib(Interface):
         @rtype:   [dictionary]
         @return:  Object representing the tree
         """
+
+
+    def getOrganizerTree(id, **kw):
+        """
+        Returns the tree structure of an organizer hierarchy, only including
+        organizers.
+
+        @type  id: string
+        @param id: Id of the root node of the tree to be returned
+
+        @rtype:   [dictionary]
+        @return:  Object representing the organizer tree
+        """
+
