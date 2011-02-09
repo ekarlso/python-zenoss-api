@@ -23,6 +23,18 @@ from zope.interface import Interface
 
 class IProcess(Interface):
 
+    def getTree(id, **kw):
+        """
+        Returns the tree structure of an organizer hierarchy where the root
+        node is the organizer identified by the id parameter.
+
+        @type  id: string
+        @param id: Id of the root node of the tree to be returned
+
+        @rtype:   [dictionary]
+        @return:  Object representing the tree
+        """
+
     def moveProcess(uid, targetUid, **kw):
         """
         Move a process or organizer from one organizer to another.

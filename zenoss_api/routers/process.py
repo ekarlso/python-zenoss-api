@@ -21,7 +21,7 @@ Process router for the Zenoss JSON API
 from zope.interface import implements
 
 from zenoss_api.interfaces import IProcess
-from zenoss_api.router import RouterBase
+from zenoss_api.router import TreeRouterBase
 from zenoss_api.utils import myArgs
 
 info = {"name": "process",
@@ -30,12 +30,16 @@ info = {"name": "process",
     "class": "Process"}
 
 
-class Process(RouterBase):
+class Process(TreeRouterBase):
     implements(IProcess)
 
     # Location + action
     location = 'process_router'
     action = 'ProcessRouter'
+
+    def getTree(self, id='/zport/dmd/Processes/', **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
 
     def moveProcess(self, uid, targetUid, **kw):
         args = myArgs()[0]
