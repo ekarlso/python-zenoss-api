@@ -34,3 +34,14 @@ class IDetailNav(Interface):
             'text': <display name of the config info>
         }
         """
+
+    def getContextMenus(uid=None, menuIds=None):
+        """
+        N/A
+        """
+
+    def getSecurityPermissions(uid):
+        """
+        returns a dictionary of all the permissions a 
+        user has on the context 
+        """
