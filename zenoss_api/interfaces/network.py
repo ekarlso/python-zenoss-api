@@ -60,7 +60,7 @@ class INetwork(Interface):
             - tree: (dictionary) An object representing the new network tree
         """
 
-    def getTree(id='/zport/dmd/Networks', **kw):
+    def getTree(id, **kw):
         """
         Returns the tree structure of an organizer hierarchy where
         the root node is the organizer identified by the id parameter.

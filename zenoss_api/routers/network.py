@@ -21,7 +21,7 @@ Network router for the Zenoss JSON API
 from zope.interface import implements
 
 from zenoss_api.interfaces import INetwork
-from zenoss_api.router import RouterBase
+from zenoss_api.router import TreeRouterBase
 from zenoss_api.utils import myArgs
 
 info = {"name": "network",
@@ -30,7 +30,7 @@ info = {"name": "network",
     "class": "Network"}
 
 
-class Network(RouterBase):
+class Network(TreeRouterBase):
     implements(INetwork)
 
     # Location + action
@@ -46,6 +46,10 @@ class Network(RouterBase):
         return self._request(args, **kw)
 
     def deleteNode(self, uid, **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
+
+    def getTree(self, id='/zport/dmd/Networks', **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
 
