@@ -42,8 +42,8 @@ class Mib(TreeRouterBase):
 
     def getTree(self, id='/zport/dmd/Mibs/', **kw):
         args = myArgs()[0]
-        return self._request(kw, **kw)
+        return self._request(args, **kw)
 
     def getOrganizerTree(self, id):
         args = myArgs()[0]
-        return self._request(kw, **kw)
+        return self._request(args, **kw)

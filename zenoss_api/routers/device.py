@@ -37,14 +37,14 @@ class Device(TreeRouterBase):
     location = 'device_router'
     action = 'DeviceRouter'
 
-    def getTree(self, id='/zport/dmd/Devices/', **kw):
+    def getTree(self, id='/zport/dmd/Devices', **kw):
         args = myArgs()[0]
-        return self._request(kw, **kw)
+        return self._request(args, **kw)
 
     def addLocationNode(self, type, contextUid, id, description=None,
                         address=None, **kw):
         args = myArgs()[0]
-        return self._request(kw, **kw)
+        return self._request(args, **kw)
 
     def getComponents(self, uid=None, meta_type=None, keys=None, start=0,
                     limit=50, sort='name', dir='ASC', name=None, **kw):
