@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """
-Interface for messaging router
+Interface for mib router
 """
 
 from zope.interface import Interface
