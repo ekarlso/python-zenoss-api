@@ -41,6 +41,10 @@ class Report(TreeRouterBase):
         args = myArgs()[0]
         return self._request(args, **kw)
 
+    def getTree(self, id='/zport/dmd/Reports', **kw):
+        args = myArgs()[0]
+        return self._request(args, **kw)
+
     def addNode(self, nodeType, contextUid, id, **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
