@@ -23,7 +23,7 @@ from zope.interface import Interface
 
 class IZenpack(Interface):
 
-    def getEligiblePacks(self, **kw):
+    def getEligiblePacks(**kw):
         """
         Get a list of eligible ZenPacks to add to.
 
@@ -33,7 +33,7 @@ class IZenpack(Interface):
             - totalCount: (integer) Total number of eligible ZenPacks
         """
 
-    def addToZenPack(self, topack, zenpack):
+    def addToZenPack(topack, zenpack, **kw):
         """
         Add an object to a ZenPack.
 
