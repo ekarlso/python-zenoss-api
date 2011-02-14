@@ -21,7 +21,7 @@ Template router for the Zenoss JSON API
 from zope.interface import implements
 
 from zenoss_api.interfaces import ITemplate
-from zenoss_api.router import TreeRouterBase
+from zenoss_api.router import RouterBase
 from zenoss_api.utils import myArgs
 
 info = {"name": "template",
@@ -30,7 +30,7 @@ info = {"name": "template",
     "class": "Template"}
 
 
-class Template(TreeRouterBase):
+class Template(RouterBase):
     implements(ITemplate)
 
     # Location + action
