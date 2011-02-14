@@ -38,4 +38,4 @@ class Messaging(RouterBase):
     action = 'MessagingRouter'
 
     def getUserMessages(self, **kw):
-        self._request(**kw)
+        self._request(kw)
