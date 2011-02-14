@@ -22,3 +22,6 @@ from nav import *
 from network import *
 from process import *
 from report import *
+from service import *
+from template import *
+from zenpack import *
