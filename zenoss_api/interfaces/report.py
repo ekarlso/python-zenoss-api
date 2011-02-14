@@ -33,6 +33,20 @@ class IReport(Interface):
             - reportTypes: ([string]) A list of the available report types
         """
 
+    def getTree(id='/zport/dmd/Reports', **kw):
+        """
+        Returns the tree structure of an organizer hierarchy where
+        the root node is the organizer identified by the id parameter.
+
+        @type  id: string
+        @param id: (optional) Id of the root node of the tree to be returned
+            (default: Reports)
+
+        @rtype:   [dictionary]
+        @return:  Object representing the tree
+        """
+
+
     def addNode(nodeType, contextUid, id, **kw):
         """
         Add a new report or report organizer.
