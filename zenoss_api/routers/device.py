@@ -24,6 +24,7 @@ from zenoss_api.interfaces import IDevice
 from zenoss_api.router import TreeRouterBase
 from zenoss_api.utils import myArgs
 
+
 info = {"name": "device",
     "author": "Endre Karlson endre.karlson@gmail.com",
     "version": "0.1",

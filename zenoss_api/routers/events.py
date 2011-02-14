@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """
-Device router for the Zenoss JSON API
+Events router for the Zenoss JSON API
 """
 
 from zope.interface import implements
