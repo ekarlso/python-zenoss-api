@@ -54,7 +54,7 @@ class Service(TreeRouterBase):
         args = myArgs()[0]
         return self._request(args, **kw)
 
-    def getInfo(self, uid, keys=None, **kw))
+    def getInfo(self, uid, keys=None, **kw):
         args = myArgs()[0]
         return self._request(args, **kw)
 
