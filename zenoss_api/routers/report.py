@@ -21,7 +21,7 @@ Report router for the Zenoss JSON API
 from zope.interface import implements
 
 from zenoss_api.interfaces import IReport
-from zenoss_api.router import RouterBase
+from zenoss_api.router import TreeRouterBase
 from zenoss_api.utils import myArgs
 
 info = {"name": "report",
@@ -30,7 +30,7 @@ info = {"name": "report",
     "class": "Report"}
 
 
-class Report(RouterBase):
+class Report(TreeRouterBase):
     implements(IReport)
 
     # Location + action
